@@ -6,16 +6,182 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Interview Web</title>
+    <link rel="stylesheet" type="text/css" href="../css/expertise.css">
 </head>
 
 <body>
     <div class="interview__container">
         <h2 style="text-align: center">Sample Project</h2>
-        <div class="interview__container_personalInfo">
+        <br>
+        <br>
+        <div class="interview__container_personalInfo" style="text-align: center">
+            <h3>Personal Info</h3>
             <form action="">
+                <div>
+                    <label for="name">Name</label>
+                    <input type="text" name="name" id="name" placeholder="Name">
+                </div>
+                <br>
+                <div>
+                    <label for="email">Email</label>
+                    <input type="email" name="email" id="email" placeholder="Email">
+                </div>
+                <br>
+                <div>
+                    <span>
+                        <label for="whatAreYou">What are you?</label>
+                        <input type="radio" name="whatAreYou" value="University Student" id="whatAreYou" checked>University Student
+                        <input type="radio" name="whatAreYou" value="Professional" id="whatAreYou"> Professional
+                    </span>
+                </div>
+                <br>
+                <div>
+                    <label for="university">University</label>
+                    <input type="text" name="university" id="university" placeholder="University">
+                </div>
+                <br>
+                <div>
+                    <label for="major">Major</label>
+                    <input type="text" name="major" id="major" placeholder="Major">
+                </div>
+                <br>
+                <div>
+                    <label for="graduationDate">Graduation Date</label>
+                    <select name="graduationDate" id="graduationDate">
+                        <option value="2020">2020</option>
+                        <option value="2019">2019</option>
+                        <option value="2018">2018</option>
+                        <option value="2017">2017</option>
+                        <option value="2016">2016</option>
+                        <option value="2015">2015</option>
+                        <option value="2014">2014</option>
+                        <option value="2013">2013</option>
+                        <option value="2012">2012</option>
+                        <option value="2011">2011</option>
+                        <option value="2010">2010</option>
+                        <option value="2009">2009</option>
+                        <option value="2008">2008</option>
+                        <option value="2007">2007</option>
+                        <option value="2006">2006</option>
+                    </select>
+                </div>
+                <br>
+                <div>
+                    <span>
+                        <label for="taxID">Do you have Tax ID?</label>
+                        <input type="radio" name="taxID" value="I have Tax ID" id="taxID" checked>I have Tax ID
+                        <input type="radio" name="taxID" value="I don't have Tax ID" id="taxID"> I don't have Tax ID
+                    </span>
+                </div>
+                <br>
+                <div>
+                    <label for="mobile">Mobile</label>
+                    <input type="number" name="mobile" id="mobile" placeholder="+91 9098788987">
+                </div>
+                <br>
 
+                <div>
+                    <input type="submit" id="submitPersonalInfo" style="background-color: #FF9F1C; color: white" value="submitPersonalInfo">
+                </div>
             </form>
         </div>
+        <br>
+        <hr>
+        <br>
+        <div class="interview__container_profile" style="text-align: center">
+            <h3>Profile</h3>
+            <form action="">
+                <div>
+                    <label for="aboutYou">About You</label>
+                    <textarea name="aboutYou" id="" cols="30" rows="3" placeholder="Write a short bio"></textarea>
+                </div>
+                <br>
+                <div>
+                    <label for="teachingExperience">Teaching Experience</label>
+                    <textarea name="teachingExperience" id="" cols="30" rows="3" placeholder="Tell us about your teaching experience"></textarea>
+                </div>
+                <br>
+                <div>
+                    <label for="workHistory">Work History</label>
+                    <input type="text" name="workHistory" id="workHistory" placeholder="Company">
+                    <br>
+                    <span>
+                        <select name="activeFrom" id="activeFrom">
+                            <option value="">Active From</option>
+                            <option value="2019">2019</option>
+                            <option value="2018">2018</option>
+                        </select>
+                        <select name="activeTo" id="activeTo">
+                            <option value="">Active To</option>
+                            <option value="2019">2019</option>
+                            <option value="2018">2018</option>
+                        </select>
+<!--                         
+                        <input type="date" id="activeFrom" name="activeFrom" placeholder="Active From">
+                        <input type="date" id="activeTo" name="activeTo" placeholder="Active To">
+                     -->
+                        <br>
+                        <a href="#">+ Add another Job</a>
+                    </span>
+                </div>
+                <br>
+                <div>
+                    <label for="school">Education</label>
+                    <input type="text" name="school" id="school" placeholder="School">
+                    <span>
+                        <select name="enrolled" id="enrolled">
+                            <option value="">Enrolled</option>
+                            <option value="2019">2019</option>
+                            <option value="2018">2018</option>
+                        </select>
+                        <select name="graduated" id="graduated">
+                            <option value="">Graduated</option>
+                            <option value="2019">2019</option>
+                            <option value="2018">2018</option>
+                        </select>
+                        <br>
+                        <a href="#">+ Add another School</a>
+                    </span>
+
+
+                </div>
+                <br>
+                <span>
+                    <input type="submit" id="goToPersonalInfo" style="background-color: #FF9F1C; color: white" value="goToPersonalInfo">
+                    <input type="submit" id="submitProfile" style="background-color: #FF9F1C; color: white" value="submitProfile">
+                </span>
+            </form>
+        </div>
+        <br>
+        <hr>
+        <br>
+        <div class="interview__container_expertise">
+            <span>
+                <div class="sidenav">
+                            <a href="#computerScience">Computer Science</a>
+                            <a href="#computerSoftware">Computer Software</a>
+                            <a href="#engineering">Engineering</a>
+                            <a href="#history">History</a>
+                            <a href="#humanities">Humanities</a>
+                            <a href="#math">Math</a>
+                            <a href="#science">Science</a>
+                            <a href="#socialScience">Social Science</a>
+                            <a href="#standardizedTests">Standardized Tests</a>
+                </div>
+                <div id="computerScience">
+                    <span><span><input type="checkbox" name="" value="">Computer Science</span><span><input type="checkbox" name="" value="">Lsp Programming</span><span><input type="checkbox" name="" value="">Visual Basic Professional</span><br></span>
+            <span><span><input type="checkbox" name="" value="">Assembly Language</span><span><input type="checkbox" name="" value="">PHP Programming</span><span><input type="checkbox" name="" value="">NodeJS</span><br></span>
+            <span><span><input type="checkbox" name="" value="">C++ Programming</span><span><input type="checkbox" name="" value="">SQL</span><span><input type="checkbox" name="" value="">ExpressJS</span><br></span>
+            <span><span><input type="checkbox" name="" value="">Database</span><span><input type="checkbox" name="" value="">MySQL</span><span><input type="checkbox" name="" value="">AngularJS</span><br></span>
+            <span><span><input type="checkbox" name="" value="">Human Computer Interaction</span><span><input type="checkbox" name="" value="">PDO</span><span><input type="checkbox" name="" value="">Git</span><br></span>
+            <span><span><input type="checkbox" name="" value="">Javascript Programming</span><span><input type="checkbox" name="" value="">Android Programming</span><span><input type="checkbox" name="" value="">Sublime</span><br></span>
+            <span><span><input type="checkbox" name="" value="">Ruby Programming</span><span><input type="checkbox" name="" value="">CSS</span><span><input type="checkbox" name="" value="">Handlebars</span><br></span>
+            <span><span><input type="checkbox" name="" value="">Web Development</span><span><input type="checkbox" name="" value="">Java Programming</span><span><input type="checkbox" name="" value="">Heroku</span><br></span>
+            <span><span><input type="checkbox" name="" value="">HTML 5</span><span><input type="checkbox" name="" value="">Machine Programming</span><span><input type="checkbox" name="" value="">Docker</span><br></span>
+            <span><span><input type="checkbox" name="" value="">iOS Programming</span><span><input type="checkbox" name="" value="">Shell Scripting</span><span><input type="checkbox" name="" value="">Jira</span><br></span>
+        </div>
+        </span>
+    </div>
     </div>
 </body>
 
