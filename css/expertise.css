@@ -2,6 +2,10 @@
     display: flex;
 }
 
+.interview__container_interview {
+    display: flex;
+}
+
 .sidenav {
     width: 180px;
     position: relative;
@@ -42,7 +46,7 @@
     padding: 0px 10px;
 }
 
-.computerScience {
+.rightBlock {
     margin-left: 300px;
     /* Same width as the sidebar + left position in px */
     font-size: 20px;
