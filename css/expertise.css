@@ -1,3 +1,7 @@
+.interview__container_expertise {
+    display: flex;
+}
+
 .sidenav {
     width: 180px;
     position: relative;
@@ -7,6 +11,11 @@
     background: #eee;
     overflow-x: hidden;
     padding: 8px 0;
+    height: 100%;
+    /*allows both columns to span the full height of the browser window*/
+    display: flex;
+    flex-direction: column;
+    /*places the left and right headers above the bottom content*/
 }
 
 .sidenav a {
@@ -21,6 +30,10 @@
     color: #FF9F1C;
 }
 
+.sidenav a:active {
+    color: white;
+}
+
 .main {
     margin-left: 300px;
     /* Same width as the sidebar + left position in px */
@@ -29,12 +42,17 @@
     padding: 0px 10px;
 }
 
-#computerScience {
+.computerScience {
     margin-left: 300px;
     /* Same width as the sidebar + left position in px */
     font-size: 20px;
     /* Increased text to enable scrolling */
     padding: 0px 10px;
+    height: 100%;
+    /*allows both columns to span the full height of the browser window*/
+    display: flex;
+    flex-direction: column;
+    /*places the left and right headers above the bottom content*/
 }
 
 @media screen and (max-height: 450px) {
@@ -44,4 +62,21 @@
     .sidenav a {
         font-size: 18px;
     }
+}
+
+#left {
+    flex-shrink: 0;
+    /*makes sure that content is not cut off in a smaller browser window*/
+}
+
+#right {
+    flex-shrink: 0;
+    display: inline-flex;
+}
+
+.bottom {
+    flex-grow: 1;
+    /*ensures that the container will take up the full height of the parent container*/
+    overflow-y: auto;
+    /*adds scroll to this container*/
 }
