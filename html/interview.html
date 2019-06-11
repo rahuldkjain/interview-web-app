@@ -299,25 +299,58 @@
         <div class="interview__container_interview" id="interview">
             <div class="sidenav" id="left">
                 <div class="bottom">
-                    <a href="#question1">Question #1 <span style="color: #FF9F1C">✔</span></a>
-                    <a href="#question2">Question #2 <span style="color: #FF9F1C">✔</span></a>
-                    <a href="#question3">Question #3 <span style="color: #FF9F1C">✔</span></a>
-                    <a href="#question4">Question #4 <span style="color: #FF9F1C">✔</span></a>
+                    <a href="javascript: question1();">Question #1 <span style="color: #FF9F1C">✔</span></a>
+                    <a href="javascript: question2();">Question #2 <span style="color: #FF9F1C">✔</span></a>
+                    <a href="javascript: question3();">Question #3 <span style="color: #FF9F1C">✔</span></a>
+                    <a href="javascript: question4();">Question #4 <span style="color: #FF9F1C">✔</span></a>
                 </div>
             </div>
             <div class="rightBlock" id="right">
-                <h3 style="text-align: center">Expertise</h3>
-                <form action="" class="bottom" style="padding: 0px;">
+                <h3 style="text-align: center">Interview</h3>
+                <div id="question1">
                     <p style="padding: 0px"><i>Where does it come from?</i></p>
-                    <textarea name="question1" id="question1" cols="70" rows="3" placeholder="Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum provident vitae suscipit tenetur officia impedit praesentium accusamus aperiam. Culpa dolor non libero sequi dolore ullam quas magni iusto cum a?"></textarea>
+                    <textarea name="question1" id="questionText1" cols="70" rows="3" placeholder="Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum provident vitae suscipit tenetur officia impedit praesentium accusamus aperiam. Culpa dolor non libero sequi dolore ullam quas magni iusto cum a?"></textarea>
                     <br>
                     <a href="" style="color: #FF9F1C">Previous question</a>
                     <br>
                     <span>
-                            <input type="submit" id="goToExpertise" style="background-color: #FF9F1C; color: white" value="&#8592; goToExpertise">
-                            <input type="submit" id="submitInterview" style="background-color: green; color: white" value="submitInterview">
+                            <input type="submit" id="goToExpertise" onclick="goTo(7)" style="background-color: #FF9F1C; color: white" value="&#8592; goToExpertise">
+                            <input type="submit" id="submitInterview" onclick="goTo(6)" style="background-color: green; color: white" value="submitInterview">
                     </span>
-                </form>
+                </div>
+                <div id="question2">
+                    <p style="padding: 0px"><i>Where does it come from?</i></p>
+                    <textarea name="question1" id="questionText2" cols="70" rows="3" placeholder="Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum provident vitae suscipit tenetur officia impedit praesentium accusamus aperiam. Culpa dolor non libero sequi dolore ullam quas magni iusto cum a?"></textarea>
+                    <br>
+                    <a href="" style="color: #FF9F1C">Previous question</a>
+                    <br>
+                    <span>
+                            <input type="submit" id="goToExpertise" onclick="goTo(7)" style="background-color: #FF9F1C; color: white" value="&#8592; goToExpertise">
+                            <input type="submit" id="submitInterview" onclick="goTo(6)" style="background-color: green; color: white" value="submitInterview">
+                    </span>
+                </div>
+                <div id="question3">
+                    <p style="padding: 0px"><i>Where does it come from?</i></p>
+                    <textarea name="question1" id="questionText3" cols="70" rows="3" placeholder="Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum provident vitae suscipit tenetur officia impedit praesentium accusamus aperiam. Culpa dolor non libero sequi dolore ullam quas magni iusto cum a?"></textarea>
+                    <br>
+                    <a href="" style="color: #FF9F1C">Previous question</a>
+                    <br>
+                    <span>
+                            <input type="submit" id="goToExpertise" onclick="goTo(7)" style="background-color: #FF9F1C; color: white" value="&#8592; goToExpertise">
+                            <input type="submit" id="submitInterview" onclick="goTo(6)" style="background-color: green; color: white" value="submitInterview">
+                    </span>
+                </div>
+                <div id="question4">
+                    <p style="padding: 0px"><i>Where does it come from?</i></p>
+                    <textarea name="question1" id="questionText4" cols="70" rows="3" placeholder="Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum provident vitae suscipit tenetur officia impedit praesentium accusamus aperiam. Culpa dolor non libero sequi dolore ullam quas magni iusto cum a?"></textarea>
+                    <br>
+                    <a href="" style="color: #FF9F1C">Previous question</a>
+                    <br>
+                    <span>
+                            <input type="submit" id="goToExpertise" onclick="goTo(7)" style="background-color: #FF9F1C; color: white" value="&#8592; goToExpertise">
+                            <input type="submit" id="submitInterview" onclick="goTo(6)" style="background-color: green; color: white" value="submitInterview">
+                    </span>
+                </div>
             </div>
         </div>
 
@@ -325,6 +358,7 @@
     <script src="../js/expertise.js"></script>
     <script src="../js/validation.js"></script>
     <script src="../js/interview.js"></script>
+    <script src="../js/main.js"></script>
 </body>
 
 </html>
