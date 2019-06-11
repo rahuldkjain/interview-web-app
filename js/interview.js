@@ -237,8 +237,46 @@ function goTo(buttonID) {
 
         personalInfoPage();
     } else if (buttonID == 4) {
+        //fetch the selected checkboxes values
+        var response = document.getElementsByName("computer-science-expertise")
+        var expertise = []
+        for (var i = 0; i < response.length; i++) {
+            if (response[i].checked == true) {
+                expertise.push(response[i].value)
+            }
+        }
+        //validation
+        if (expertise.length < 1) {
+            alert("Please select atleast one expertise")
+        } else {
+            sessionStorage.setItem("expertise", JSON.stringify(expertise))
+            interviewPage();
+            alert("Expertise added successfully");
+        }
 
     } else if (buttonID == 5) {
+        document.getElementById("aboutYou").value = JSON.parse(sessionStorage.getItem("profile")).aboutYou
+        document.getElementById("teachingExperience").value = JSON.parse(sessionStorage.getItem("profile")).teachingExperience
+
+        for (var index = 1; index <= JSON.parse(sessionStorage.getItem("profile")).workHistory.length; index++) {
+            if (index > 1) {
+                addWorkHistory();
+            }
+            document.getElementById("company-" + index).value = JSON.parse(sessionStorage.getItem("profile")).workHistory[index - 1].company
+            document.getElementById("activeFrom-" + index).value = JSON.parse(sessionStorage.getItem("profile")).workHistory[index - 1].activeFrom
+            document.getElementById("activeTo-" + index).value = JSON.parse(sessionStorage.getItem("profile")).workHistory[index - 1].activeTo
+        }
+
+        for (var index = 1; index <= JSON.parse(sessionStorage.getItem("profile")).education.length; index++) {
+            if (index > 1) {
+                addNewSchool();
+            }
+            document.getElementById("school-" + index).value = JSON.parse(sessionStorage.getItem("profile")).education[index - 1].school
+            document.getElementById("enrolled-" + index).value = JSON.parse(sessionStorage.getItem("profile")).education[index - 1].enrolled
+            document.getElementById("graduated-" + index).value = JSON.parse(sessionStorage.getItem("profile")).education[index - 1].graduated
+        }
+
+        profilePage();
 
     } else if (buttonID == 6) {
 

@@ -14,7 +14,7 @@
     left: 80px;
     background: #eee;
     overflow-x: hidden;
-    padding: 8px 0;
+    padding: 2px 0;
     height: 100%;
     /*allows both columns to span the full height of the browser window*/
     display: flex;
@@ -23,7 +23,7 @@
 }
 
 .sidenav a {
-    padding: 6px 8px 6px 16px;
+    padding: 10px 23px;
     text-decoration: none;
     font-size: 14px;
     color: #000000;
@@ -32,10 +32,6 @@
 
 .sidenav a:hover {
     color: #FF9F1C;
-}
-
-.sidenav a:active {
-    color: white;
 }
 
 .main {
@@ -82,5 +78,6 @@
     flex-grow: 1;
     /*ensures that the container will take up the full height of the parent container*/
     overflow-y: auto;
-    /*adds scroll to this container*/
+    /* adds scroll to this container */
+    /* width: 20%; */
 }

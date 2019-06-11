@@ -187,37 +187,109 @@
 
         <!-- interview__container_expertise -->
         <div class="interview__container_expertise" id="expertise">
-            <div class="sidenav" id="left">
+            <div class="sidenav">
                 <div class="bottom">
-                    <a href="#computerScience" active>Computer Science</a>
-                    <a href="#computerSoftware">Computer Software</a>
-                    <a href="#engineering">Engineering</a>
-                    <a href="#history">History</a>
-                    <a href="#humanities">Humanities</a>
-                    <a href="#math">Math</a>
-                    <a href="#science">Science</a>
-                    <a href="#socialScience">Social Science</a>
-                    <a href="#standardizedTests">Standardized Tests</a>
+                    <a href="javascript: computerScienceExpertise();" id="button-computer-science">ComputerScience</a>
+                    <a href="javascript: computerSoftwareExpertise();" id="button-computer-software">ComputerSoftware</a>
+                    <a href="javascript: engineeringExpertise();" id="button-engineering">Engineering</a>
+                    <a href="javascript: historyExpertise();" id="button-history">History</a>
+                    <a href="javascript: humanitiesExpertise();" id="button-humanities">Humanities</a>
+                    <a href="javascript: mathExpertise();" id="button-math">Math</a>
+                    <a href="javascript: scienceExpertise();" id="button-science">Science</a>
+                    <a href="javascript: socialScienceExpertise();" id="button-social-science">SocialScience</a>
+                    <a href="javascript: standardizedTestsExpertise();" id="button-standardized-tests">StandardizedTests</a>
                 </div>
             </div>
             <div class="rightBlock" id="right">
                 <h3 style="text-align: center">Expertise</h3>
-                <form action="" class="bottom">
-                    <span><span><input type="checkbox" name="" value="">Computer Science</span><span><input type="checkbox" name="" value="">Lsp Programming</span><span><input type="checkbox" name="" value="">Visual Basic Professional</span><br></span>
-                    <span><span><input type="checkbox" name="" value="">Assembly Language</span><span><input type="checkbox" name="" value="">PHP Programming</span><span><input type="checkbox" name="" value="">NodeJS</span><br></span>
-                    <span><span><input type="checkbox" name="" value="">C++ Programming</span><span><input type="checkbox" name="" value="">SQL</span><span><input type="checkbox" name="" value="">ExpressJS</span><br></span>
-                    <span><span><input type="checkbox" name="" value="">Database</span><span><input type="checkbox" name="" value="">MySQL</span><span><input type="checkbox" name="" value="">AngularJS</span><br></span>
-                    <span><span><input type="checkbox" name="" value="">Human Computer Interaction</span><span><input type="checkbox" name="" value="">PDO</span><span><input type="checkbox" name="" value="">Git</span><br></span>
-                    <span><span><input type="checkbox" name="" value="">Javascript Programming</span><span><input type="checkbox" name="" value="">Android Programming</span><span><input type="checkbox" name="" value="">Sublime</span><br></span>
-                    <span><span><input type="checkbox" name="" value="">Ruby Programming</span><span><input type="checkbox" name="" value="">CSS</span><span><input type="checkbox" name="" value="">Handlebars</span><br></span>
-                    <span><span><input type="checkbox" name="" value="">Web Development</span><span><input type="checkbox" name="" value="">Java Programming</span><span><input type="checkbox" name="" value="">Heroku</span><br></span>
-                    <span><span><input type="checkbox" name="" value="">HTML 5</span><span><input type="checkbox" name="" value="">Machine Programming</span><span><input type="checkbox" name="" value="">Docker</span><br></span>
-                    <span><span><input type="checkbox" name="" value="">iOS Programming</span><span><input type="checkbox" name="" value="">Shell Scripting</span><span><input type="checkbox" name="" value="">Jira</span><br></span>
+                <div id="computerScience">
+                    <span><span><input type="checkbox" name="computer-science-expertise" value="Computer Science">Computer Science</span><span><input type="checkbox" name="computer-science-expertise" value="">Lsp Programming</span><span><input type="checkbox" name="computer-science-expertise" value="">Visual Basic Professional</span><br></span>
+                    <span><span><input type="checkbox" name="computer-science-expertise" value="Assembly Language">Assembly Language</span><span><input type="checkbox" name="computer-science-expertise" value="">PHP Programming</span><span><input type="checkbox" name="computer-science-expertise" value="">NodeJS</span><br></span>
+                    <span><span><input type="checkbox" name="computer-science-expertise" value="C++ Programming">C++ Programming</span><span><input type="checkbox" name="computer-science-expertise" value="">SQL</span><span><input type="checkbox" name="computer-science-expertise" value="">ExpressJS</span><br></span>
+                    <span><span><input type="checkbox" name="computer-science-expertise" value="Database">Database</span><span><input type="checkbox" name="computer-science-expertise" value="">MySQL</span><span><input type="checkbox" name="computer-science-expertise" value="">AngularJS</span><br></span>
+                    <span><span><input type="checkbox" name="computer-science-expertise" value="Human Computer Interaction">Human Computer Interaction</span><span><input type="checkbox" name="computer-science-expertise" value="">PDO</span><span><input type="checkbox" name="computer-science-expertise" value="">Git</span><br></span>
+                    <span><span><input type="checkbox" name="computer-science-expertise" value="">Javascript Programming</span><span><input type="checkbox" name="computer-science-expertise" value="">Android Programming</span><span><input type="checkbox" name="computer-science-expertise" value="">Sublime</span><br></span>
+                    <span><span><input type="checkbox" name="computer-science-expertise" value="">Ruby Programming</span><span><input type="checkbox" name="computer-science-expertise" value="">CSS</span><span><input type="checkbox" name="computer-science-expertise" value="">Handlebars</span><br></span>
+                    <span><span><input type="checkbox" name="computer-science-expertise" value="">Web Development</span><span><input type="checkbox" name="computer-science-expertise" value="">Java Programming</span><span><input type="checkbox" name="computer-science-expertise" value="">Heroku</span><br></span>
+                    <span><span><input type="checkbox" name="computer-science-expertise" value="">HTML 5</span><span><input type="checkbox" name="computer-science-expertise" value="">Machine Programming</span><span><input type="checkbox" name="computer-science-expertise" value="">Docker</span><br></span>
+                    <span><span><input type="checkbox" name="computer-science-expertise" value="">iOS Programming</span><span><input type="checkbox" name="computer-science-expertise" value="">Shell Scripting</span><span><input type="checkbox" name="computer-science-expertise" value="">Jira</span><br></span>
                     <span>
-                        <input type="submit" id="goToProfile" style="background-color: #FF9F1C; color: white" value="&#8592; goToProfile">
-                        <input type="submit" id="submitExpertise" style="background-color: #FF9F1C; color: white" value="&#8594; submitExpertise">
+                        <input type="submit" id="goToProfile" onclick="goTo(5)" style="background-color: #FF9F1C; color: white" value="&#8592; goToProfile">
+                        <input type="submit" id="submitExpertise" onclick="goTo(4)" style="background-color: #FF9F1C; color: white" value="&#8594; submitExpertise">
                     </span>
-                </form>
+                </div>
+                <div id="computerSoftware">
+                    <span><span><input type="checkbox" name="computer-software-expertise" value="">Django</span><span><input type="checkbox" name="computer-software-expertise" value="">Lsp Programming</span><span><input type="checkbox" name="computer-software-expertise" value="">Visual Basic Professional</span><br></span>
+                    <span><span><input type="checkbox" name="computer-software-expertise" value="">Flask</span><span><input type="checkbox" name="computer-software-expertise" value="">PHP Programming</span><span><input type="checkbox" name="computer-software-expertise" value="">NodeJS</span><br></span>
+                    <span><span><input type="checkbox" name="computer-software-expertise" value="">Spring Boot</span><span><input type="checkbox" name="computer-software-expertise" value="">SQL</span><span><input type="checkbox" name="computer-software-expertise" value="">ExpressJS</span><br></span>
+                    <span><span><input type="checkbox" name="computer-software-expertise" value="">Angular</span><span><input type="checkbox" name="computer-software-expertise" value="">MySQL</span><span><input type="checkbox" name="computer-software-expertise" value="">AngularJS</span><br></span>
+                    <span><span><input type="checkbox" name="computer-software-expertise" value="">Vue</span><span><input type="checkbox" name="computer-software-expertise" value="">PDO</span><span><input type="checkbox" name="computer-software-expertise" value="">Git</span><br></span>
+                    <span><span><input type="checkbox" name="computer-software-expertise" value="">Bootstrap</span><span><input type="checkbox" name="computer-software-expertise" value="">Android Programming</span><span><input type="checkbox" name="computer-software-expertise" value="">Sublime</span><br></span>
+                    <span><span><input type="checkbox" name="computer-software-expertise" value="">Ruby Programming</span><span><input type="checkbox" name="computer-software-expertise" value="">CSS</span><span><input type="checkbox" name="computer-software-expertise" value="">Handlebars</span><br></span>
+                    <span><span><input type="checkbox" name="computer-software-expertise" value="">Web Development</span><span><input type="checkbox" name="computer-software-expertise" value="">Java Programming</span><span><input type="checkbox" name="computer-software-expertise" value="">Heroku</span><br></span>
+                    <span><span><input type="checkbox" name="computer-software-expertise" value="">HTML 5</span><span><input type="checkbox" name="computer-software-expertise" value="">Machine Programming</span><span><input type="checkbox" name="computer-software-expertise" value="">Docker</span><br></span>
+                    <span><span><input type="checkbox" name="computer-software-expertise" value="">iOS Programming</span><span><input type="checkbox" name="computer-software-expertise" value="">Shell Scripting</span><span><input type="checkbox" name="computer-software-expertise" value="">Jira</span><br></span>
+                    <span>
+                        <input type="submit" id="goToProfile" onclick="goTo(5)" style="background-color: #FF9F1C; color: white" value="&#8592; goToProfile">
+                        <input type="submit" id="submitExpertise" onclick="goTo(4)" style="background-color: #FF9F1C; color: white" value="&#8594; submitExpertise">
+                    </span>
+                </div>
+                <div id="engineering">
+                    <span><span><input type="checkbox" name="engineering-expertise" value="">Django</span><span><input type="checkbox" name="engineering-expertise" value="">Lsp Programming</span><span><input type="checkbox" name="engineering-expertise" value="">Visual Basic Professional</span><br></span>
+                    <span><span><input type="checkbox" name="engineering-expertise" value="">Flask</span><span><input type="checkbox" name="engineering-expertise" value="">PHP Programming</span><span><input type="checkbox" name="engineering-expertise" value="">NodeJS</span><br></span>
+                    <span>
+                        <input type="submit" id="goToProfile" onclick="goTo(5)" style="background-color: #FF9F1C; color: white" value="&#8592; goToProfile">
+                        <input type="submit" id="submitExpertise" onclick="goTo(4)" style="background-color: #FF9F1C; color: white" value="&#8594; submitExpertise">
+                    </span>
+                </div>
+                <div id="history">
+                    <span><span><input type="checkbox" name="history-expertise" value="">Django</span><span><input type="checkbox" name="history-expertise" value="">Lsp Programming</span><span><input type="checkbox" name="history-expertise" value="">Visual Basic Professional</span><br></span>
+                    <span><span><input type="checkbox" name="history-expertise" value="">Flask</span><span><input type="checkbox" name="history-expertise" value="">PHP Programming</span><span><input type="checkbox" name="history-expertise" value="">NodeJS</span><br></span>
+                    <span>
+                        <input type="submit" id="goToProfile" onclick="goTo(5)" style="background-color: #FF9F1C; color: white" value="&#8592; goToProfile">
+                        <input type="submit" id="submitExpertise" onclick="goTo(4)" style="background-color: #FF9F1C; color: white" value="&#8594; submitExpertise">
+                    </span>
+                </div>
+                <div id="humanities">
+                    <span><span><input type="checkbox" name="humanities-expertise" value="">Django</span><span><input type="checkbox" name="humanities-expertise" value="">Lsp Programming</span><span><input type="checkbox" name="humanities-expertise" value="">Visual Basic Professional</span><br></span>
+                    <span><span><input type="checkbox" name="humanities-expertise" value="">Flask</span><span><input type="checkbox" name="humanities-expertise" value="">PHP Programming</span><span><input type="checkbox" name="humanities-expertise" value="">NodeJS</span><br></span>
+                    <span>
+                        <input type="submit" id="goToProfile" onclick="goTo(5)" style="background-color: #FF9F1C; color: white" value="&#8592; goToProfile">
+                        <input type="submit" id="submitExpertise" onclick="goTo(4)"style="background-color: #FF9F1C; color: white" value="&#8594; submitExpertise">
+                    </span>
+                </div>
+                <div id="math">
+                    <span><span><input type="checkbox" name="math-expertise" value="">Django</span><span><input type="checkbox" name="math-expertise" value="">Lsp Programming</span><span><input type="checkbox" name="math-expertise" value="">Visual Basic Professional</span><br></span>
+                    <span><span><input type="checkbox" name="math-expertise" value="">Flask</span><span><input type="checkbox" name="math-expertise" value="">PHP Programming</span><span><input type="checkbox" name="math-expertise" value="">NodeJS</span><br></span>
+                    <span>
+                        <input type="submit" id="goToProfile" onclick="goTo(5)" style="background-color: #FF9F1C; color: white" value="&#8592; goToProfile">
+                        <input type="submit" id="submitExpertise" onclick="goTo(4)" style="background-color: #FF9F1C; color: white" value="&#8594; submitExpertise">
+                    </span>
+                </div>
+                <div id="science">
+                    <span><span><input type="checkbox" name="science-expertise" value="">Django</span><span><input type="checkbox" name="science-expertise" value="">Lsp Programming</span><span><input type="checkbox" name="science-expertise" value="">Visual Basic Professional</span><br></span>
+                    <span><span><input type="checkbox" name="science-expertise" value="">Flask</span><span><input type="checkbox" name="science-expertise" value="">PHP Programming</span><span><input type="checkbox" name="science-expertise" value="">NodeJS</span><br></span>
+                    <span>
+                        <input type="submit" id="goToProfile" onclick="goTo(5)" style="background-color: #FF9F1C; color: white" value="&#8592; goToProfile">
+                        <input type="submit" id="submitExpertise" onclick="goTo(4)" style="background-color: #FF9F1C; color: white" value="&#8594; submitExpertise">
+                    </span>
+                </div>
+                <div id="socialScience">
+                    <span><span><input type="checkbox" name="social-science-expertise" value="">Django</span><span><input type="checkbox" name="social-science-expertise" value="">Lsp Programming</span><span><input type="checkbox" name="social-science-expertise" value="">Visual Basic Professional</span><br></span>
+                    <span><span><input type="checkbox" name="social-science-expertise" value="">Flask</span><span><input type="checkbox" name="social-science-expertise" value="">PHP Programming</span><span><input type="checkbox" name="social-science-expertise" value="">NodeJS</span><br></span>
+                    <span>
+                        <input type="submit" id="goToProfile" onclick="goTo(5)" style="background-color: #FF9F1C; color: white" value="&#8592; goToProfile">
+                        <input type="submit" id="submitExpertise" onclick="goTo(4)" style="background-color: #FF9F1C; color: white" value="&#8594; submitExpertise">
+                    </span>
+                </div>
+                <div id="standardizedTests">
+                    <span><span><input type="checkbox" name="standardized-tests-expertise" value="">Django</span><span><input type="checkbox" name="standardized-tests-expertise" value="">Lsp Programming</span><span><input type="checkbox" name="standardized-tests-expertise" value="">Visual Basic Professional</span><br></span>
+                    <span><span><input type="checkbox" name="standardized-tests-expertise" value="">Flask</span><span><input type="checkbox" name="standardized-tests-expertise" value="">PHP Programming</span><span><input type="checkbox" name="standardized-tests-expertise" value="">NodeJS</span><br></span>
+                    <span>
+                        <input type="submit" id="goToProfile" onclick="goTo(5)" style="background-color: #FF9F1C; color: white" value="&#8592; goToProfile">
+                        <input type="submit" id="submitExpertise" onclick="goTo(4)" style="background-color: #FF9F1C; color: white" value="&#8594; submitExpertise">
+                    </span>
+                </div>
             </div>
         </div>
 
@@ -250,6 +322,7 @@
         </div>
 
     </div>
+    <script src="../js/expertise.js"></script>
     <script src="../js/validation.js"></script>
     <script src="../js/interview.js"></script>
 </body>
