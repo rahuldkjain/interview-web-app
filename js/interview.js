@@ -4,22 +4,22 @@ if (sessionStorage.length == 0) {
     document.getElementById("interview").style.display = 'none';
 } else if (sessionStorage.length == 1) {
     document.getElementById("personalInfo").style.display = 'none';
-    document.getElementById("button1").innerHTML = "&#10003";
+    document.getElementById("button-1").innerHTML = "&#10003";
     document.getElementById("expertise").style.display = 'none';
     document.getElementById("interview").style.display = 'none';
 } else if (sessionStorage.length == 2) {
     document.getElementById("personalInfo").style.display = 'none';
-    document.getElementById("button1").innerHTML = "&#10003";
+    document.getElementById("button-1").innerHTML = "&#10003";
     document.getElementById("profile").style.display = 'none';
-    document.getElementById("button2").innerHTML = "&#10003";
+    document.getElementById("button-2").innerHTML = "&#10003";
     document.getElementById("interview").style.display = 'none';
 } else {
     document.getElementById("personalInfo").style.display = 'none';
-    document.getElementById("button1").innerHTML = "&#10003";
+    document.getElementById("button-1").innerHTML = "&#10003";
     document.getElementById("profile").style.display = 'none';
-    document.getElementById("button2").innerHTML = "&#10003";
+    document.getElementById("button-2").innerHTML = "&#10003";
     document.getElementById("expertise").style.display = 'none';
-    document.getElementById("button3").innerHTML = "&#10003";
+    document.getElementById("button-3").innerHTML = "&#10003";
 }
 
 
@@ -37,26 +37,26 @@ function nextPage() {
         var taxID = document.querySelector('input[name="taxID"]:checked').value
         var mobile = document.getElementById("mobile").value
         console.log("email: " + email)
-        if (name == "") {
-            validated = false
-            alert("Please enter your name")
-        } else if (email == "") {
-            validated = false
-            alert("Please enter your email")
-        } else if (university == "") {
-            validated = false
-            alert("Please enter your university")
-        } else if (major == "") {
-            validated = false
-            alert("Please enter your major")
-        } else if (graduationDate == "") {
-            validated = false
-            alert("Please select your graduation year")
-        } else if (mobile == "") {
-            validated = false
-            alert("Please enter your mobile number")
-        }
 
+        validated = validateName(name);
+        if (validated) {
+            validated = validateEmail(email);
+        }
+        if (validated) {
+            if (university == "") {
+                validated = false
+                alert("Please enter your university")
+            } else if (major == "") {
+                validated = false
+                alert("Please enter your major")
+            } else if (graduationDate == "") {
+                validated = false
+                alert("Please select your graduation year")
+            }
+        }
+        if (validated) {
+            validated = validateMobile(mobile)
+        }
         if (validated) {
             var data = {
                 name: name,
@@ -72,7 +72,7 @@ function nextPage() {
             console.log(JSON.parse(sessionStorage.getItem("personalInfo")))
             document.getElementById("profile").style.display = '';
             document.getElementById("personalInfo").style.display = 'none';
-            document.getElementById("button1").innerHTML = "&#10003";
+            document.getElementById("button-1").innerHTML = "&#10003";
             alert("data inserted successfully")
         }
 

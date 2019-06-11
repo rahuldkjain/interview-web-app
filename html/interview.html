@@ -26,13 +26,13 @@
 
         <!-- interview__container_header -->
         <div class="interview__container_header">
-            <button class="button" id="button1">1</button>
+            <button class="button" id="button-1">1</button>
             <hr>
-            <button class="button" id="button2">2</button>
+            <button class="button" id="button-2">2</button>
             <hr>
-            <button class="button" id="button3">3</button>
+            <button class="button" id="button-3">3</button>
             <hr>
-            <button class="button" id="button4">4</button>
+            <button class="button" id="button-4">4</button>
         </div>
         <div class="interview__container_header">
             <p>PERSONAL INFO</p>
@@ -82,35 +82,35 @@
             <div>
                 <label for="graduationDate">Graduation Date</label>
                 <select name="graduationDate" id="graduationDate">
-                                    <option value="2020" selected>2020</option>
-                                    <option value="2019">2019</option>
-                                    <option value="2018">2018</option>
-                                    <option value="2017">2017</option>
-                                    <option value="2016">2016</option>
-                                    <option value="2015">2015</option>
-                                    <option value="2014">2014</option>
-                                    <option value="2013">2013</option>
-                                    <option value="2012">2012</option>
-                                    <option value="2011">2011</option>
-                                    <option value="2010">2010</option>
-                                    <option value="2009">2009</option>
-                                    <option value="2008">2008</option>
-                                    <option value="2007">2007</option>
-                                    <option value="2006">2006</option>
-                                </select>
+                    <option value="2020" selected>2020</option>
+                    <option value="2019">2019</option>
+                    <option value="2018">2018</option>
+                    <option value="2017">2017</option>
+                    <option value="2016">2016</option>
+                    <option value="2015">2015</option>
+                    <option value="2014">2014</option>
+                    <option value="2013">2013</option>
+                    <option value="2012">2012</option>
+                    <option value="2011">2011</option>
+                    <option value="2010">2010</option>
+                    <option value="2009">2009</option>
+                    <option value="2008">2008</option>
+                    <option value="2007">2007</option>
+                    <option value="2006">2006</option>
+                </select>
             </div>
             <br>
             <div>
                 <span>
-                                    <label for="taxID">Do you have Tax ID?</label>
-                                    <input type="radio" name="taxID" id="taxID" value="taxID"checked>I have Tax ID
-                                    <input type="radio" name="taxID" id="no_taxID" value="no taxID"> I don't have Tax ID
-                                </span>
+                    <label for="taxID">Do you have Tax ID?</label>
+                    <input type="radio" name="taxID" id="taxID" value="taxID"checked>I have Tax ID
+                    <input type="radio" name="taxID" id="no_taxID" value="no taxID"> I don't have Tax ID
+                </span>
             </div>
             <br>
             <div>
                 <label for="mobile">Mobile</label>
-                <input type="number" name="mobile" id="mobile" max="9999999999" placeholder="9098788987" required>
+                <input type="number" name="mobile" id="mobile" pattern="[789][0-9]{9}" placeholder="9098788987" required>
             </div>
             <br>
 
@@ -251,7 +251,7 @@
         </div>
 
     </div>
-
+    <script src="../js/validation.js"></script>
     <script src="../js/interview.js"></script>
 </body>
 
