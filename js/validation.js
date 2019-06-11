@@ -31,3 +31,30 @@ function validateMobile(mobile) {
 
     return true
 }
+
+function validateProfile(profileData) {
+    if (profileData.aboutYou == "") {
+        alert("Please tell us a little bit about yourself")
+        return false
+    } else if (profileData.teachingExperience == "") {
+        alert("Please tell us about your teaching experience")
+        return false
+    } else if (profileData.workHistory.length == 0) {
+        alert("Please tell us about your work history")
+        return false
+    } else if (profileData.workHistory.length == 1) {
+        if (profileData.workHistory[0].activeFrom > profileData.workHistory[0].activeTo) {
+            alert("Please set the dates correctly")
+            return false
+        }
+    } else if (profileData.education.length == 0) {
+        alert("Please tell us about your education")
+        return false
+    } else if (profileData.education.length == 1) {
+        if (profileData.education[0].enrolled > profileData.education[0].graduated) {
+            alert("Please set the dates correctly")
+            return false
+        }
+    }
+    return true
+}

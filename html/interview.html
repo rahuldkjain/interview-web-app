@@ -18,6 +18,7 @@
             |---------interview__container_personalInfo
             |---------interview__container_profile
             |---------interview__container_expertise
+            |---------interview__container_interview
     -->
 
     <div class="interview__container">
@@ -39,7 +40,7 @@
             <hr width="0px" style="border: 0px;">
             <p>PROFILE</p>
             <hr width="0px" style="border: 0px;">
-            <p>EXPERIENCE</p>
+            <p>EXPERTISE</p>
             <hr width="0px" style="border: 0px;">
             <p>INTERVIEW</p>
         </div>
@@ -64,8 +65,8 @@
             <div>
                 <span>
                         <label for="whatAreYou">What are you?</label>
-                        <input type="radio" name="whatAreYou" value="University Student" id="universityStudent" checked>University Student
-                        <input type="radio" name="whatAreYou" value="Professional" id="professional"> Professional
+                        <input type="radio" name="whatAreYou" value="universityStudent" id="universityStudent" checked>University Student
+                        <input type="radio" name="whatAreYou" value="professional" id="professional"> Professional
                     </span>
             </div>
             <br>
@@ -104,7 +105,7 @@
                 <span>
                     <label for="taxID">Do you have Tax ID?</label>
                     <input type="radio" name="taxID" id="taxID" value="taxID"checked>I have Tax ID
-                    <input type="radio" name="taxID" id="no_taxID" value="no taxID"> I don't have Tax ID
+                    <input type="radio" name="taxID" id="no_taxID" value="no_taxID"> I don't have Tax ID
                 </span>
             </div>
             <br>
@@ -115,7 +116,7 @@
             <br>
 
             <div>
-                <input type="submit" id="nextPage" onclick="nextPage()" style="background-color: #FF9F1C; color: white" value="&#8594; submitPersonalInfo">
+                <input type="submit" id="nextPage" onclick="goTo(1)" style="background-color: #FF9F1C; color: white" value="&#8594; submitPersonalInfo">
             </div>
 
         </div>
@@ -126,22 +127,21 @@
         <!-- interview__container_profile -->
         <div class="interview__container_profile" style="text-align: center" id="profile">
             <h3>Profile</h3>
-            <form action="" id="profileForm">
-                <div>
-                    <label for="aboutYou">About You</label>
-                    <textarea name="aboutYou" id="" cols="30" rows="3" placeholder="Write a short bio"></textarea>
-                </div>
+            <div>
+                <label for="aboutYou">About You</label>
+                <textarea name="aboutYou" id="aboutYou" cols="30" rows="3" placeholder="Write a short bio"></textarea>
+            </div>
+            <br>
+            <div>
+                <label for="teachingExperience">Teaching Experience</label>
+                <textarea name="teachingExperience" id="teachingExperience" cols="30" rows="3" placeholder="Tell us about your teaching experience"></textarea>
+            </div>
+            <br>
+            <div>
+                <label for="workHistory">Work History</label>
+                <input type="text" name="workHistory" id="company" placeholder="Company">
                 <br>
-                <div>
-                    <label for="teachingExperience">Teaching Experience</label>
-                    <textarea name="teachingExperience" id="" cols="30" rows="3" placeholder="Tell us about your teaching experience"></textarea>
-                </div>
-                <br>
-                <div>
-                    <label for="workHistory">Work History</label>
-                    <input type="text" name="workHistory" id="workHistory" placeholder="Company">
-                    <br>
-                    <span>
+                <span>
                         <select name="activeFrom" id="activeFrom">
                             <option value="">Active From</option>
                             <option value="2019">2019</option>
@@ -155,12 +155,12 @@
                         <br>
                         <a href="#">+ Add another Job</a>
                     </span>
-                </div>
-                <br>
-                <div>
-                    <label for="school">Education</label>
-                    <input type="text" name="school" id="school" placeholder="School">
-                    <span>
+            </div>
+            <br>
+            <div>
+                <label for="school">Education</label>
+                <input type="text" name="school" id="school" placeholder="School">
+                <span>
                         <select name="enrolled" id="enrolled">
                             <option value="">Enrolled</option>
                             <option value="2019">2019</option>
@@ -176,13 +176,12 @@
                     </span>
 
 
-                </div>
-                <br>
-                <span>
-                    <input type="submit" id="goToPersonalInfo" style="background-color: #FF9F1C; color: white" value="&#8592; goToPersonalInfo">
-                    <input type="submit" id="submitProfile" style="background-color: #FF9F1C; color: white" value="&#8594; submitProfile">
+            </div>
+            <br>
+            <span>
+                    <input type="submit" id="goToPersonalInfo" onclick="goTo(3)" style="background-color: #FF9F1C; color: white" value="&#8592; goToPersonalInfo">
+                    <input type="submit" id="submitProfile" onclick="goTo(2)" style="background-color: #FF9F1C; color: white" value="&#8594; submitProfile">
                 </span>
-            </form>
         </div>
 
 
