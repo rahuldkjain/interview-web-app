@@ -137,42 +137,42 @@
                 <textarea name="teachingExperience" id="teachingExperience" cols="30" rows="3" placeholder="Tell us about your teaching experience"></textarea>
             </div>
             <br>
-            <div>
+            <div id="workHistory">
                 <label for="workHistory">Work History</label>
-                <input type="text" name="workHistory" id="company" placeholder="Company">
+                <input type="text" name="workHistory" id="company-1" placeholder="Company">
                 <br>
                 <span>
-                        <select name="activeFrom" id="activeFrom">
+                        <select name="activeFrom-1" id="activeFrom-1">
                             <option value="">Active From</option>
                             <option value="2019">2019</option>
                             <option value="2018">2018</option>
                         </select>
-                        <select name="activeTo" id="activeTo">
+                        <select name="activeTo-1" id="activeTo-1">
                             <option value="">Active To</option>
                             <option value="2019">2019</option>
                             <option value="2018">2018</option>
                         </select>
                         <br>
-                        <a href="#">+ Add another Job</a>
+                        <button onclick="addWorkHistory()">+ Add another work</button>
                     </span>
             </div>
             <br>
-            <div>
+            <div id="education">
                 <label for="school">Education</label>
-                <input type="text" name="school" id="school" placeholder="School">
+                <input type="text" name="school" id="school-1" placeholder="School">
                 <span>
-                        <select name="enrolled" id="enrolled">
+                        <select name="enrolled-1" id="enrolled-1">
                             <option value="">Enrolled</option>
                             <option value="2019">2019</option>
                             <option value="2018">2018</option>
                         </select>
-                        <select name="graduated" id="graduated">
+                        <select name="graduated-1" id="graduated-1">
                             <option value="">Graduated</option>
                             <option value="2019">2019</option>
                             <option value="2018">2018</option>
                         </select>
                         <br>
-                        <a href="#">+ Add another School</a>
+                        <button onclick="addNewSchool()">+ Add another school</button>
                     </span>
 
 

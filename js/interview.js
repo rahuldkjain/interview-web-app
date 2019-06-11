@@ -33,6 +33,88 @@ function interviewPage() {
 }
 
 
+var workHistoryCount = 1
+
+function addWorkHistory() {
+    workHistoryCount += 1
+    var company = document.createElement("INPUT");
+    company.setAttribute("type", "text");
+    company.setAttribute("name", "company");
+    company.setAttribute("placeholder", "Company");
+    company.setAttribute("id", "company-" + workHistoryCount);
+
+    var activeFrom = document.createElement("SELECT");
+    activeFrom.setAttribute("name", "activeFrom-" + workHistoryCount);
+    activeFrom.setAttribute("id", "activeFrom-" + workHistoryCount);
+    var option = document.createElement("option");
+    option.setAttribute("value", 2019)
+    option.text = 2019
+    activeFrom.add(option)
+    option = document.createElement("option");
+    option.setAttribute("value", 2018)
+    option.text = 2018
+    activeFrom.add(option)
+
+
+    var activeTo = document.createElement("SELECT");
+    activeTo.setAttribute("name", "activeTo-" + workHistoryCount);
+    activeTo.setAttribute("id", "activeTo-" + workHistoryCount);
+    var option = document.createElement("option");
+    option.setAttribute("value", 2019)
+    option.text = 2019
+    activeTo.add(option)
+    option = document.createElement("option");
+    option.setAttribute("value", 2018)
+    option.text = 2018
+    activeTo.add(option)
+
+    var workHistoryDiv = document.getElementById("workHistory")
+    workHistoryDiv.appendChild(company)
+    workHistoryDiv.appendChild(activeFrom)
+    workHistoryDiv.appendChild(activeTo)
+}
+
+var schoolCount = 1
+
+function addNewSchool() {
+    schoolCount += 1
+    var school = document.createElement("INPUT");
+    school.setAttribute("type", "text");
+    school.setAttribute("name", "school");
+    school.setAttribute("placeholder", "School");
+    school.setAttribute("id", "school-" + schoolCount);
+
+    var enrolled = document.createElement("SELECT");
+    enrolled.setAttribute("name", "enrolled-" + schoolCount);
+    enrolled.setAttribute("id", "enrolled-" + schoolCount);
+    var option = document.createElement("option");
+    option.setAttribute("value", 2019)
+    option.text = 2019
+    enrolled.add(option)
+    option = document.createElement("option");
+    option.setAttribute("value", 2018)
+    option.text = 2018
+    enrolled.add(option)
+
+
+    var graduated = document.createElement("SELECT");
+    graduated.setAttribute("name", "graduated-" + schoolCount);
+    graduated.setAttribute("id", "graduated-" + schoolCount);
+    var option = document.createElement("option");
+    option.setAttribute("value", 2019)
+    option.text = 2019
+    graduated.add(option)
+    option = document.createElement("option");
+    option.setAttribute("value", 2018)
+    option.text = 2018
+    graduated.add(option)
+
+    var educationDiv = document.getElementById("education")
+    educationDiv.appendChild(school)
+    educationDiv.appendChild(enrolled)
+    educationDiv.appendChild(graduated)
+}
+
 if (sessionStorage.length == 0) {
     personalInfoPage();
 } else if (sessionStorage.length == 1) {
@@ -108,12 +190,12 @@ function goTo(buttonID) {
         var validated = true
         var aboutYou = document.getElementById("aboutYou").value
         var teachingExperience = document.getElementById("teachingExperience").value
-        var company = document.getElementById("company").value
-        var activeFrom = document.getElementById("activeFrom").value
-        var activeTo = document.getElementById("activeTo").value
-        var school = document.getElementById("school").value
-        var enrolled = document.getElementById("enrolled").value
-        var graduated = document.getElementById("graduated").value
+        var company = document.getElementById("company-1").value
+        var activeFrom = document.getElementById("activeFrom-1").value
+        var activeTo = document.getElementById("activeTo-1").value
+        var school = document.getElementById("school-1").value
+        var enrolled = document.getElementById("enrolled-1").value
+        var graduated = document.getElementById("graduated-1").value
 
         var data = {
             aboutYou: aboutYou,
@@ -122,6 +204,19 @@ function goTo(buttonID) {
             education: [{ school: school, enrolled: enrolled, graduated: graduated }]
         }
 
+        for (var index = 2; index <= workHistoryCount; index++) {
+            company = document.getElementById("company-" + index).value
+            activeFrom = document.getElementById("activeFrom-" + index).value
+            activeTo = document.getElementById("activeTo-" + index).value
+            data.workHistory.push({ company: company, activeFrom: activeFrom, activeTo: activeTo })
+        }
+
+        for (var index = 2; index <= schoolCount; index++) {
+            school = document.getElementById("school-" + index).value
+            enrolled = document.getElementById("enrolled-" + index).value
+            graduated = document.getElementById("graduated-" + index).value
+            data.education.push({ school: school, enrolled: enrolled, graduated: graduated })
+        }
         validated = validateProfile(data)
 
         if (validated) {

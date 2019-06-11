@@ -42,18 +42,23 @@ function validateProfile(profileData) {
     } else if (profileData.workHistory.length == 0) {
         alert("Please tell us about your work history")
         return false
-    } else if (profileData.workHistory.length == 1) {
-        if (profileData.workHistory[0].activeFrom > profileData.workHistory[0].activeTo) {
-            alert("Please set the dates correctly")
-            return false
+    } else if (profileData.workHistory.length > 0) {
+        for (var index = 0; index < profileData.workHistory.length; index++) {
+            if (profileData.workHistory[index].activeFrom > profileData.workHistory[index].activeTo) {
+                alert("Please set the Work History dates correctly")
+                return false
+            }
         }
-    } else if (profileData.education.length == 0) {
+    }
+    if (profileData.education.length == 0) {
         alert("Please tell us about your education")
         return false
-    } else if (profileData.education.length == 1) {
-        if (profileData.education[0].enrolled > profileData.education[0].graduated) {
-            alert("Please set the dates correctly")
-            return false
+    } else {
+        for (var index = 0; index < profileData.education.length; index++) {
+            if (profileData.education[index].enrolled > profileData.education[index].graduated) {
+                alert("Please set the Education dates correctly")
+                return false
+            }
         }
     }
     return true
