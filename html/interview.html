@@ -26,13 +26,13 @@
 
         <!-- interview__container_header -->
         <div class="interview__container_header">
-            <input type="button" class="button button1" value="1">
+            <button class="button" id="button1">1</button>
             <hr>
-            <input type="button" class="button button1" value="2">
+            <button class="button" id="button2">2</button>
             <hr>
-            <input type="button" class="button button1" value="3">
+            <button class="button" id="button3">3</button>
             <hr>
-            <input type="button" class="button button1" value="4">
+            <button class="button" id="button4">4</button>
         </div>
         <div class="interview__container_header">
             <p>PERSONAL INFO</p>
@@ -49,76 +49,75 @@
 
         <br>
         <!-- interview__container_personalInfo -->
-        <div class="interview__container_personalInfo" style="text-align: center">
+        <div class="interview__container_personalInfo" style="text-align: center" id="personalInfo">
             <h3>Personal Info</h3>
-            <form action="">
-                <div>
-                    <label for="name">Name</label>
-                    <input type="text" name="name" id="name" placeholder="Name">
-                </div>
-                <br>
-                <div>
-                    <label for="email">Email</label>
-                    <input type="email" name="email" id="email" placeholder="Email">
-                </div>
-                <br>
-                <div>
-                    <span>
+            <div>
+                <label for="name">Name</label>
+                <input type="text" name="name" id="name" placeholder="Name" required>
+            </div>
+            <br>
+            <div>
+                <label for="email">Email</label>
+                <input type="email" name="email" id="email" placeholder="Email" required>
+            </div>
+            <br>
+            <div>
+                <span>
                         <label for="whatAreYou">What are you?</label>
-                        <input type="radio" name="whatAreYou" value="University Student" id="whatAreYou" checked>University Student
-                        <input type="radio" name="whatAreYou" value="Professional" id="whatAreYou"> Professional
+                        <input type="radio" name="whatAreYou" value="University Student" id="universityStudent" checked>University Student
+                        <input type="radio" name="whatAreYou" value="Professional" id="professional"> Professional
                     </span>
-                </div>
-                <br>
-                <div>
-                    <label for="university">University</label>
-                    <input type="text" name="university" id="university" placeholder="University">
-                </div>
-                <br>
-                <div>
-                    <label for="major">Major</label>
-                    <input type="text" name="major" id="major" placeholder="Major">
-                </div>
-                <br>
-                <div>
-                    <label for="graduationDate">Graduation Date</label>
-                    <select name="graduationDate" id="graduationDate">
-                        <option value="2020">2020</option>
-                        <option value="2019">2019</option>
-                        <option value="2018">2018</option>
-                        <option value="2017">2017</option>
-                        <option value="2016">2016</option>
-                        <option value="2015">2015</option>
-                        <option value="2014">2014</option>
-                        <option value="2013">2013</option>
-                        <option value="2012">2012</option>
-                        <option value="2011">2011</option>
-                        <option value="2010">2010</option>
-                        <option value="2009">2009</option>
-                        <option value="2008">2008</option>
-                        <option value="2007">2007</option>
-                        <option value="2006">2006</option>
-                    </select>
-                </div>
-                <br>
-                <div>
-                    <span>
-                        <label for="taxID">Do you have Tax ID?</label>
-                        <input type="radio" name="taxID" value="I have Tax ID" id="taxID" checked>I have Tax ID
-                        <input type="radio" name="taxID" value="I don't have Tax ID" id="taxID"> I don't have Tax ID
-                    </span>
-                </div>
-                <br>
-                <div>
-                    <label for="mobile">Mobile</label>
-                    <input type="number" name="mobile" id="mobile" placeholder="+91 9098788987">
-                </div>
-                <br>
+            </div>
+            <br>
+            <div>
+                <label for="university">University</label>
+                <input type="text" name="university" id="university" placeholder="University" required>
+            </div>
+            <br>
+            <div>
+                <label for="major">Major</label>
+                <input type="text" name="major" id="major" placeholder="Major" required>
+            </div>
+            <br>
+            <div>
+                <label for="graduationDate">Graduation Date</label>
+                <select name="graduationDate" id="graduationDate">
+                                    <option value="2020" selected>2020</option>
+                                    <option value="2019">2019</option>
+                                    <option value="2018">2018</option>
+                                    <option value="2017">2017</option>
+                                    <option value="2016">2016</option>
+                                    <option value="2015">2015</option>
+                                    <option value="2014">2014</option>
+                                    <option value="2013">2013</option>
+                                    <option value="2012">2012</option>
+                                    <option value="2011">2011</option>
+                                    <option value="2010">2010</option>
+                                    <option value="2009">2009</option>
+                                    <option value="2008">2008</option>
+                                    <option value="2007">2007</option>
+                                    <option value="2006">2006</option>
+                                </select>
+            </div>
+            <br>
+            <div>
+                <span>
+                                    <label for="taxID">Do you have Tax ID?</label>
+                                    <input type="radio" name="taxID" id="taxID" value="taxID"checked>I have Tax ID
+                                    <input type="radio" name="taxID" id="no_taxID" value="no taxID"> I don't have Tax ID
+                                </span>
+            </div>
+            <br>
+            <div>
+                <label for="mobile">Mobile</label>
+                <input type="number" name="mobile" id="mobile" max="9999999999" placeholder="9098788987" required>
+            </div>
+            <br>
 
-                <div>
-                    <input type="submit" id="submitPersonalInfo" style="background-color: #FF9F1C; color: white" value="&#8594; submitPersonalInfo">
-                </div>
-            </form>
+            <div>
+                <input type="submit" id="nextPage" onclick="nextPage()" style="background-color: #FF9F1C; color: white" value="&#8594; submitPersonalInfo">
+            </div>
+
         </div>
 
 
