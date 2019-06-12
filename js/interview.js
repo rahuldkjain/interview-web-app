@@ -71,7 +71,7 @@ function nextQuestion(questionID) {
         } else if (answer1 == "") {
             alert("Please answer the question! Skipping questions not allowed")
         } else {
-            var data = [{ question1: answer1 }]
+            var data = [{ question: answer1 }]
             sessionStorage.setItem("questions", JSON.stringify(data))
             document.getElementById("button-question-1").innerHTML += '<span style = "color: #FF9F1C"> ✔ </span>';
             alert("Question 1 response submitted")
@@ -86,14 +86,14 @@ function nextQuestion(questionID) {
             alert("Please answer the question! Skipping questions not allowed")
         } else {
             var data = JSON.parse(sessionStorage.getItem("questions"))
-            data.push({ question2: answer2 })
+            data.push({ question: answer2 })
             sessionStorage.setItem("questions", JSON.stringify(data))
             document.getElementById("button-question-2").innerHTML += '<span style = "color: #FF9F1C"> ✔ </span>';
             alert("Question 2 response submitted")
             question3();
         }
     } else if (questionID == 3) {
-        document.getElementById("questionText1").value = JSON.parse(sessionStorage.getItem("questions"))[0].question1
+        document.getElementById("questionText1").value = JSON.parse(sessionStorage.getItem("questions"))[0].question
         question1();
     } else if (questionID == 4) {
         var answer3 = document.getElementById("questionText3").value
@@ -104,17 +104,17 @@ function nextQuestion(questionID) {
             alert("Please answer the question! Skipping questions not allowed")
         } else {
             var data = JSON.parse(sessionStorage.getItem("questions"))
-            data.push({ question3: answer3 })
+            data.push({ question: answer3 })
             sessionStorage.setItem("questions", JSON.stringify(data))
             document.getElementById("button-question-3").innerHTML += '<span style = "color: #FF9F1C"> ✔ </span>';
             alert("Question 3 response submitted")
             question4();
         }
     } else if (questionID == 5) {
-        document.getElementById("questionText2").value = JSON.parse(sessionStorage.getItem("questions"))[1].question2
+        document.getElementById("questionText2").value = JSON.parse(sessionStorage.getItem("questions"))[1].question
         question2();
     } else if (questionID == 6) {
-        document.getElementById("questionText3").value = JSON.parse(sessionStorage.getItem("questions"))[2].question3
+        document.getElementById("questionText3").value = JSON.parse(sessionStorage.getItem("questions"))[2].question
         question3();
     }
 }
@@ -131,7 +131,7 @@ function jump(questionID) {
     //questionID => 1
     if (questionID == 1) {
         if (questions.length >= 1) {
-            document.getElementById("questionText1").value = JSON.parse(sessionStorage.getItem("questions"))[0].question1
+            document.getElementById("questionText1").value = JSON.parse(sessionStorage.getItem("questions"))[0].question
             question1();
         } else {
             question1();
@@ -142,7 +142,7 @@ function jump(questionID) {
     //questionID => 2
     else if (questionID == 2) {
         if (questions[1]) {
-            document.getElementById("questionText2").value = JSON.parse(sessionStorage.getItem("questions"))[1].question2
+            document.getElementById("questionText2").value = JSON.parse(sessionStorage.getItem("questions"))[1].question
             question2();
         } else if (questions.length == 1) {
             question2();
@@ -153,7 +153,7 @@ function jump(questionID) {
     //questionID => 3
     else if (questionID == 3) {
         if (questions[2]) {
-            document.getElementById("questionText3").value = JSON.parse(sessionStorage.getItem("questions"))[2].question3
+            document.getElementById("questionText3").value = JSON.parse(sessionStorage.getItem("questions"))[2].question
             question3();
         } else if (questions.length == 2) {
             question3();
@@ -164,7 +164,7 @@ function jump(questionID) {
     //questionID => 4
     else if (questionID == 4) {
         if (questions[3]) {
-            document.getElementById("questionText4").value = JSON.parse(sessionStorage.getItem("questions"))[3].question4
+            document.getElementById("questionText4").value = JSON.parse(sessionStorage.getItem("questions"))[3].question
             question4();
         } else if (questions.length == 3) {
             question4();

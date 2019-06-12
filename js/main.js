@@ -1,3 +1,18 @@
+function resetButtons() {
+    for (var index = 1; index <= sessionStorage.length; index++) {
+        document.getElementById("button-" + index).style.backgroundColor = "white";
+        document.getElementById("button-" + index).style.color = "#FF9F1C";
+        document.getElementById("button-" + index).innerHTML = "&#10003";
+        document.getElementById("button-" + index).style.border = "1px solid #FF9F1C";
+    }
+    for (var index = sessionStorage.length + 1; index <= 4; index++) {
+        document.getElementById("button-" + index).style.backgroundColor = "white";
+        document.getElementById("button-" + index).style.color = "black";
+        document.getElementById("button-" + index).innerHTML = index;
+        document.getElementById("button-" + index).style.border = "1px solid black";
+    }
+}
+
 function personalInfoPage() {
     document.getElementById("profile").style.display = 'none';
     document.getElementById("expertise").style.display = 'none';
@@ -8,15 +23,16 @@ function personalInfoPage() {
     document.getElementById("interview__container_header-profile").style.color = "gray"
     document.getElementById("interview__container_header-expertise").style.color = "gray"
     document.getElementById("interview__container_header-interview").style.color = "gray"
+
+    resetButtons();
+
     document.getElementById("button-1").style.backgroundColor = "#FF9F1C";
     document.getElementById("button-1").style.color = "white";
+    document.getElementById("button-1").style.border = "1px solid #FF9F1C";
 }
 
 function profilePage() {
     document.getElementById("personalInfo").style.display = 'none';
-    document.getElementById("button-1").innerHTML = "&#10003";
-    document.getElementById("button-1").style.color = "#FF9F1C";
-    document.getElementById("button-1").style.border = "1px solid #FF9F1C";
     document.getElementById("expertise").style.display = 'none';
     document.getElementById("interview").style.display = 'none';
     document.getElementById("thankYou").style.display = 'none';
@@ -25,18 +41,16 @@ function profilePage() {
     document.getElementById("interview__container_header-profile").style.color = "black"
     document.getElementById("interview__container_header-expertise").style.color = "gray"
     document.getElementById("interview__container_header-interview").style.color = "gray"
+
+    resetButtons();
+
     document.getElementById("button-2").style.backgroundColor = "#FF9F1C";
     document.getElementById("button-2").style.color = "white";
+    document.getElementById("button-2").style.border = "1px solid #FF9F1C";
 }
 
 function expertisePage() {
     document.getElementById("personalInfo").style.display = 'none';
-    document.getElementById("button-1").innerHTML = "&#10003";
-    document.getElementById("button-1").style.color = "#FF9F1C";
-    document.getElementById("button-1").style.border = "1px solid #FF9F1C";
-    document.getElementById("button-2").innerHTML = "&#10003";
-    document.getElementById("button-2").style.color = "#FF9F1C";
-    document.getElementById("button-2").style.border = "1px solid #FF9F1C";
     document.getElementById("profile").style.display = 'none';
     document.getElementById("interview").style.display = 'none';
     document.getElementById("thankYou").style.display = 'none';
@@ -45,21 +59,17 @@ function expertisePage() {
     document.getElementById("interview__container_header-profile").style.color = "gray"
     document.getElementById("interview__container_header-expertise").style.color = "black"
     document.getElementById("interview__container_header-interview").style.color = "gray"
+
+    resetButtons();
+
     document.getElementById("button-3").style.backgroundColor = "#FF9F1C";
     document.getElementById("button-3").style.color = "white";
+    document.getElementById("button-3").style.border = "1px solid #FF9F1C";
 }
 
 function interviewPage() {
     document.getElementById("personalInfo").style.display = 'none';
-    document.getElementById("button-1").innerHTML = "&#10003";
-    document.getElementById("button-1").style.color = "#FF9F1C";
-    document.getElementById("button-1").style.border = "1px solid #FF9F1C";
-    document.getElementById("button-2").innerHTML = "&#10003";
-    document.getElementById("button-2").style.color = "#FF9F1C";
-    document.getElementById("button-2").style.border = "1px solid #FF9F1C";
-    document.getElementById("button-3").innerHTML = "&#10003";
-    document.getElementById("button-3").style.color = "#FF9F1C";
-    document.getElementById("button-3").style.border = "1px solid #FF9F1C";
+
     document.getElementById("profile").style.display = 'none';
     document.getElementById("expertise").style.display = 'none';
     document.getElementById("thankYou").style.display = 'none';
@@ -68,25 +78,17 @@ function interviewPage() {
     document.getElementById("interview__container_header-profile").style.color = "gray"
     document.getElementById("interview__container_header-expertise").style.color = "gray"
     document.getElementById("interview__container_header-interview").style.color = "black"
+
+    resetButtons();
+
     document.getElementById("button-4").style.backgroundColor = "#FF9F1C";
     document.getElementById("button-4").style.color = "white";
+    document.getElementById("button-4").style.border = "1px solid #FF9F1C";
 
 }
 
 function thankYouPage() {
     document.getElementById("personalInfo").style.display = 'none';
-    document.getElementById("button-1").innerHTML = "&#10003";
-    document.getElementById("button-1").style.color = "#FF9F1C";
-    document.getElementById("button-1").style.border = "1px solid #FF9F1C";
-    document.getElementById("button-2").innerHTML = "&#10003";
-    document.getElementById("button-2").style.color = "#FF9F1C";
-    document.getElementById("button-2").style.border = "1px solid #FF9F1C";
-    document.getElementById("button-3").innerHTML = "&#10003";
-    document.getElementById("button-3").style.color = "#FF9F1C";
-    document.getElementById("button-3").style.border = "1px solid #FF9F1C";
-    document.getElementById("button-4").innerHTML = "&#10003";
-    document.getElementById("button-4").style.color = "#FF9F1C";
-    document.getElementById("button-4").style.border = "1px solid #FF9F1C";
     document.getElementById("profile").style.display = 'none';
     document.getElementById("expertise").style.display = 'none';
     document.getElementById("interview").style.display = 'none';
@@ -95,6 +97,7 @@ function thankYouPage() {
     document.getElementById("interview__container_header-profile").style.color = "gray"
     document.getElementById("interview__container_header-expertise").style.color = "gray"
     document.getElementById("interview__container_header-interview").style.color = "gray"
+    resetButtons();
     sessionStorage.clear()
 }
 
@@ -250,9 +253,9 @@ function addNewSchool() {
 }
 
 if (sessionStorage.length == 0) {
-    document.getElementById("button-1").style.backgroundColor = "#FF9F1C";
-    document.getElementById("button-1").style.color = "#ffffff";
-    document.getElementById("button-1").style.border = "1px solid #FF9F1C";
+    // document.getElementById("button-1").style.backgroundColor = "#FF9F1C";
+    // document.getElementById("button-1").style.color = "#ffffff";
+    // document.getElementById("button-1").style.border = "1px solid #FF9F1C";
     document.getElementById("interview__container_header-personalInfo").style.color = ""
     personalInfoPage();
 } else if (sessionStorage.length == 1) {
@@ -260,6 +263,13 @@ if (sessionStorage.length == 0) {
 } else if (sessionStorage.length == 2) {
     expertisePage();
 } else if (sessionStorage.length == 3) {
+    interviewPage();
+} else if (sessionStorage.length == 4) {
+    var questions = JSON.parse(sessionStorage.getItem("questions"))
+    for (var index = 1; index <= questions.length; index++) {
+        document.getElementById("questionText" + index).value = questions[index - 1].question
+    }
+    jump(questions.length);
     interviewPage();
 }
 
@@ -463,31 +473,40 @@ function goTo(buttonID) {
         switch (name) {
             case "computer-science-expertise":
                 computerScienceExpertise();
+                expertisePage();
                 break;
             case "computer-software-expertise":
                 computerSoftwareExpertise();
+                expertisePage();
                 break;
 
             case "engineering-expertise":
                 engineeringExpertise();
+                expertisePage();
                 break;
             case "history-expertise":
                 historyExpertise();
+                expertisePage();
                 break;
             case "humanities-expertise":
                 humanitiesExpertise();
+                expertisePage();
                 break;
             case "math-expertise":
                 mathExpertise();
+                expertisePage();
                 break;
             case "science-expertise":
                 scienceExpertise();
+                expertisePage();
                 break;
             case "social-science-expertise":
                 socialScienceExpertise();
+                expertisePage();
                 break;
             case "standardized-tests-expertise":
                 standardizedTestsExpertise();
+                expertisePage();
                 break;
             default:
                 break;
