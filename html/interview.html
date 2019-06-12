@@ -50,138 +50,189 @@
 
         <br>
         <!-- interview__container_personalInfo -->
-        <div class="interview__container_personalInfo" style="text-align: center" id="personalInfo">
-            <h3>Personal Info</h3>
-            <div>
-                <label for="name">Name</label>
-                <input type="text" name="name" id="name" placeholder="Name" required>
+        <div class="interview__container_personalInfo" id="personalInfo">
+            <div class="inputField">
+                <div class="label">
+                    <label for="name">Name</label>
+                </div>
+                <div class="input">
+                    <input type="text" name="name" id="name" placeholder="Name" size="30" required>
+                </div>
             </div>
-            <br>
-            <div>
-                <label for="email">Email</label>
-                <input type="email" name="email" id="email" placeholder="Email" required>
+
+            <div class="inputField">
+                <div class="label">
+                    <label for="email">Email</label>
+                </div>
+                <div class="input">
+                    <input type="email" name="email" id="email" placeholder="Email" size="30" required>
+                </div>
             </div>
-            <br>
-            <div>
-                <span>
-                        <label for="whatAreYou">What are you?</label>
+
+            <div class="inputField">
+                <div class="label">
+                    <label for="whatAreYou">What are you?</label>
+                </div>
+                <div class="input">
+                    <span>
                         <input type="radio" name="whatAreYou" value="universityStudent" id="universityStudent" checked>University Student
+                        &nbsp;&nbsp;&nbsp;&nbsp;
                         <input type="radio" name="whatAreYou" value="professional" id="professional"> Professional
                     </span>
+                </div>
             </div>
-            <br>
-            <div>
-                <label for="university">University</label>
-                <input type="text" name="university" id="university" placeholder="University" required>
+
+            <div class="inputField">
+                <div class="label">
+                    <label for="university">University</label>
+                </div>
+                <div class="input">
+                    <input type="text" name="university" id="university" size="30" placeholder="University" required>
+                </div>
             </div>
-            <br>
-            <div>
-                <label for="major">Major</label>
-                <input type="text" name="major" id="major" placeholder="Major" required>
+
+            <div class="inputField">
+                <div class="label">
+                    <label for="major">Major</label>
+                </div>
+                <div class="input">
+                    <input type="text" name="major" id="major" size="30" placeholder="Major" required>
+                </div>
             </div>
-            <br>
-            <div>
-                <label for="graduationDate">Graduation Date</label>
-                <select name="graduationDate" id="graduationDate">
-                    <option value="2020" selected>2020</option>
-                    <option value="2019">2019</option>
-                    <option value="2018">2018</option>
-                    <option value="2017">2017</option>
-                    <option value="2016">2016</option>
-                    <option value="2015">2015</option>
-                    <option value="2014">2014</option>
-                    <option value="2013">2013</option>
-                    <option value="2012">2012</option>
-                    <option value="2011">2011</option>
-                    <option value="2010">2010</option>
-                    <option value="2009">2009</option>
-                    <option value="2008">2008</option>
-                    <option value="2007">2007</option>
-                    <option value="2006">2006</option>
-                </select>
+
+            <div class="inputField">
+                <div class="label">
+                    <label for="graduationDate">Graduation Date</label>
+                </div>
+                <div class="input">
+                    <select name="graduationDate" id="graduationDate">
+                                <option value="2020" selected>2020</option>
+                                <option value="2019">2019</option>
+                                <option value="2018">2018</option>
+                                <option value="2017">2017</option>
+                                <option value="2016">2016</option>
+                                <option value="2015">2015</option>
+                                <option value="2014">2014</option>
+                                <option value="2013">2013</option>
+                                <option value="2012">2012</option>
+                                <option value="2011">2011</option>
+                                <option value="2010">2010</option>
+                                <option value="2009">2009</option>
+                                <option value="2008">2008</option>
+                                <option value="2007">2007</option>
+                                <option value="2006">2006</option>
+                    </select>
+                </div>
             </div>
-            <br>
-            <div>
-                <span>
+
+            <div class="inputField">
+                <div class="label">
                     <label for="taxID">Do you have Tax ID?</label>
-                    <input type="radio" name="taxID" id="taxID" value="taxID"checked>I have Tax ID
-                    <input type="radio" name="taxID" id="no_taxID" value="no_taxID"> I don't have Tax ID
-                </span>
+                </div>
+                <div class="input">
+                    <span>
+                        <input type="radio" name="taxID" id="taxID" value="taxID"checked>I have Tax ID
+                        &nbsp;&nbsp;&nbsp;&nbsp;
+                        <input type="radio" name="taxID" id="no_taxID" value="no_taxID"> I don't have Tax ID
+                    </span>
+                </div>
             </div>
-            <br>
-            <div>
-                <label for="mobile">Mobile</label>
-                <input type="number" name="mobile" id="mobile" pattern="[789][0-9]{9}" placeholder="9098788987" required>
+
+            <div class="inputField">
+                <div class="label">
+                    <label for="mobile">Mobile</label>
+                </div>
+                <div class="input">
+                    <input type="number" name="mobile" id="mobile" pattern="[789][0-9]{9}" placeholder="9098788987" required>
+                </div>
             </div>
-            <br>
 
             <div>
-                <input type="submit" id="nextPage" onclick="goTo(1)" style="background-color: #FF9F1C; color: white" value="&#8594; submitPersonalInfo">
+                <input type="submit" class="nextButton" id="nextPage" onclick="goTo(1)" style="background-color: #FF9F1C; color: white" value="next &#8594;">
             </div>
 
         </div>
 
 
-
-
         <!-- interview__container_profile -->
-        <div class="interview__container_profile" style="text-align: center" id="profile">
-            <h3>Profile</h3>
-            <div>
-                <label for="aboutYou">About You</label>
-                <textarea name="aboutYou" id="aboutYou" cols="30" rows="3" placeholder="Write a short bio"></textarea>
+        <div class="interview__container_profile" id="profile">
+            <div class="inputField">
+                <div class="label">
+                    <label for="aboutYou">About You</label>
+                </div>
+                <div class="input">
+                    <textarea name="aboutYou" id="aboutYou" cols="50" rows="3" placeholder="Write a short bio"></textarea>
+                </div>
             </div>
-            <br>
-            <div>
-                <label for="teachingExperience">Teaching Experience</label>
-                <textarea name="teachingExperience" id="teachingExperience" cols="30" rows="3" placeholder="Tell us about your teaching experience"></textarea>
+
+            <div class="inputField">
+                <div class="label">
+                    <label for="teachingExperience">Teaching Experience</label>
+                </div>
+                <div class="input">
+                    <textarea name="teachingExperience" id="teachingExperience" cols="50" rows="3" placeholder="Tell us about your teaching experience"></textarea>
+                </div>
             </div>
-            <br>
-            <div id="workHistory">
-                <label for="workHistory">Work History</label>
-                <input type="text" name="workHistory" id="company-1" placeholder="Company">
-                <br>
-                <span>
-                        <select name="activeFrom-1" id="activeFrom-1">
-                            <option value="">Active From</option>
-                            <option value="2019">2019</option>
-                            <option value="2018">2018</option>
-                        </select>
-                        <select name="activeTo-1" id="activeTo-1">
-                            <option value="">Active To</option>
-                            <option value="2019">2019</option>
-                            <option value="2018">2018</option>
-                        </select>
-                        <br>
-                        <button onclick="addWorkHistory()">+ Add another work</button>
+
+            <div class="inputField">
+                <div class="label">
+                    <label for="workHistory">Work History</label>
+                </div>
+                <div class="input" id="workHistory">
+                    <input type="text" name="workHistory" id="company-1" placeholder="Company">
+                    <span>
+                            <select name="activeFrom-1" id="activeFrom-1">
+                                <option value="">Active From</option>
+                                <option value="2019">2019</option>
+                                <option value="2018">2018</option>
+                                <option value="2017">2017</option>
+                                <option value="2016">2016</option>
+                            </select>
+                            <select name="activeTo-1" id="activeTo-1">
+                                <option value="">Active To</option>
+                                <option value="2019">2019</option>
+                                <option value="2018">2018</option>
+                                <option value="2017">2017</option>
+                                <option value="2016">2016</option>
+                            </select>
                     </span>
+                    <br>
+                    <a id="addWorkLink" href="javascript: addWorkHistory();">+ Add work</a>
+                </div>
             </div>
-            <br>
-            <div id="education">
-                <label for="school">Education</label>
-                <input type="text" name="school" id="school-1" placeholder="School">
-                <span>
+
+            <div class="inputField">
+                <div class="label">
+                    <label for="school">Education</label>
+                </div>
+                <div class="input" id="education">
+                    <input type="text" name="school" id="school-1" placeholder="School">
+                    <span>
                         <select name="enrolled-1" id="enrolled-1">
-                            <option value="">Enrolled</option>
-                            <option value="2019">2019</option>
-                            <option value="2018">2018</option>
+                                    <option value="">Enrolled</option>
+                                    <option value="2019">2019</option>
+                                    <option value="2018">2018</option>
+                                    <option value="2017">2017</option>
+                                    <option value="2016">2016</option>
                         </select>
                         <select name="graduated-1" id="graduated-1">
-                            <option value="">Graduated</option>
-                            <option value="2019">2019</option>
-                            <option value="2018">2018</option>
+                                    <option value="">Graduated</option>
+                                    <option value="2019">2019</option>
+                                    <option value="2018">2018</option>
+                                    <option value="2017">2017</option>
+                                    <option value="2016">2016</option>
                         </select>
-                        <br>
-                        <button onclick="addNewSchool()">+ Add another school</button>
                     </span>
-
-
+                    <br>
+                    <a id="addSchoolLink" href="javascript: addNewSchool();">+ Add school</a>
+                </div>
             </div>
-            <br>
+
             <span>
-                    <input type="submit" id="goToPersonalInfo" onclick="goTo(3)" style="background-color: #FF9F1C; color: white" value="&#8592; goToPersonalInfo">
-                    <input type="submit" id="submitProfile" onclick="goTo(2)" style="background-color: #FF9F1C; color: white" value="&#8594; submitProfile">
-                </span>
+                <input type="submit" id="goToPersonalInfo" class="backButton" onclick="goTo(3)" style="background-color: #FF9F1C; color: white" value="&#8592; back">
+                <input type="submit" id="submitProfile" class="nextButton" onclick="goTo(2)" style="background-color: #FF9F1C; color: white" value="next &#8594; ">
+            </span>
+
         </div>
 
 

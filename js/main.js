@@ -4,6 +4,7 @@ function personalInfoPage() {
     document.getElementById("interview").style.display = 'none';
     document.getElementById("thankYou").style.display = 'none';
     document.getElementById("personalInfo").style.display = '';
+    document.getElementById("interview__container_header-personalInfo").style.color = "black"
     document.getElementById("interview__container_header-profile").style.color = "gray"
     document.getElementById("interview__container_header-expertise").style.color = "gray"
     document.getElementById("interview__container_header-interview").style.color = "gray"
@@ -12,11 +13,14 @@ function personalInfoPage() {
 function profilePage() {
     document.getElementById("personalInfo").style.display = 'none';
     document.getElementById("button-1").innerHTML = "&#10003";
+    document.getElementById("button-1").style.color = "#FF9F1C";
+    document.getElementById("button-1").style.border = "1px solid #FF9F1C";
     document.getElementById("expertise").style.display = 'none';
     document.getElementById("interview").style.display = 'none';
     document.getElementById("thankYou").style.display = 'none';
     document.getElementById("profile").style.display = '';
     document.getElementById("interview__container_header-personalInfo").style.color = "gray"
+    document.getElementById("interview__container_header-profile").style.color = "black"
     document.getElementById("interview__container_header-expertise").style.color = "gray"
     document.getElementById("interview__container_header-interview").style.color = "gray"
 }
@@ -24,40 +28,60 @@ function profilePage() {
 function expertisePage() {
     document.getElementById("personalInfo").style.display = 'none';
     document.getElementById("button-1").innerHTML = "&#10003";
-    document.getElementById("profile").style.display = 'none';
+    document.getElementById("button-1").style.color = "#FF9F1C";
+    document.getElementById("button-1").style.border = "1px solid #FF9F1C";
     document.getElementById("button-2").innerHTML = "&#10003";
+    document.getElementById("button-2").style.color = "#FF9F1C";
+    document.getElementById("button-2").style.border = "1px solid #FF9F1C";
+    document.getElementById("profile").style.display = 'none';
     document.getElementById("interview").style.display = 'none';
     document.getElementById("thankYou").style.display = 'none';
     document.getElementById("expertise").style.display = '';
     document.getElementById("interview__container_header-personalInfo").style.color = "gray"
     document.getElementById("interview__container_header-profile").style.color = "gray"
+    document.getElementById("interview__container_header-expertise").style.color = "black"
     document.getElementById("interview__container_header-interview").style.color = "gray"
 }
 
 function interviewPage() {
     document.getElementById("personalInfo").style.display = 'none';
     document.getElementById("button-1").innerHTML = "&#10003";
-    document.getElementById("profile").style.display = 'none';
+    document.getElementById("button-1").style.color = "#FF9F1C";
+    document.getElementById("button-1").style.border = "1px solid #FF9F1C";
     document.getElementById("button-2").innerHTML = "&#10003";
-    document.getElementById("expertise").style.display = 'none';
+    document.getElementById("button-2").style.color = "#FF9F1C";
+    document.getElementById("button-2").style.border = "1px solid #FF9F1C";
     document.getElementById("button-3").innerHTML = "&#10003";
+    document.getElementById("button-3").style.color = "#FF9F1C";
+    document.getElementById("button-3").style.border = "1px solid #FF9F1C";
+    document.getElementById("profile").style.display = 'none';
+    document.getElementById("expertise").style.display = 'none';
     document.getElementById("thankYou").style.display = 'none';
     document.getElementById("interview").style.display = '';
     document.getElementById("interview__container_header-personalInfo").style.color = "gray"
     document.getElementById("interview__container_header-profile").style.color = "gray"
     document.getElementById("interview__container_header-expertise").style.color = "gray"
+    document.getElementById("interview__container_header-interview").style.color = "black"
 
 }
 
 function thankYouPage() {
     document.getElementById("personalInfo").style.display = 'none';
     document.getElementById("button-1").innerHTML = "&#10003";
-    document.getElementById("profile").style.display = 'none';
+    document.getElementById("button-1").style.color = "#FF9F1C";
+    document.getElementById("button-1").style.border = "1px solid #FF9F1C";
     document.getElementById("button-2").innerHTML = "&#10003";
-    document.getElementById("expertise").style.display = 'none';
+    document.getElementById("button-2").style.color = "#FF9F1C";
+    document.getElementById("button-2").style.border = "1px solid #FF9F1C";
     document.getElementById("button-3").innerHTML = "&#10003";
-    document.getElementById("interview").style.display = 'none';
+    document.getElementById("button-3").style.color = "#FF9F1C";
+    document.getElementById("button-3").style.border = "1px solid #FF9F1C";
     document.getElementById("button-4").innerHTML = "&#10003";
+    document.getElementById("button-4").style.color = "#FF9F1C";
+    document.getElementById("button-4").style.border = "1px solid #FF9F1C";
+    document.getElementById("profile").style.display = 'none';
+    document.getElementById("expertise").style.display = 'none';
+    document.getElementById("interview").style.display = 'none';
     document.getElementById("thankYou").style.display = '';
     document.getElementById("interview__container_header-personalInfo").style.color = "gray"
     document.getElementById("interview__container_header-profile").style.color = "gray"
@@ -81,12 +105,23 @@ function addWorkHistory() {
     activeFrom.setAttribute("name", "activeFrom-" + workHistoryCount);
     activeFrom.setAttribute("id", "activeFrom-" + workHistoryCount);
     var option = document.createElement("option");
+    option.text = "Active From"
+    activeFrom.add(option)
+    option = document.createElement("option");
     option.setAttribute("value", 2019)
     option.text = 2019
     activeFrom.add(option)
     option = document.createElement("option");
     option.setAttribute("value", 2018)
     option.text = 2018
+    activeFrom.add(option)
+    option = document.createElement("option");
+    option.setAttribute("value", 2017)
+    option.text = 2017
+    activeFrom.add(option)
+    option = document.createElement("option");
+    option.setAttribute("value", 2016)
+    option.text = 2016
     activeFrom.add(option)
 
 
@@ -94,6 +129,9 @@ function addWorkHistory() {
     activeTo.setAttribute("name", "activeTo-" + workHistoryCount);
     activeTo.setAttribute("id", "activeTo-" + workHistoryCount);
     var option = document.createElement("option");
+    option.text = "Active To"
+    activeTo.add(option)
+    option = document.createElement("option");
     option.setAttribute("value", 2019)
     option.text = 2019
     activeTo.add(option)
@@ -101,11 +139,31 @@ function addWorkHistory() {
     option.setAttribute("value", 2018)
     option.text = 2018
     activeTo.add(option)
+    option = document.createElement("option");
+    option.setAttribute("value", 2017)
+    option.text = 2017
+    activeTo.add(option)
+    option = document.createElement("option");
+    option.setAttribute("value", 2016)
+    option.text = 2016
+    activeTo.add(option)
 
     var workHistoryDiv = document.getElementById("workHistory")
     workHistoryDiv.appendChild(company)
     workHistoryDiv.appendChild(activeFrom)
     workHistoryDiv.appendChild(activeTo)
+
+    var oldLink = document.getElementById("addWorkLink");
+    oldLink.parentNode.removeChild(oldLink);
+
+    var br = document.createElement("br")
+    var addWorkLink = document.createElement("a")
+    addWorkLink.setAttribute("id", "addWorkLink")
+    addWorkLink.setAttribute("href", "javascript: addWorkHistory();")
+    addWorkLink.text = "+ Add work"
+
+    workHistoryDiv.appendChild(br)
+    workHistoryDiv.appendChild(addWorkLink)
 }
 
 var schoolCount = 1
@@ -122,12 +180,23 @@ function addNewSchool() {
     enrolled.setAttribute("name", "enrolled-" + schoolCount);
     enrolled.setAttribute("id", "enrolled-" + schoolCount);
     var option = document.createElement("option");
+    option.text = "Enrolled"
+    enrolled.add(option)
+    option = document.createElement("option");
     option.setAttribute("value", 2019)
     option.text = 2019
     enrolled.add(option)
     option = document.createElement("option");
     option.setAttribute("value", 2018)
     option.text = 2018
+    enrolled.add(option)
+    option = document.createElement("option");
+    option.setAttribute("value", 2017)
+    option.text = 2017
+    enrolled.add(option)
+    option = document.createElement("option");
+    option.setAttribute("value", 2016)
+    option.text = 2016
     enrolled.add(option)
 
 
@@ -135,6 +204,9 @@ function addNewSchool() {
     graduated.setAttribute("name", "graduated-" + schoolCount);
     graduated.setAttribute("id", "graduated-" + schoolCount);
     var option = document.createElement("option");
+    option.text = "Graduated";
+    graduated.add(option);
+    option = document.createElement("option");
     option.setAttribute("value", 2019)
     option.text = 2019
     graduated.add(option)
@@ -142,11 +214,31 @@ function addNewSchool() {
     option.setAttribute("value", 2018)
     option.text = 2018
     graduated.add(option)
+    option = document.createElement("option");
+    option.setAttribute("value", 2017)
+    option.text = 2017
+    graduated.add(option)
+    option = document.createElement("option");
+    option.setAttribute("value", 2016)
+    option.text = 2016
+    graduated.add(option)
 
     var educationDiv = document.getElementById("education")
     educationDiv.appendChild(school)
     educationDiv.appendChild(enrolled)
     educationDiv.appendChild(graduated)
+
+    var oldLink = document.getElementById("addSchoolLink");
+    oldLink.parentNode.removeChild(oldLink);
+
+    var br = document.createElement("br")
+    var addSchoolLink = document.createElement("a")
+    addSchoolLink.setAttribute("id", "addSchoolLink")
+    addSchoolLink.setAttribute("href", "javascript: addNewSchool();")
+    addSchoolLink.text = "+ Add school"
+
+    educationDiv.appendChild(br)
+    educationDiv.appendChild(addSchoolLink)
 }
 
 if (sessionStorage.length == 0) {
@@ -177,91 +269,104 @@ function goTo(buttonID) {
 
     // nextPage from Personal Info
     if (buttonID == 1) {
-        var validated = true
-        var name = document.getElementById("name").value
-        var email = document.getElementById("email").value
-        var whatAreYou = document.querySelector('input[name="whatAreYou"]:checked').value
-        var university = document.getElementById("university").value
-        var major = document.getElementById("major").value
-        var graduationDate = document.getElementById("graduationDate").value
-        var taxID = document.querySelector('input[name="taxID"]:checked').value
-        var mobile = document.getElementById("mobile").value
-        console.log("email: " + email)
-
-        validated = validateName(name);
-        if (validated) {
-            validated = validateEmail(email);
-        }
-        if (validated) {
-            if (university == "") {
-                validated = false
-                alert("Please enter your university")
-            } else if (major == "") {
-                validated = false
-                alert("Please enter your major")
-            } else if (graduationDate == "") {
-                validated = false
-                alert("Please select your graduation year")
-            }
-        }
-        if (validated) {
-            validated = validateMobile(mobile)
-        }
-        if (validated) {
-            var data = {
-                name: name,
-                email: email,
-                whatAreYou: whatAreYou,
-                university: university,
-                major: major,
-                graduationDate: graduationDate,
-                taxID: taxID,
-                mobile: mobile
-            }
-            sessionStorage.setItem("personalInfo", JSON.stringify(data))
-            console.log(JSON.parse(sessionStorage.getItem("personalInfo")))
+        if (sessionStorage.length == 1) {
             profilePage();
-            alert("data inserted successfully")
+        } else if (sessionStorage.length > 1) {
+            goTo(5);
+        } else {
+            var validated = true
+            var name = document.getElementById("name").value
+            var email = document.getElementById("email").value
+            var whatAreYou = document.querySelector('input[name="whatAreYou"]:checked').value
+            var university = document.getElementById("university").value
+            var major = document.getElementById("major").value
+            var graduationDate = document.getElementById("graduationDate").value
+            var taxID = document.querySelector('input[name="taxID"]:checked').value
+            var mobile = document.getElementById("mobile").value
+            console.log("email: " + email)
+
+            validated = validateName(name);
+            if (validated) {
+                validated = validateEmail(email);
+            }
+            if (validated) {
+                if (university == "") {
+                    validated = false
+                    alert("Please enter your university")
+                } else if (major == "") {
+                    validated = false
+                    alert("Please enter your major")
+                } else if (graduationDate == "") {
+                    validated = false
+                    alert("Please select your graduation year")
+                }
+            }
+            if (validated) {
+                validated = validateMobile(mobile)
+            }
+            if (validated) {
+                var data = {
+                    name: name,
+                    email: email,
+                    whatAreYou: whatAreYou,
+                    university: university,
+                    major: major,
+                    graduationDate: graduationDate,
+                    taxID: taxID,
+                    mobile: mobile
+                }
+                sessionStorage.setItem("personalInfo", JSON.stringify(data))
+                console.log(JSON.parse(sessionStorage.getItem("personalInfo")))
+                profilePage();
+                alert("✔✔ Personal Info added successfully")
+            }
         }
+
 
     } else if (buttonID == 2) {
-        var validated = true
-        var aboutYou = document.getElementById("aboutYou").value
-        var teachingExperience = document.getElementById("teachingExperience").value
-        var company = document.getElementById("company-1").value
-        var activeFrom = document.getElementById("activeFrom-1").value
-        var activeTo = document.getElementById("activeTo-1").value
-        var school = document.getElementById("school-1").value
-        var enrolled = document.getElementById("enrolled-1").value
-        var graduated = document.getElementById("graduated-1").value
-
-        var data = {
-            aboutYou: aboutYou,
-            teachingExperience: teachingExperience,
-            workHistory: [{ company: company, activeFrom: activeFrom, activeTo: activeTo }],
-            education: [{ school: school, enrolled: enrolled, graduated: graduated }]
-        }
-
-        for (var index = 2; index <= workHistoryCount; index++) {
-            company = document.getElementById("company-" + index).value
-            activeFrom = document.getElementById("activeFrom-" + index).value
-            activeTo = document.getElementById("activeTo-" + index).value
-            data.workHistory.push({ company: company, activeFrom: activeFrom, activeTo: activeTo })
-        }
-
-        for (var index = 2; index <= schoolCount; index++) {
-            school = document.getElementById("school-" + index).value
-            enrolled = document.getElementById("enrolled-" + index).value
-            graduated = document.getElementById("graduated-" + index).value
-            data.education.push({ school: school, enrolled: enrolled, graduated: graduated })
-        }
-        validated = validateProfile(data)
-
-        if (validated) {
-            sessionStorage.setItem("profile", JSON.stringify(data))
-            console.log(JSON.parse(sessionStorage.getItem("profile")))
+        if (sessionStorage.length == 2) {
             expertisePage();
-            alert("profile inserted successfully")
+        } else if (sessionStorage.length > 2) {
+            goTo(7);
+        } else {
+            var validated = true
+            var aboutYou = document.getElementById("aboutYou").value
+            var teachingExperience = document.getElementById("teachingExperience").value
+            var company = document.getElementById("company-1").value
+            var activeFrom = document.getElementById("activeFrom-1").value
+            var activeTo = document.getElementById("activeTo-1").value
+            var school = document.getElementById("school-1").value
+            var enrolled = document.getElementById("enrolled-1").value
+            var graduated = document.getElementById("graduated-1").value
+
+            var data = {
+                aboutYou: aboutYou,
+                teachingExperience: teachingExperience,
+                workHistory: [{ company: company, activeFrom: activeFrom, activeTo: activeTo }],
+                education: [{ school: school, enrolled: enrolled, graduated: graduated }]
+            }
+
+            for (var index = 2; index <= workHistoryCount; index++) {
+                company = document.getElementById("company-" + index).value
+                activeFrom = document.getElementById("activeFrom-" + index).value
+                activeTo = document.getElementById("activeTo-" + index).value
+                data.workHistory.push({ company: company, activeFrom: activeFrom, activeTo: activeTo })
+            }
+
+            for (var index = 2; index <= schoolCount; index++) {
+                school = document.getElementById("school-" + index).value
+                enrolled = document.getElementById("enrolled-" + index).value
+                graduated = document.getElementById("graduated-" + index).value
+                data.education.push({ school: school, enrolled: enrolled, graduated: graduated })
+            }
+            validated = validateProfile(data)
+
+            if (validated) {
+                sessionStorage.setItem("profile", JSON.stringify(data))
+                console.log(JSON.parse(sessionStorage.getItem("profile")))
+                expertisePage();
+                alert("profile inserted successfully")
+            }
         }
     } else if (buttonID == 3) {
         document.getElementById("name").value = JSON.parse(sessionStorage.getItem("personalInfo")).name
@@ -275,28 +380,31 @@ function goTo(buttonID) {
 
         personalInfoPage();
     } else if (buttonID == 4) {
-        //fetch the selected checkboxes values
-        var domain = stream + "-expertise";
-        var response = document.getElementsByName(domain)
-        var expertise = []
-        for (var i = 0; i < response.length; i++) {
-            if (response[i].checked == true) {
-                expertise.push(response[i].value)
-            }
-        }
-        //validation
-        if (expertise.length < 1) {
-            alert("Please select atleast one expertise")
-        } else {
-            var data = {
-                stream: stream,
-                expertise: expertise
-            }
-            sessionStorage.setItem("expertise", JSON.stringify(data))
+        if (sessionStorage.length == 3) {
             interviewPage();
-            alert("Expertise added successfully");
+        } else {
+            //fetch the selected checkboxes values
+            var domain = stream + "-expertise";
+            var response = document.getElementsByName(domain)
+            var expertise = []
+            for (var i = 0; i < response.length; i++) {
+                if (response[i].checked == true) {
+                    expertise.push(response[i].value)
+                }
+            }
+            //validation
+            if (expertise.length < 1) {
+                alert("Please select atleast one expertise")
+            } else {
+                var data = {
+                    stream: stream,
+                    expertise: expertise
+                }
+                sessionStorage.setItem("expertise", JSON.stringify(data))
+                interviewPage();
+                alert("Expertise added successfully");
+            }
         }
-
     } else if (buttonID == 5) {
         document.getElementById("aboutYou").value = JSON.parse(sessionStorage.getItem("profile")).aboutYou
         document.getElementById("teachingExperience").value = JSON.parse(sessionStorage.getItem("profile")).teachingExperience
