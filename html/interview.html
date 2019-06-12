@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Interview Web</title>
     <link rel="stylesheet" type="text/css" href="../css/expertise.css">
-    <link rel="stylesheet" type="text/css" href="../css/interview.css">
+    <link rel="stylesheet" type="text/css" href="../css/main.css">
 </head>
 
 <body>
@@ -22,27 +22,27 @@
     -->
 
     <div class="interview__container">
-        <h2 style="text-align: center">Sample Project</h2>
+        <h2 style="text-align: center; color: gray; font-family: 'Times New Roman', Times, serif; font-weight: 400">Sample Project</h2>
         <br>
 
         <!-- interview__container_header -->
         <div class="interview__container_header">
-            <button class="button" id="button-1">1</button>
+            <button class="button" onclick="jumpPage(1)" id="button-1">1</button>
             <hr>
-            <button class="button" id="button-2">2</button>
+            <button class="button" onclick="jumpPage(2)" id="button-2">2</button>
             <hr>
-            <button class="button" id="button-3">3</button>
+            <button class="button" onclick="jumpPage(3)" id="button-3">3</button>
             <hr>
-            <button class="button" id="button-4">4</button>
+            <button class="button" onclick="jumpPage(4)" id="button-4">4</button>
         </div>
         <div class="interview__container_header">
-            <p>PERSONAL INFO</p>
+            <p id="interview__container_header-personalInfo">PERSONAL INFO</p>
             <hr width="0px" style="border: 0px;">
-            <p>PROFILE</p>
+            <p id="interview__container_header-profile">PROFILE</p>
             <hr width="0px" style="border: 0px;">
-            <p>EXPERTISE</p>
+            <p id="interview__container_header-expertise">EXPERTISE</p>
             <hr width="0px" style="border: 0px;">
-            <p>INTERVIEW</p>
+            <p id="interview__container_header-interview">INTERVIEW</p>
         </div>
 
 
@@ -345,11 +345,15 @@
             </div>
         </div>
 
+        <!-- Thank You Page -->
+        <div id="thankYou">
+            <h1 style="text-align: center">Thank You!</h1>
+        </div>
     </div>
+    <script src="../js/main.js"></script>
     <script src="../js/expertise.js"></script>
     <script src="../js/validation.js"></script>
     <script src="../js/interview.js"></script>
-    <script src="../js/main.js"></script>
 </body>
 
 </html>

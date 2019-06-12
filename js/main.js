@@ -2,7 +2,11 @@ function personalInfoPage() {
     document.getElementById("profile").style.display = 'none';
     document.getElementById("expertise").style.display = 'none';
     document.getElementById("interview").style.display = 'none';
+    document.getElementById("thankYou").style.display = 'none';
     document.getElementById("personalInfo").style.display = '';
+    document.getElementById("interview__container_header-profile").style.color = "gray"
+    document.getElementById("interview__container_header-expertise").style.color = "gray"
+    document.getElementById("interview__container_header-interview").style.color = "gray"
 }
 
 function profilePage() {
@@ -10,7 +14,11 @@ function profilePage() {
     document.getElementById("button-1").innerHTML = "&#10003";
     document.getElementById("expertise").style.display = 'none';
     document.getElementById("interview").style.display = 'none';
+    document.getElementById("thankYou").style.display = 'none';
     document.getElementById("profile").style.display = '';
+    document.getElementById("interview__container_header-personalInfo").style.color = "gray"
+    document.getElementById("interview__container_header-expertise").style.color = "gray"
+    document.getElementById("interview__container_header-interview").style.color = "gray"
 }
 
 function expertisePage() {
@@ -19,7 +27,11 @@ function expertisePage() {
     document.getElementById("profile").style.display = 'none';
     document.getElementById("button-2").innerHTML = "&#10003";
     document.getElementById("interview").style.display = 'none';
+    document.getElementById("thankYou").style.display = 'none';
     document.getElementById("expertise").style.display = '';
+    document.getElementById("interview__container_header-personalInfo").style.color = "gray"
+    document.getElementById("interview__container_header-profile").style.color = "gray"
+    document.getElementById("interview__container_header-interview").style.color = "gray"
 }
 
 function interviewPage() {
@@ -29,7 +41,29 @@ function interviewPage() {
     document.getElementById("button-2").innerHTML = "&#10003";
     document.getElementById("expertise").style.display = 'none';
     document.getElementById("button-3").innerHTML = "&#10003";
+    document.getElementById("thankYou").style.display = 'none';
     document.getElementById("interview").style.display = '';
+    document.getElementById("interview__container_header-personalInfo").style.color = "gray"
+    document.getElementById("interview__container_header-profile").style.color = "gray"
+    document.getElementById("interview__container_header-expertise").style.color = "gray"
+
+}
+
+function thankYouPage() {
+    document.getElementById("personalInfo").style.display = 'none';
+    document.getElementById("button-1").innerHTML = "&#10003";
+    document.getElementById("profile").style.display = 'none';
+    document.getElementById("button-2").innerHTML = "&#10003";
+    document.getElementById("expertise").style.display = 'none';
+    document.getElementById("button-3").innerHTML = "&#10003";
+    document.getElementById("interview").style.display = 'none';
+    document.getElementById("button-4").innerHTML = "&#10003";
+    document.getElementById("thankYou").style.display = '';
+    document.getElementById("interview__container_header-personalInfo").style.color = "gray"
+    document.getElementById("interview__container_header-profile").style.color = "gray"
+    document.getElementById("interview__container_header-expertise").style.color = "gray"
+    document.getElementById("interview__container_header-interview").style.color = "gray"
+    sessionStorage.clear()
 }
 
 
@@ -116,12 +150,16 @@ function addNewSchool() {
 }
 
 if (sessionStorage.length == 0) {
+    document.getElementById("button-1").style.backgroundColor = "#FF9F1C";
+    document.getElementById("button-1").style.color = "#ffffff";
+    document.getElementById("button-1").style.border = "1px solid #FF9F1C";
+    document.getElementById("interview__container_header-personalInfo").style.color = ""
     personalInfoPage();
 } else if (sessionStorage.length == 1) {
     profilePage();
 } else if (sessionStorage.length == 2) {
     expertisePage();
-} else {
+} else if (sessionStorage.length == 3) {
     interviewPage();
 }
 
@@ -295,7 +333,7 @@ function goTo(buttonID) {
                 document.getElementById("button-question-4").innerHTML += '<span style = "color: #FF9F1C"> ✔ </span>';
                 alert("Question 4 response submitted")
                 alert("Interview Ended! Thank You for participating")
-                personalInfoPage()
+                thankYouPage();
             }
         }
 
@@ -306,10 +344,78 @@ function goTo(buttonID) {
             document.getElementById(expertise).checked = true;
         });
 
-        if (name == "computer-science-expertise") {
-            computerScienceExpertise();
+        switch (name) {
+            case "computer-science-expertise":
+                computerScienceExpertise();
+                break;
+            case "computer-software-expertise":
+                computerSoftwareExpertise();
+                break;
+
+            case "engineering-expertise":
+                engineeringExpertise();
+                break;
+            case "history-expertise":
+                historyExpertise();
+                break;
+            case "humanities-expertise":
+                humanitiesExpertise();
+                break;
+            case "math-expertise":
+                mathExpertise();
+                break;
+            case "science-expertise":
+                scienceExpertise();
+                break;
+            case "social-science-expertise":
+                socialScienceExpertise();
+                break;
+            case "standardized-tests-expertise":
+                standardizedTestsExpertise();
+                break;
+            default:
+                break;
         }
     }
 
     return false
+}
+
+// pageID: 1 => personalInfo
+// pageID: 2 => profile
+// pageID: 3 => expertise
+// pageID: 4 => interview
+
+function jumpPage(pageID) {
+    if (pageID == 1) {
+        if (sessionStorage.length == 0) {
+            personalInfoPage();
+        } else {
+            goTo(3);
+        }
+    } else if (pageID == 2) {
+        if (sessionStorage.length == 1) {
+            profilePage();
+        } else if (sessionStorage.length > 1) {
+            goTo(5);
+        } else {
+            alert("Fill this page first! Jumping not allowed")
+        }
+    } else if (pageID == 3) {
+        if (sessionStorage.length == 2) {
+            expertisePage();
+        } else if (sessionStorage.length > 2) {
+            goTo(7);
+        } else {
+            alert("Fill this page first! Jumping not allowed")
+        }
+    } else if (pageID == 4) {
+        if (sessionStorage.length == 3) {
+            interviewPage();
+        } else if (sessionStorage.length > 3) {
+            interviewPage();
+        } else {
+            alert("Fill this page first! Jumping not allowed")
+        }
+    }
 }

@@ -1,4 +1,4 @@
-hideAllExpertise();
+hideAllExpertise()
 var stream = "";
 
 function hideAllExpertise() {
@@ -25,7 +25,7 @@ function hideAllExpertise() {
 function computerScienceExpertise() {
 
     if (JSON.parse(sessionStorage.getItem("expertise"))) {
-        expertisePage();
+        expertisePage()
     }
     hideAllExpertise();
     stream = "computer-science";
