@@ -8,6 +8,8 @@ function personalInfoPage() {
     document.getElementById("interview__container_header-profile").style.color = "gray"
     document.getElementById("interview__container_header-expertise").style.color = "gray"
     document.getElementById("interview__container_header-interview").style.color = "gray"
+    document.getElementById("button-1").style.backgroundColor = "#FF9F1C";
+    document.getElementById("button-1").style.color = "white";
 }
 
 function profilePage() {
@@ -23,6 +25,8 @@ function profilePage() {
     document.getElementById("interview__container_header-profile").style.color = "black"
     document.getElementById("interview__container_header-expertise").style.color = "gray"
     document.getElementById("interview__container_header-interview").style.color = "gray"
+    document.getElementById("button-2").style.backgroundColor = "#FF9F1C";
+    document.getElementById("button-2").style.color = "white";
 }
 
 function expertisePage() {
@@ -41,6 +45,8 @@ function expertisePage() {
     document.getElementById("interview__container_header-profile").style.color = "gray"
     document.getElementById("interview__container_header-expertise").style.color = "black"
     document.getElementById("interview__container_header-interview").style.color = "gray"
+    document.getElementById("button-3").style.backgroundColor = "#FF9F1C";
+    document.getElementById("button-3").style.color = "white";
 }
 
 function interviewPage() {
@@ -62,6 +68,8 @@ function interviewPage() {
     document.getElementById("interview__container_header-profile").style.color = "gray"
     document.getElementById("interview__container_header-expertise").style.color = "gray"
     document.getElementById("interview__container_header-interview").style.color = "black"
+    document.getElementById("button-4").style.backgroundColor = "#FF9F1C";
+    document.getElementById("button-4").style.color = "white";
 
 }
 

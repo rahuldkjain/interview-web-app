@@ -237,99 +237,204 @@
 
 
         <!-- interview__container_expertise -->
-        <div class="interview__container_expertise" id="expertise">
-            <div class="sidenav">
-                <div class="bottom">
-                    <a href="javascript: computerScienceExpertise();" id="button-computer-science">ComputerScience</a>
-                    <a href="javascript: computerSoftwareExpertise();" id="button-computer-software">ComputerSoftware</a>
-                    <a href="javascript: engineeringExpertise();" id="button-engineering">Engineering</a>
-                    <a href="javascript: historyExpertise();" id="button-history">History</a>
-                    <a href="javascript: humanitiesExpertise();" id="button-humanities">Humanities</a>
-                    <a href="javascript: mathExpertise();" id="button-math">Math</a>
-                    <a href="javascript: scienceExpertise();" id="button-science">Science</a>
-                    <a href="javascript: socialScienceExpertise();" id="button-social-science">SocialScience</a>
-                    <a href="javascript: standardizedTestsExpertise();" id="button-standardized-tests">StandardizedTests</a>
+        <div id="expertise">
+            <div class="interview__container_expertise">
+                <div class="sidenav">
+                    <div class="bottom">
+                        <a href="javascript: computerScienceExpertise();" id="button-computer-science">ComputerScience</a>
+                        <a href="javascript: computerSoftwareExpertise();" id="button-computer-software">ComputerSoftware</a>
+                        <a href="javascript: engineeringExpertise();" id="button-engineering">Engineering</a>
+                        <a href="javascript: historyExpertise();" id="button-history">History</a>
+                        <a href="javascript: humanitiesExpertise();" id="button-humanities">Humanities</a>
+                        <a href="javascript: mathExpertise();" id="button-math">Math</a>
+                        <a href="javascript: scienceExpertise();" id="button-science">Science</a>
+                        <a href="javascript: socialScienceExpertise();" id="button-social-science">SocialScience</a>
+                        <a href="javascript: standardizedTestsExpertise();" id="button-standardized-tests">StandardizedTests</a>
+                    </div>
+                </div>
+                <div class="rightBlock" id="right">
+                    <div id="computerScience">
+                        <table>
+                            <tr>
+                                <td><input type="checkbox" name="computer-science-expertise" id="Computer Science" value="Computer Science">Computer Science</td>
+                                <td><input type="checkbox" name="computer-science-expertise" id="Lsp Programming" value="Lsp Programming">Lsp Programming</td>
+                                <td><input type="checkbox" name="computer-science-expertise" id="Visual Basic Professional" value="Visual Basic Professional">Visual Basic Professional</td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox" name="computer-science-expertise" id="Assembly Language" value="Assembly Language">Assembly Language</td>
+                                <td><input type="checkbox" name="computer-science-expertise" id="PHP Programming" value="PHP Programming">PHP Programming</td>
+                                <td><input type="checkbox" name="computer-science-expertise" id="NodeJS" value="NodeJS">NodeJS</td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox" name="computer-science-expertise" id="C++ Programming" value="C++ Programming">C++ Programming</td>
+                                <td><input type="checkbox" name="computer-science-expertise" id="SQL" value="SQL">SQL</td>
+                                <td><input type="checkbox" name="computer-science-expertise" id="ExpressJS" value="ExpressJS">ExpressJS</td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox" name="computer-science-expertise" id="Database" value="Database">Database</td>
+                                <td><input type="checkbox" name="computer-science-expertise" id="MySQL" value="MySQL">MySQL</td>
+                                <td><input type="checkbox" name="computer-science-expertise" id="AngularJS" value="AngularJS">AngularJS</td>
+                            </tr>
+                        </table>
+                        <br>
+                        <!-- <div>
+                                <input type="submit" class="backButton" style="margin-left: 0px;" id="goToProfile" onclick="goTo(5)" value="&#8592; back">
+                                <input type="submit" class="nextButton" style="margin-right: 0px;" id="submitExpertise" onclick="goTo(4)" value="next &#8594;">
+                            </div> -->
+                    </div>
+                    <div id="computerSoftware">
+                        <table>
+                            <tr>
+                                <td><input type="checkbox" name="computer-software-expertise" id="Django" value="Django">Django</td>
+                                <td><input type="checkbox" name="computer-software-expertise" id="Flask" value="Flask">Flask</td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox" name="computer-software-expertise" id="Spring Boot" value="Spring Boot">Spring Boot</td>
+                                <td><input type="checkbox" name="computer-software-expertise" id="Angular" value="Angular">Angular</span>
+                                </td>
+                            </tr>
+                        </table>
+                        <br>
+                        <!-- <div>
+                                <input type="submit" class="backButton" style="margin-left: 0px;" id="goToProfile" onclick="goTo(5)" style="background-color: #FF9F1C; color: white" value="&#8592; back">
+                                <input type="submit" class="nextButton" style="margin-right: 0px;" id="submitExpertise" onclick="goTo(4)" style="background-color: #FF9F1C; color: white" value="next &#8594; ">
+                            </div> -->
+                    </div>
+                    <div id="engineering">
+                        <table>
+                            <tr>
+                                <td><input type="checkbox" name="engineering-expertise" value="">Django</td>
+                                <td><input type="checkbox" name="engineering-expertise" value="">Lsp Programming</td>
+                                <td><input type="checkbox" name="engineering-expertise" value="">Visual Basic Professional</td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox" name="engineering-expertise" value="">Flask</td>
+                                <td><input type="checkbox" name="engineering-expertise" value="">PHP Programming</td>
+                                <td><input type="checkbox" name="engineering-expertise" value="">NodeJS</td>
+                            </tr>
+                        </table>
+
+                        <!-- <div>
+                                <input type="submit" class="backButton" style="margin-left: 0px;" id="goToProfile" onclick="goTo(5)" style="background-color: #FF9F1C; color: white" value="&#8592; back">
+                                <input type="submit" class="nextButton" style="margin-right: 0px;" id="submitExpertise" onclick="goTo(4)" style="background-color: #FF9F1C; color: white" value="next &#8594; ">
+                            </div> -->
+                    </div>
+                    <div id="history">
+                        <table>
+                            <tr>
+                                <td><input type="checkbox" name="history-expertise" value="">Django</td>
+                                <td><input type="checkbox" name="history-expertise" value="">Lsp Programming</td>
+                                <td><input type="checkbox" name="history-expertise" value="">Visual Basic Professional</td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox" name="history-expertise" value="">Flask</td>
+                                <td><input type="checkbox" name="history-expertise" value="">PHP Programming</td>
+                                <td><input type="checkbox" name="history-expertise" value="">NodeJS</td>
+                            </tr>
+                        </table>
+
+                        <!-- <div>
+                                <input type="submit" class="backButton" style="margin-left: 0px;" id="goToProfile" onclick="goTo(5)" style="background-color: #FF9F1C; color: white" value="&#8592; back">
+                                <input type="submit" class="nextButton" style="margin-right: 0px;" id="submitExpertise" onclick="goTo(4)" style="background-color: #FF9F1C; color: white" value="next &#8594; ">
+                            </div> -->
+                    </div>
+                    <div id="humanities">
+                        <table>
+                            <tr>
+                                <td><input type="checkbox" name="humanities-expertise" value="">Django</td>
+                                <td><input type="checkbox" name="humanities-expertise" value="">Lsp Programming</td>
+                                <td><input type="checkbox" name="humanities-expertise" value="">Visual Basic Professional</td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox" name="humanities-expertise" value="">Flask</td>
+                                <td><input type="checkbox" name="humanities-expertise" value="">PHP Programming</td>
+                                <td><input type="checkbox" name="humanities-expertise" value="">NodeJS</td>
+                            </tr>
+                        </table>
+
+                        <!-- <div>
+                                <input type="submit" class="backButton" style="margin-left: 0px;" id="goToProfile" onclick="goTo(5)" style="background-color: #FF9F1C; color: white" value="&#8592; back">
+                                <input type="submit" class="nextButton" style="margin-right: 0px;" id="submitExpertise" onclick="goTo(4)" style="background-color: #FF9F1C; color: white" value="next &#8594; ">
+                            </div> -->
+                    </div>
+                    <div id="math">
+                        <table>
+                            <tr>
+                                <td><input type="checkbox" name="math-expertise" value="">Django</td>
+                                <td><input type="checkbox" name="math-expertise" value="">Lsp Programming</td>
+                                <td><input type="checkbox" name="math-expertise" value="">Visual Basic Professional</td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox" name="math-expertise" value="">Flask</td>
+                                <td><input type="checkbox" name="math-expertise" value="">PHP Programming</td>
+                                <td><input type="checkbox" name="math-expertise" value="">NodeJS</td>
+                            </tr>
+                        </table>
+
+                        <!-- <div>
+                                <input type="submit" class="backButton" style="margin-left: 0px;" id="goToProfile" onclick="goTo(5)" style="background-color: #FF9F1C; color: white" value="&#8592; back">
+                                <input type="submit" class="nextButton" style="margin-right: 0px;" id="submitExpertise" onclick="goTo(4)" style="background-color: #FF9F1C; color: white" value="next &#8594; ">
+                            </div> -->
+                    </div>
+                    <div id="science">
+                        <table>
+                            <tr>
+                                <td><input type="checkbox" name="science-expertise" value="">Django</td>
+                                <td><input type="checkbox" name="science-expertise" value="">Lsp Programming</td>
+                                <td><input type="checkbox" name="science-expertise" value="">Visual Basic Professional</td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox" name="science-expertise" value="">Flask</td>
+                                <td><input type="checkbox" name="science-expertise" value="">PHP Programming</td>
+                                <td><input type="checkbox" name="science-expertise" value="">NodeJS</td>
+                            </tr>
+                        </table>
+
+                        <!-- <div>
+                                <input type="submit" class="backButton" style="margin-left: 0px;" id="goToProfile" onclick="goTo(5)" style="background-color: #FF9F1C; color: white" value="&#8592; back">
+                                <input type="submit" class="nextButton" style="margin-right: 0px;" id="submitExpertise" onclick="goTo(4)" style="background-color: #FF9F1C; color: white" value="next &#8594; ">
+                            </div> -->
+                    </div>
+                    <div id="socialScience">
+                        <table>
+                            <tr>
+                                <td><input type="checkbox" name="social-science-expertise" value="">Django</td>
+                                <td><input type="checkbox" name="social-science-expertise" value="">Lsp Programming</td>
+                                <td><input type="checkbox" name="social-science-expertise" value="">Visual Basic Professional</td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox" name="social-science-expertise" value="">Flask</td>
+                                <td><input type="checkbox" name="social-science-expertise" value="">PHP Programming</td>
+                                <td><input type="checkbox" name="social-science-expertise" value="">NodeJS</td>
+                            </tr>
+                        </table>
+
+                        <!-- <div>
+                                <input type="submit" class="backButton" style="margin-left: 0px;" id="goToProfile" onclick="goTo(5)" style="background-color: #FF9F1C; color: white" value="&#8592; back">
+                                <input type="submit" class="nextButton" style="margin-right: 0px;" id="submitExpertise" onclick="goTo(4)" style="background-color: #FF9F1C; color: white" value="next &#8594; ">
+                            </div> -->
+                    </div>
+                    <div id="standardizedTests">
+                        <table>
+                            <tr>
+                                <td><input type="checkbox" name="standardized-tests-expertise" value="">Django</td>
+                                <td><input type="checkbox" name="standardized-tests-expertise" value="">Lsp Programming</td>
+                                <td><input type="checkbox" name="standardized-tests-expertise" value="">Visual Basic Professional</td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox" name="standardized-tests-expertise" value="">Flask</td>
+                                <td><input type="checkbox" name="standardized-tests-expertise" value="">PHP Programming</td>
+                                <td><input type="checkbox" name="standardized-tests-expertise" value="">NodeJS</td>
+                            </tr>
+                        </table>
+
+
+                    </div>
                 </div>
             </div>
-            <div class="rightBlock" id="right">
-                <h3 style="text-align: center">Expertise</h3>
-                <div id="computerScience">
-                    <span><span><input type="checkbox" name="computer-science-expertise" id="Computer Science" value="Computer Science">Computer Science</span><span><input type="checkbox" name="computer-science-expertise" id="Lsp Programming" value="Lsp Programming" >Lsp Programming</span><span><input type="checkbox" name="computer-science-expertise" id="Visual Basic Professional" value="Visual Basic Professional">Visual Basic Professional</span><br></span>
-                    <span><span><input type="checkbox" name="computer-science-expertise" id="Assembly Language" value="Assembly Language">Assembly Language</span><span><input type="checkbox" name="computer-science-expertise" id="PHP Programming" value="PHP Programming">PHP Programming</span><span><input type="checkbox" name="computer-science-expertise" id="NodeJS" value="NodeJS">NodeJS</span><br></span>
-                    <span><span><input type="checkbox" name="computer-science-expertise" id="C++ Programming" value="C++ Programming">C++ Programming</span><span><input type="checkbox" name="computer-science-expertise" id="SQL" value="SQL">SQL</span><span><input type="checkbox" name="computer-science-expertise" id="ExpressJS" value="ExpressJS">ExpressJS</span><br></span>
-                    <span><span><input type="checkbox" name="computer-science-expertise" id="Database" value="Database">Database</span><span><input type="checkbox" name="computer-science-expertise" id="MySQL" value="MySQL">MySQL</span><span><input type="checkbox" name="computer-science-expertise" id="AngularJS" value="AngularJS">AngularJS</span><br></span>
-                    <span>
-                        <input type="submit" id="goToProfile" onclick="goTo(5)" style="background-color: #FF9F1C; color: white" value="&#8592; goToProfile">
-                        <input type="submit" id="submitExpertise" onclick="goTo(4)" style="background-color: #FF9F1C; color: white" value="&#8594; submitExpertise">
-                    </span>
-                </div>
-                <div id="computerSoftware">
-                    <span><input type="checkbox" name="computer-software-expertise" id="Django" value="Django">Django</span>
-                    <span><input type="checkbox" name="computer-software-expertise" id="Flask" value="Flask">Flask</span>
-                    <span><input type="checkbox" name="computer-software-expertise" id="Spring Boot" value="Spring Boot">Spring Boot</span>
-                    <span><input type="checkbox" name="computer-software-expertise" id="Angular" value="Angular">Angular</span>
-                    <br>
-                    <span>
-                        <input type="submit" id="goToProfile" onclick="goTo(5)" style="background-color: #FF9F1C; color: white" value="&#8592; goToProfile">
-                        <input type="submit" id="submitExpertise" onclick="goTo(4)" style="background-color: #FF9F1C; color: white" value="&#8594; submitExpertise">
-                    </span>
-                </div>
-                <div id="engineering">
-                    <span><span><input type="checkbox" name="engineering-expertise" value="">Django</span><span><input type="checkbox" name="engineering-expertise" value="">Lsp Programming</span><span><input type="checkbox" name="engineering-expertise" value="">Visual Basic Professional</span><br></span>
-                    <span><span><input type="checkbox" name="engineering-expertise" value="">Flask</span><span><input type="checkbox" name="engineering-expertise" value="">PHP Programming</span><span><input type="checkbox" name="engineering-expertise" value="">NodeJS</span><br></span>
-                    <span>
-                        <input type="submit" id="goToProfile" onclick="goTo(5)" style="background-color: #FF9F1C; color: white" value="&#8592; goToProfile">
-                        <input type="submit" id="submitExpertise" onclick="goTo(4)" style="background-color: #FF9F1C; color: white" value="&#8594; submitExpertise">
-                    </span>
-                </div>
-                <div id="history">
-                    <span><span><input type="checkbox" name="history-expertise" value="">Django</span><span><input type="checkbox" name="history-expertise" value="">Lsp Programming</span><span><input type="checkbox" name="history-expertise" value="">Visual Basic Professional</span><br></span>
-                    <span><span><input type="checkbox" name="history-expertise" value="">Flask</span><span><input type="checkbox" name="history-expertise" value="">PHP Programming</span><span><input type="checkbox" name="history-expertise" value="">NodeJS</span><br></span>
-                    <span>
-                        <input type="submit" id="goToProfile" onclick="goTo(5)" style="background-color: #FF9F1C; color: white" value="&#8592; goToProfile">
-                        <input type="submit" id="submitExpertise" onclick="goTo(4)" style="background-color: #FF9F1C; color: white" value="&#8594; submitExpertise">
-                    </span>
-                </div>
-                <div id="humanities">
-                    <span><span><input type="checkbox" name="humanities-expertise" value="">Django</span><span><input type="checkbox" name="humanities-expertise" value="">Lsp Programming</span><span><input type="checkbox" name="humanities-expertise" value="">Visual Basic Professional</span><br></span>
-                    <span><span><input type="checkbox" name="humanities-expertise" value="">Flask</span><span><input type="checkbox" name="humanities-expertise" value="">PHP Programming</span><span><input type="checkbox" name="humanities-expertise" value="">NodeJS</span><br></span>
-                    <span>
-                        <input type="submit" id="goToProfile" onclick="goTo(5)" style="background-color: #FF9F1C; color: white" value="&#8592; goToProfile">
-                        <input type="submit" id="submitExpertise" onclick="goTo(4)"style="background-color: #FF9F1C; color: white" value="&#8594; submitExpertise">
-                    </span>
-                </div>
-                <div id="math">
-                    <span><span><input type="checkbox" name="math-expertise" value="">Django</span><span><input type="checkbox" name="math-expertise" value="">Lsp Programming</span><span><input type="checkbox" name="math-expertise" value="">Visual Basic Professional</span><br></span>
-                    <span><span><input type="checkbox" name="math-expertise" value="">Flask</span><span><input type="checkbox" name="math-expertise" value="">PHP Programming</span><span><input type="checkbox" name="math-expertise" value="">NodeJS</span><br></span>
-                    <span>
-                        <input type="submit" id="goToProfile" onclick="goTo(5)" style="background-color: #FF9F1C; color: white" value="&#8592; goToProfile">
-                        <input type="submit" id="submitExpertise" onclick="goTo(4)" style="background-color: #FF9F1C; color: white" value="&#8594; submitExpertise">
-                    </span>
-                </div>
-                <div id="science">
-                    <span><span><input type="checkbox" name="science-expertise" value="">Django</span><span><input type="checkbox" name="science-expertise" value="">Lsp Programming</span><span><input type="checkbox" name="science-expertise" value="">Visual Basic Professional</span><br></span>
-                    <span><span><input type="checkbox" name="science-expertise" value="">Flask</span><span><input type="checkbox" name="science-expertise" value="">PHP Programming</span><span><input type="checkbox" name="science-expertise" value="">NodeJS</span><br></span>
-                    <span>
-                        <input type="submit" id="goToProfile" onclick="goTo(5)" style="background-color: #FF9F1C; color: white" value="&#8592; goToProfile">
-                        <input type="submit" id="submitExpertise" onclick="goTo(4)" style="background-color: #FF9F1C; color: white" value="&#8594; submitExpertise">
-                    </span>
-                </div>
-                <div id="socialScience">
-                    <span><span><input type="checkbox" name="social-science-expertise" value="">Django</span><span><input type="checkbox" name="social-science-expertise" value="">Lsp Programming</span><span><input type="checkbox" name="social-science-expertise" value="">Visual Basic Professional</span><br></span>
-                    <span><span><input type="checkbox" name="social-science-expertise" value="">Flask</span><span><input type="checkbox" name="social-science-expertise" value="">PHP Programming</span><span><input type="checkbox" name="social-science-expertise" value="">NodeJS</span><br></span>
-                    <span>
-                        <input type="submit" id="goToProfile" onclick="goTo(5)" style="background-color: #FF9F1C; color: white" value="&#8592; goToProfile">
-                        <input type="submit" id="submitExpertise" onclick="goTo(4)" style="background-color: #FF9F1C; color: white" value="&#8594; submitExpertise">
-                    </span>
-                </div>
-                <div id="standardizedTests">
-                    <span><span><input type="checkbox" name="standardized-tests-expertise" value="">Django</span><span><input type="checkbox" name="standardized-tests-expertise" value="">Lsp Programming</span><span><input type="checkbox" name="standardized-tests-expertise" value="">Visual Basic Professional</span><br></span>
-                    <span><span><input type="checkbox" name="standardized-tests-expertise" value="">Flask</span><span><input type="checkbox" name="standardized-tests-expertise" value="">PHP Programming</span><span><input type="checkbox" name="standardized-tests-expertise" value="">NodeJS</span><br></span>
-                    <span>
-                        <input type="submit" id="goToProfile" onclick="goTo(5)" style="background-color: #FF9F1C; color: white" value="&#8592; goToProfile">
-                        <input type="submit" id="submitExpertise" onclick="goTo(4)" style="background-color: #FF9F1C; color: white" value="&#8594; submitExpertise">
-                    </span>
-                </div>
+            <div>
+                <input type="submit" class="backButton" style="margin-left: 280px;" id="goToProfile" onclick="goTo(5)" style="background-color: #FF9F1C; color: white" value="&#8592; back">
+                <input type="submit" class="nextButton" id="submitExpertise" onclick="goTo(4)" style="background-color: #FF9F1C; color: white" value="next &#8594; ">
             </div>
         </div>
 
@@ -346,51 +451,54 @@
                 </div>
             </div>
             <div class="rightBlock" id="right">
-                <h3 style="text-align: center">Interview</h3>
                 <div id="question1">
                     <p style="padding: 0px"><i>Where does it come from?</i></p>
                     <textarea name="question1" id="questionText1" cols="70" rows="3" placeholder="Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum provident vitae suscipit tenetur officia impedit praesentium accusamus aperiam. Culpa dolor non libero sequi dolore ullam quas magni iusto cum a?"></textarea>
                     <br>
-                    <a href="javascript: nextQuestion(1);" style="color: #FF9F1C">Next Question</a>
+                    <a href="javascript: nextQuestion(1);" style="color: #FF9F1C">next question</a>
+                    <br>
                     <br>
                     <span>
-                            <input type="submit" id="goToExpertise" onclick="goTo(7)" style="background-color: #FF9F1C; color: white" value="&#8592; goToExpertise">
-                            <input type="submit" id="button" onclick="goTo(6)" style="background-color: #3bff2d; color: white" value="submitInterview" disabled>
+                            <input type="submit" class="backButton" style="margin-left: 0px;" id="goToExpertise" onclick="goTo(7)" style="background-color: #FF9F1C; color: white" value="&#8592; back">
+                            <input type="submit" class="nextButton" style="margin-right: 0px; background-color: #3bff2d; color: white" id="button" onclick="goTo(6)"value="next &#8594;" disabled>
                     </span>
                 </div>
                 <div id="question2">
                     <p style="padding: 0px"><i>Where does it come from?</i></p>
                     <textarea name="question1" id="questionText2" cols="70" rows="3" placeholder="Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum provident vitae suscipit tenetur officia impedit praesentium accusamus aperiam. Culpa dolor non libero sequi dolore ullam quas magni iusto cum a?"></textarea>
                     <br>
-                    <a href="javascript: nextQuestion(3);" style="color: #FF9F1C">Previous question</a>
-                    <a href="javascript: nextQuestion(2);" style="color: #FF9F1C">Next question</a>
+                    <a href="javascript: nextQuestion(3);" style="color: #FF9F1C">previous question</a>
+                    <a href="javascript: nextQuestion(2);" style="color: #FF9F1C">next question</a>
+                    <br>
                     <br>
                     <span>
-                            <input type="button" id="goToExpertise" onclick="goTo(7)" style="background-color: #FF9F1C; color: white" value="&#8592; goToExpertise">
-                            <input type="button" id="submitInterview" onclick="goTo(6)" style="background-color: #3bff2d; color: white" value="submitInterview" disabled>
+                            <input type="button" class="backButton" style="margin-left: 0px;" id="goToExpertise" onclick="goTo(7)" style="background-color: #FF9F1C; color: white" value="&#8592; back">
+                            <input type="button" class="nextButton" style="margin-right: 0px; background-color: #3bff2d; color: white" id="submitInterview" onclick="goTo(6)" value="next &#8594;" disabled>
                     </span>
                 </div>
                 <div id="question3">
                     <p style="padding: 0px"><i>Where does it come from?</i></p>
                     <textarea name="question1" id="questionText3" cols="70" rows="3" placeholder="Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum provident vitae suscipit tenetur officia impedit praesentium accusamus aperiam. Culpa dolor non libero sequi dolore ullam quas magni iusto cum a?"></textarea>
                     <br>
-                    <a href="javascript: nextQuestion(5);" style="color: #FF9F1C">Previous question</a>
-                    <a href="javascript: nextQuestion(4);" style="color: #FF9F1C">Next question</a>
+                    <a href="javascript: nextQuestion(5);" style="color: #FF9F1C">previous question</a>
+                    <a href="javascript: nextQuestion(4);" style="color: #FF9F1C">next question</a>
+                    <br>
                     <br>
                     <span>
-                            <input type="button" id="goToExpertise" onclick="goTo(7)" style="background-color: #FF9F1C; color: white" value="&#8592; goToExpertise">
-                            <input type="button" id="submitInterview" onclick="goTo(6)" style="background-color: #3bff2d; color: white" value="submitInterview" disabled>
+                            <input type="button" class="backButton" style="margin-left: 0px;" id="goToExpertise" onclick="goTo(7)" style="background-color: #FF9F1C; color: white" value="&#8592; back">
+                            <input type="button" class="nextButton" style="margin-right: 0px; background-color: #3bff2d; color: white" id="submitInterview" onclick="goTo(6)" value="next &#8594;" disabled>
                     </span>
                 </div>
                 <div id="question4">
                     <p style="padding: 0px"><i>Where does it come from?</i></p>
                     <textarea name="question1" id="questionText4" cols="70" rows="3" placeholder="Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum provident vitae suscipit tenetur officia impedit praesentium accusamus aperiam. Culpa dolor non libero sequi dolore ullam quas magni iusto cum a?"></textarea>
                     <br>
-                    <a href="javascript: nextQuestion(6);" style="color: #FF9F1C">Previous question</a>
+                    <br>
+                    <a href="javascript: nextQuestion(6);" style="color: #FF9F1C">previous question</a>
                     <br>
                     <span>
-                            <input type="button" id="goToExpertise" onclick="goTo(7)" style="background-color: #FF9F1C; color: white" value="&#8592; goToExpertise">
-                            <input type="button" id="submitInterview" onclick="goTo(6)" style="background-color: green; color: white" value="submitInterview">
+                            <input type="button" class="backButton" style="margin-left: 0px;" id="goToExpertise" onclick="goTo(7)" style="background-color: #FF9F1C; color: white" value="&#8592; back">
+                            <input type="button" class="nextButton" style="margin-right: 0px;" id="submitInterview" onclick="goTo(6)" style="background-color: green; color: white" value="next &#8594;">
                     </span>
                 </div>
             </div>

@@ -51,7 +51,7 @@
     height: 100%;
     /*allows both columns to span the full height of the browser window*/
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     /*places the left and right headers above the bottom content*/
 }
 
@@ -80,4 +80,13 @@
     overflow-y: auto;
     /* adds scroll to this container */
     /* width: 20%; */
+}
+
+table {
+    width: 100%;
+}
+
+td {
+    padding: 20px;
+    text-align: left;
 }
