@@ -238,7 +238,8 @@ function goTo(buttonID) {
         personalInfoPage();
     } else if (buttonID == 4) {
         //fetch the selected checkboxes values
-        var response = document.getElementsByName("computer-science-expertise")
+        var domain = stream + "-expertise";
+        var response = document.getElementsByName(domain)
         var expertise = []
         for (var i = 0; i < response.length; i++) {
             if (response[i].checked == true) {
@@ -249,7 +250,11 @@ function goTo(buttonID) {
         if (expertise.length < 1) {
             alert("Please select atleast one expertise")
         } else {
-            sessionStorage.setItem("expertise", JSON.stringify(expertise))
+            var data = {
+                stream: stream,
+                expertise: expertise
+            }
+            sessionStorage.setItem("expertise", JSON.stringify(data))
             interviewPage();
             alert("Expertise added successfully");
         }
@@ -279,9 +284,31 @@ function goTo(buttonID) {
         profilePage();
 
     } else if (buttonID == 6) {
+        if (JSON.parse(sessionStorage.getItem("questions")).length == 3) {
+            var answer4 = document.getElementById("questionText4").value
+            if (answer4 == "") {
+                alert("Please answer the question! Skipping questions not allowed")
+            } else {
+                var data = JSON.parse(sessionStorage.getItem("questions"))
+                data.push({ question4: answer4 })
+                sessionStorage.setItem("questions", JSON.stringify(data))
+                document.getElementById("button-question-4").innerHTML += '<span style = "color: #FF9F1C"> ✔ </span>';
+                alert("Question 4 response submitted")
+                alert("Interview Ended! Thank You for participating")
+                personalInfoPage()
+            }
+        }
 
     } else if (buttonID == 7) {
+        var name = JSON.parse(sessionStorage.getItem("expertise")).stream + "-expertise";
+        var expertises = JSON.parse(sessionStorage.getItem("expertise")).expertise
+        expertises.forEach(expertise => {
+            document.getElementById(expertise).checked = true;
+        });
 
+        if (name == "computer-science-expertise") {
+            computerScienceExpertise();
+        }
     }
 
     return false
