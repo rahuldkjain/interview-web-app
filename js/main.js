@@ -109,7 +109,6 @@ function thankYouPage() {
     document.getElementById("interview__container_header-interview").style.color = "gray"
 
     resetButtons();
-    console.log(sessionStorage)
     sessionStorage.clear()
 }
 
@@ -495,6 +494,7 @@ function goTo(buttonID) {
                 data.push({ question4: answer4 })
                 sessionStorage.setItem("questions", JSON.stringify(data))
                 document.getElementById("button-question-4").innerHTML += '<span style = "color: #FF9F1C"> ✔ </span>';
+                console.log("final Session storage: " + sessionStorage);
                 alert("✔ Question 4 response submitted")
                 alert("✔✔ Interview Ended! Thank You for participating")
                 thankYouPage();
