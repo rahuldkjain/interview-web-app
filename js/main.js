@@ -288,6 +288,23 @@ if (sessionStorage.length == 0) {
     interviewPage();
 }
 
+function displayError(element) {
+    document.getElementById(element).style.webkitTransition = "all 0.30s ease-in-out;";
+    document.getElementById(element).style.outline = "none";
+    document.getElementById(element).style.padding = "3px 0px 3px 3px";
+    document.getElementById(element).style.margin = "5px 1px 3px 0px";
+    document.getElementById(element).style.border = "1px solid red";
+}
+
+function hideError(element) {
+    document.getElementById(element).style.webkitTransition = "";
+    document.getElementById(element).style.outline = "";
+    document.getElementById(element).style.padding = "";
+    document.getElementById(element).style.margin = "";
+    document.getElementById(element).style.border = "";
+    document.getElementById(element + "Error").textContent = "";
+}
+
 
 
 // buttonID: 1 => submitPersonalInfo
@@ -316,24 +333,12 @@ function goTo(buttonID) {
             var taxID = document.querySelector('input[name="taxID"]:checked').value
             var mobile = document.getElementById("mobile").value
 
-            validated = validateName(name);
             if (validated) {
+                validated = validateName(name);
                 validated = validateEmail(email);
-            }
-            if (validated) {
-                if (university == "") {
-                    validated = false
-                    alert("Please enter your university")
-                } else if (major == "") {
-                    validated = false
-                    alert("Please enter your major")
-                } else if (graduationDate == "") {
-                    validated = false
-                    alert("Please select your graduation year")
-                }
-            }
-            if (validated) {
-                validated = validateMobile(mobile)
+                validated = validateUniversity(university);
+                validated = validateMajor(major);
+                validated = validateMobile(mobile);
             }
             if (validated) {
                 var data = {

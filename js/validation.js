@@ -1,7 +1,32 @@
 function validateName(name) {
     if (name == "") {
-        alert("Please enter your name")
+        displayError("name")
+        document.getElementById("nameError").textContent = "Please enter your name"
         return false
+    } else {
+        hideError("name");
+    }
+    return true
+}
+
+function validateUniversity(university) {
+    if (university == "") {
+        displayError("university")
+        document.getElementById("universityError").textContent = "Please enter your university"
+        return false
+    } else {
+        hideError("university");
+    }
+    return true
+}
+
+function validateMajor(name) {
+    if (name == "") {
+        displayError("major")
+        document.getElementById("majorError").textContent = "Please enter your major"
+        return false
+    } else {
+        hideError("major");
     }
     return true
 }
@@ -10,11 +35,15 @@ function validateEmail(email) {
     var reg = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
 
     if (email == "") {
-        alert("Please enter your email");
+        displayError("email");
+        document.getElementById("emailError").textContent = "Please enter your email"
         return false;
     } else if (reg.test(email) == false) {
-        alert('Invalid Email Address');
+        displayError("email");
+        document.getElementById("emailError").textContent = "Enter valid email address"
         return false;
+    } else {
+        hideError("email")
     }
 
     return true;
@@ -22,14 +51,15 @@ function validateEmail(email) {
 
 function validateMobile(mobile) {
     if (mobile == "") {
-        alert("Please enter your mobile number");
+        displayError("mobile");
+        document.getElementById("mobileError").textContent = "Please enter mobile number";
         return false
-    } else if (mobile.length < 10) {
-        alert("Please enter a valid mobile number");
+    } else if (mobile.length < 10 || mobile.length > 12) {
+        displayError("mobile");
+        document.getElementById("mobileError").textContent = "Enter valid mobile number";
         return false;
-    } else if (mobile.length > 10) {
-        alert("Please enter valid mobile number");
-        return false;
+    } else {
+        hideError("mobile");
     }
 
     return true
