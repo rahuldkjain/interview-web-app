@@ -315,7 +315,6 @@ function goTo(buttonID) {
             var graduationDate = document.getElementById("graduationDate").value
             var taxID = document.querySelector('input[name="taxID"]:checked').value
             var mobile = document.getElementById("mobile").value
-            console.log("email: " + email)
 
             validated = validateName(name);
             if (validated) {
@@ -348,7 +347,6 @@ function goTo(buttonID) {
                     mobile: mobile
                 }
                 sessionStorage.setItem("personalInfo", JSON.stringify(data))
-                console.log(JSON.parse(sessionStorage.getItem("personalInfo")))
                 profilePage();
                 alert("✔✔ Personal Info added successfully")
             }
@@ -414,7 +412,6 @@ function goTo(buttonID) {
             validated = validateProfile(data)
             if (validated) {
                 sessionStorage.setItem("profile", JSON.stringify(data))
-                console.log(JSON.parse(sessionStorage.getItem("profile")))
                 expertisePage();
                 alert("✔✔ Profile recorded successfully")
             }
@@ -491,10 +488,13 @@ function goTo(buttonID) {
                 alert("Please answer the question! Skipping questions not allowed")
             } else {
                 var data = JSON.parse(sessionStorage.getItem("questions"))
-                data.push({ question4: answer4 })
+                data.push({ questions: answer4 })
                 sessionStorage.setItem("questions", JSON.stringify(data))
                 document.getElementById("button-question-4").innerHTML += '<span style = "color: #FF9F1C"> ✔ </span>';
-                console.log("final Session storage: " + sessionStorage);
+                console.log("final personalInfo: " + sessionStorage.getItem("personalInfo"));
+                console.log("final profile: " + sessionStorage.getItem("profile"));
+                console.log("final expertise: " + JSON.parse(sessionStorage.getItem("expertise")).expertise);
+                console.log("final Interview: " + JSON.parse(sessionStorage.getItem("questions"))[0].question + ', ' + JSON.parse(sessionStorage.getItem("questions"))[1].question + ', ' + JSON.parse(sessionStorage.getItem("questions"))[2].question + ', ' + JSON.parse(sessionStorage.getItem("questions"))[3].question);
                 alert("✔ Question 4 response submitted")
                 alert("✔✔ Interview Ended! Thank You for participating")
                 thankYouPage();

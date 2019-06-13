@@ -24,6 +24,9 @@ function validateMobile(mobile) {
     if (mobile == "") {
         alert("Please enter your mobile number");
         return false
+    } else if (mobile.length < 10) {
+        alert("Please enter a valid mobile number");
+        return false;
     } else if (mobile.length > 10) {
         alert("Please enter valid mobile number");
         return false;
