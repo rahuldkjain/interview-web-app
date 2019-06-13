@@ -1,4 +1,5 @@
 question1();
+
 document.getElementById("submitInterview").disabled = true;
 if (sessionStorage.getItem("questions")) {
     var questions = JSON.parse(sessionStorage.getItem("questions"))
@@ -26,32 +27,42 @@ function hideAllQuestion() {
     document.getElementById("button-question-2").style.background = "#eee";
     document.getElementById("button-question-3").style.background = "#eee";
     document.getElementById("button-question-4").style.background = "#eee";
+
+    document.getElementById("button-question-1").style.borderLeft = "0px solid #FF9F1C";
+    document.getElementById("button-question-2").style.borderLeft = "0px solid #FF9F1C";
+    document.getElementById("button-question-3").style.borderLeft = "0px solid #FF9F1C";
+    document.getElementById("button-question-4").style.borderLeft = "0px solid #FF9F1C";
 }
 
 function question1() {
     hideAllQuestion();
     document.getElementById("question1").style.display = '';
     document.getElementById("button-question-1").style.background = "#ffffff";
+    document.getElementById("button-question-1").style.borderLeft = "2px solid #FF9F1C";
 }
 
 function question2() {
     hideAllQuestion();
     document.getElementById("question2").style.display = '';
     document.getElementById("button-question-2").style.background = "#ffffff";
+    document.getElementById("button-question-2").style.borderLeft = "2px solid #FF9F1C";
 }
 
 function question3() {
     hideAllQuestion();
     document.getElementById("question3").style.display = '';
     document.getElementById("button-question-3").style.background = "#ffffff";
+    document.getElementById("button-question-3").style.borderLeft = "2px solid #FF9F1C";
 }
 
 function question4() {
     hideAllQuestion();
     document.getElementById("question4").style.display = '';
     document.getElementById("button-question-4").style.background = "#ffffff";
+    document.getElementById("button-question-4").style.borderLeft = "2px solid #FF9F1C";
 }
 
+// function to submit question of interviewPage
 function nextQuestion(questionID) {
 
     // questionID: 1 => nextQuestion from question1
@@ -60,8 +71,6 @@ function nextQuestion(questionID) {
     // questionID: 4 => nextQuestion from question3
     // questionID: 5 => previousQuestion from question3
     // questionID: 6 => previousQuestion from question4
-
-    // <span style = "color: #FF9F1C" > ✔ < /span>
 
     if (questionID == 1) {
         var answer1 = document.getElementById("questionText1").value
@@ -119,7 +128,7 @@ function nextQuestion(questionID) {
     }
 }
 
-
+// function to jump questions of interviewPage
 function jump(questionID) {
     var questions;
     if (JSON.parse(sessionStorage.getItem("questions"))) {

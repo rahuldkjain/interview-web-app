@@ -6,6 +6,15 @@
     display: flex;
 }
 
+table {
+    width: 100%;
+}
+
+td {
+    padding: 20px;
+    text-align: left;
+}
+
 .sidenav {
     width: 180px;
     position: relative;
@@ -28,18 +37,11 @@
     font-size: 14px;
     color: #000000;
     display: block;
+    border-bottom: 0.5px solid #b3b3b3;
 }
 
 .sidenav a:hover {
     color: #FF9F1C;
-}
-
-.main {
-    margin-left: 300px;
-    /* Same width as the sidebar + left position in px */
-    font-size: 20px;
-    /* Increased text to enable scrolling */
-    padding: 0px 10px;
 }
 
 .rightBlock {
@@ -80,13 +82,4 @@
     overflow-y: auto;
     /* adds scroll to this container */
     /* width: 20%; */
-}
-
-table {
-    width: 100%;
-}
-
-td {
-    padding: 20px;
-    text-align: left;
 }

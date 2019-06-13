@@ -8,17 +8,11 @@ input {
     font-size: 16px;
 }
 
-
-/* input[type="radio" i]:before {
-    background-color: #FF9F1C !important;
-    border: 1px solid #FF9F1C;
-    color: #FF9F1C;
-} */
-
 textarea {
     border: 1px solid gray;
     border-radius: 2px;
     font-size: 16px;
+    width: 350px;
 }
 
 .button {
@@ -61,7 +55,7 @@ textarea {
 .interview__container_header {
     display: flex;
     align-items: center;
-    padding: 0px 200px;
+    padding: 0px 120px;
 }
 
 .interview__container_header hr {
@@ -88,6 +82,8 @@ textarea {
     text-align: end;
     margin-right: 10px;
     font-size: 20px;
+    color: gray;
+    font-style: italic;
 }
 
 .input {
@@ -95,3 +91,10 @@ textarea {
     align-self: flex-start;
     margin-left: 10px;
 }
+
+
+/* input[type="radio" i]:before {
+    background-color: #FF9F1C !important;
+    border: 1px solid #FF9F1C;
+    color: #FF9F1C;
+} */

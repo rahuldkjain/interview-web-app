@@ -1,5 +1,9 @@
-hideAllExpertise()
+// Global Variables
 var stream = "";
+
+//onload functionCall
+hideAllExpertise()
+
 
 function hideAllExpertise() {
     document.getElementById("computerScience").style.display = 'none';
@@ -20,6 +24,16 @@ function hideAllExpertise() {
     document.getElementById("button-social-science").style.background = "#eee";
     document.getElementById("standardizedTests").style.display = 'none';
     document.getElementById("button-standardized-tests").style.background = "#eee";
+
+    document.getElementById("button-computer-science").style.borderLeft = "0px solid #FF9F1C";
+    document.getElementById("button-computer-software").style.borderLeft = "0px solid #FF9F1C";
+    document.getElementById("button-engineering").style.borderLeft = "0px solid #FF9F1C";
+    document.getElementById("button-humanities").style.borderLeft = "0px solid #FF9F1C";
+    document.getElementById("button-math").style.borderLeft = "0px solid #FF9F1C";
+    document.getElementById("button-history").style.borderLeft = "0px solid #FF9F1C";
+    document.getElementById("button-social-science").style.borderLeft = "0px solid #FF9F1C";
+    document.getElementById("button-science").style.borderLeft = "0px solid #FF9F1C";
+    document.getElementById("button-standardized-tests").style.borderLeft = "0px solid #FF9F1C";
 }
 
 function computerScienceExpertise() {
@@ -31,10 +45,7 @@ function computerScienceExpertise() {
     stream = "computer-science";
     document.getElementById("computerScience").style.display = '';
     document.getElementById("button-computer-science").style.background = "#ffffff";
-    // document.getElementById("button-computer-science").style.borderLeftColor = "#FF9F1C";
-    // document.getElementById("button-computer-science").style.border = "1px";
-
-
+    document.getElementById("button-computer-science").style.borderLeft = "2px solid #FF9F1C";
 }
 
 function computerSoftwareExpertise() {
@@ -42,6 +53,7 @@ function computerSoftwareExpertise() {
     stream = "computer-software";
     document.getElementById("computerSoftware").style.display = '';
     document.getElementById("button-computer-software").style.background = "#ffffff";
+    document.getElementById("button-computer-software").style.borderLeft = "2px solid #FF9F1C";
 }
 
 function engineeringExpertise() {
@@ -49,6 +61,7 @@ function engineeringExpertise() {
     stream = "engineering";
     document.getElementById("engineering").style.display = '';
     document.getElementById("button-engineering").style.background = "#ffffff";
+    document.getElementById("button-engineering").style.borderLeft = "2px solid #FF9F1C";
 }
 
 function historyExpertise() {
@@ -56,6 +69,7 @@ function historyExpertise() {
     stream = "history";
     document.getElementById("history").style.display = '';
     document.getElementById("button-history").style.background = "#ffffff";
+    document.getElementById("button-history").style.borderLeft = "2px solid #FF9F1C";
 }
 
 function humanitiesExpertise() {
@@ -63,6 +77,7 @@ function humanitiesExpertise() {
     stream = "humanities"
     document.getElementById("humanities").style.display = '';
     document.getElementById("button-humanities").style.background = "#ffffff";
+    document.getElementById("button-humanities").style.borderLeft = "2px solid #FF9F1C";
 }
 
 function mathExpertise() {
@@ -70,6 +85,7 @@ function mathExpertise() {
     stream = "math";
     document.getElementById("math").style.display = '';
     document.getElementById("button-math").style.background = "#ffffff";
+    document.getElementById("button-math").style.borderLeft = "2px solid #FF9F1C";
 }
 
 function scienceExpertise() {
@@ -77,6 +93,7 @@ function scienceExpertise() {
     stream = "science";
     document.getElementById("science").style.display = '';
     document.getElementById("button-science").style.background = "#ffffff";
+    document.getElementById("button-science").style.borderLeft = "2px solid #FF9F1C";
 }
 
 function socialScienceExpertise() {
@@ -84,6 +101,7 @@ function socialScienceExpertise() {
     stream = "social-science";
     document.getElementById("socialScience").style.display = '';
     document.getElementById("button-social-science").style.background = "#ffffff";
+    document.getElementById("button-social-science").style.borderLeft = "2px solid #FF9F1C";
 }
 
 function standardizedTestsExpertise() {
@@ -91,4 +109,5 @@ function standardizedTestsExpertise() {
     stream = "standardized-tests";
     document.getElementById("standardizedTests").style.display = '';
     document.getElementById("button-standardized-tests").style.background = "#ffffff";
+    document.getElementById("button-standardized-tests").style.borderLeft = "2px solid #FF9F1C";
 }

@@ -1,3 +1,8 @@
+// Global Variables
+var workHistoryCount = 1
+var schoolCount = 1
+
+// to reset round buttons of header
 function resetButtons() {
     for (var index = 1; index <= sessionStorage.length; index++) {
         document.getElementById("button-" + index).style.backgroundColor = "white";
@@ -13,6 +18,7 @@ function resetButtons() {
     }
 }
 
+// display personalInfoPage
 function personalInfoPage() {
     document.getElementById("profile").style.display = 'none';
     document.getElementById("expertise").style.display = 'none';
@@ -31,6 +37,7 @@ function personalInfoPage() {
     document.getElementById("button-1").style.border = "1px solid #FF9F1C";
 }
 
+//display profilePage
 function profilePage() {
     document.getElementById("personalInfo").style.display = 'none';
     document.getElementById("expertise").style.display = 'none';
@@ -49,6 +56,7 @@ function profilePage() {
     document.getElementById("button-2").style.border = "1px solid #FF9F1C";
 }
 
+//display expertisePage
 function expertisePage() {
     document.getElementById("personalInfo").style.display = 'none';
     document.getElementById("profile").style.display = 'none';
@@ -67,6 +75,7 @@ function expertisePage() {
     document.getElementById("button-3").style.border = "1px solid #FF9F1C";
 }
 
+//display interviewPage
 function interviewPage() {
     document.getElementById("personalInfo").style.display = 'none';
 
@@ -87,6 +96,7 @@ function interviewPage() {
 
 }
 
+// display thankYouPage
 function thankYouPage() {
     document.getElementById("personalInfo").style.display = 'none';
     document.getElementById("profile").style.display = 'none';
@@ -97,13 +107,14 @@ function thankYouPage() {
     document.getElementById("interview__container_header-profile").style.color = "gray"
     document.getElementById("interview__container_header-expertise").style.color = "gray"
     document.getElementById("interview__container_header-interview").style.color = "gray"
+
     resetButtons();
+    console.log(sessionStorage)
     sessionStorage.clear()
 }
 
 
-var workHistoryCount = 1
-
+// add another job in html
 function addWorkHistory() {
     workHistoryCount += 1
     var company = document.createElement("INPUT");
@@ -180,8 +191,8 @@ function addWorkHistory() {
     workHistoryDiv.appendChild(addWorkLink)
 }
 
-var schoolCount = 1
 
+// add another school in html
 function addNewSchool() {
     schoolCount += 1
     var school = document.createElement("INPUT");
@@ -245,8 +256,6 @@ function addNewSchool() {
     educationDiv.appendChild(enrolled)
     educationDiv.appendChild(graduated)
 
-
-
     var oldLink = document.getElementById("addSchoolLink");
     oldLink.parentNode.removeChild(oldLink);
 
@@ -260,10 +269,9 @@ function addNewSchool() {
     educationDiv.appendChild(addSchoolLink)
 }
 
+
+// at the time of page reload
 if (sessionStorage.length == 0) {
-    // document.getElementById("button-1").style.backgroundColor = "#FF9F1C";
-    // document.getElementById("button-1").style.color = "#ffffff";
-    // document.getElementById("button-1").style.border = "1px solid #FF9F1C";
     document.getElementById("interview__container_header-personalInfo").style.color = ""
     personalInfoPage();
 } else if (sessionStorage.length == 1) {
@@ -282,6 +290,7 @@ if (sessionStorage.length == 0) {
 }
 
 
+
 // buttonID: 1 => submitPersonalInfo
 // buttonID: 2 => submitProfile
 // buttonID: 3 => goBackToPersonalInfo
@@ -289,8 +298,6 @@ if (sessionStorage.length == 0) {
 // buttonID: 5 => goBackToProfile
 // buttonID: 6 => submitInterview
 // buttonID: 7 => goBackToExpertise
-
-
 function goTo(buttonID) {
 
     // nextPage from Personal Info
@@ -350,6 +357,7 @@ function goTo(buttonID) {
 
 
     } else if (buttonID == 2) {
+        //nextPage from profilePage
         if (sessionStorage.length == 2) {
             expertisePage();
         } else if (sessionStorage.length > 2) {
@@ -365,6 +373,16 @@ function goTo(buttonID) {
             var enrolled = document.getElementById("enrolled-1").value
             var graduated = document.getElementById("graduated-1").value
 
+            if (activeFrom == "" || activeTo == "") {
+                alert("Please set the work history dates!")
+                return false;
+            }
+
+            if (enrolled == "" || graduated == "") {
+                alert("Please set the dates education dates!")
+                return false;
+            }
+
             var data = {
                 aboutYou: aboutYou,
                 teachingExperience: teachingExperience,
@@ -376,6 +394,10 @@ function goTo(buttonID) {
                 company = document.getElementById("company-" + index).value
                 activeFrom = document.getElementById("activeFrom-" + index).value
                 activeTo = document.getElementById("activeTo-" + index).value
+                if (activeFrom == "" || activeTo == "") {
+                    alert("Please set the work history dates!")
+                    return false;
+                }
                 data.workHistory.push({ company: company, activeFrom: activeFrom, activeTo: activeTo })
             }
 
@@ -383,10 +405,14 @@ function goTo(buttonID) {
                 school = document.getElementById("school-" + index).value
                 enrolled = document.getElementById("enrolled-" + index).value
                 graduated = document.getElementById("graduated-" + index).value
+                if (enrolled == "" || graduated == "") {
+                    alert("Please set the dates education dates!")
+                    return false;
+                }
                 data.education.push({ school: school, enrolled: enrolled, graduated: graduated })
             }
-            validated = validateProfile(data)
 
+            validated = validateProfile(data)
             if (validated) {
                 sessionStorage.setItem("profile", JSON.stringify(data))
                 console.log(JSON.parse(sessionStorage.getItem("profile")))
@@ -395,6 +421,7 @@ function goTo(buttonID) {
             }
         }
     } else if (buttonID == 3) {
+        //backPage from profile
         document.getElementById("name").value = JSON.parse(sessionStorage.getItem("personalInfo")).name
         document.getElementById("email").value = JSON.parse(sessionStorage.getItem("personalInfo")).email
         document.querySelector('input[name="whatAreYou"]:checked').value = JSON.parse(sessionStorage.getItem("personalInfo")).whatAreYou
@@ -406,6 +433,7 @@ function goTo(buttonID) {
 
         personalInfoPage();
     } else if (buttonID == 4) {
+        // nextPage from expertise
         if (sessionStorage.length == 3) {
             interviewPage();
         } else {
@@ -432,6 +460,7 @@ function goTo(buttonID) {
             }
         }
     } else if (buttonID == 5) {
+        //backPage from expertise
         document.getElementById("aboutYou").value = JSON.parse(sessionStorage.getItem("profile")).aboutYou
         document.getElementById("teachingExperience").value = JSON.parse(sessionStorage.getItem("profile")).teachingExperience
 
@@ -456,6 +485,7 @@ function goTo(buttonID) {
         profilePage();
 
     } else if (buttonID == 6) {
+        //submit interview
         if (JSON.parse(sessionStorage.getItem("questions")).length == 3) {
             var answer4 = document.getElementById("questionText4").value
             if (answer4 == "") {
@@ -472,6 +502,7 @@ function goTo(buttonID) {
         }
 
     } else if (buttonID == 7) {
+        //back to expertisePage
         var name = JSON.parse(sessionStorage.getItem("expertise")).stream + "-expertise";
         var expertises = JSON.parse(sessionStorage.getItem("expertise")).expertise
         expertises.forEach(expertise => {
@@ -524,11 +555,11 @@ function goTo(buttonID) {
     return false
 }
 
+
 // pageID: 1 => personalInfo
 // pageID: 2 => profile
 // pageID: 3 => expertise
 // pageID: 4 => interview
-
 function jumpPage(pageID) {
     if (pageID == 1) {
         if (sessionStorage.length == 0) {
