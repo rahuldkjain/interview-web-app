@@ -36,13 +36,13 @@
             <button class="button" onclick="jumpPage(4)" id="button-4">4</button>
         </div>
         <div class="interview__container_header">
-            <p id="interview__container_header-personalInfo">PERSONAL INFO</p>
+            <span id="interview__container_header-personalInfo">PERSONAL INFO</span>
             <hr width="0px" style="border: 0px;">
-            <p id="interview__container_header-profile">PROFILE</p>
+            <span id="interview__container_header-profile">PROFILE</span>
             <hr width="0px" style="border: 0px;">
-            <p id="interview__container_header-expertise">EXPERTISE</p>
+            <span id="interview__container_header-expertise">EXPERTISE</span>
             <hr width="0px" style="border: 0px;">
-            <p id="interview__container_header-interview">INTERVIEW</p>
+            <span id="interview__container_header-interview">INTERVIEW</span>
         </div>
 
 
@@ -148,7 +148,7 @@
             </div>
 
             <div>
-                <input type="submit" class="nextButton" id="nextPage" onclick="goTo(1)" style="background-color: #FF9F1C; color: white" value="next &#8594;">
+                <input type="submit" class="nextButton" id="nextPage" onclick="goTo(1)" style="background-color: #FF9F1C; color: white" value="Next &#8594;">
             </div>
 
         </div>
@@ -180,6 +180,7 @@
                 </div>
                 <div class="input" id="workHistory">
                     <input type="text" name="workHistory" id="company-1" placeholder="Company">
+                    <br>
                     <span>
                             <select name="activeFrom-1" id="activeFrom-1">
                                 <option value="">Active From</option>
@@ -207,6 +208,7 @@
                 </div>
                 <div class="input" id="education">
                     <input type="text" name="school" id="school-1" placeholder="School">
+                    <br>
                     <span>
                         <select name="enrolled-1" id="enrolled-1">
                                     <option value="">Enrolled</option>
@@ -229,8 +231,8 @@
             </div>
 
             <span>
-                <input type="submit" id="goToPersonalInfo" class="backButton" onclick="goTo(3)" style="background-color: #FF9F1C; color: white" value="&#8592; back">
-                <input type="submit" id="submitProfile" class="nextButton" onclick="goTo(2)" style="background-color: #FF9F1C; color: white" value="next &#8594; ">
+                <input type="submit" id="goToPersonalInfo" class="backButton" onclick="goTo(3)" style="background-color: #FF9F1C; color: white" value="&#8592; Back">
+                <input type="submit" id="submitProfile" class="nextButton" onclick="goTo(2)" style="background-color: #FF9F1C; color: white" value="Next &#8594;">
             </span>
 
         </div>
@@ -278,7 +280,7 @@
                         </table>
                         <br>
                         <!-- <div>
-                                <input type="submit" class="backButton" style="margin-left: 0px;" id="goToProfile" onclick="goTo(5)" value="&#8592; back">
+                                <input type="submit" class="backButton" style="margin-left: 0px;" id="goToProfile" onclick="goTo(5)" value="&#8592; Back">
                                 <input type="submit" class="nextButton" style="margin-right: 0px;" id="submitExpertise" onclick="goTo(4)" value="next &#8594;">
                             </div> -->
                     </div>
@@ -296,8 +298,8 @@
                         </table>
                         <br>
                         <!-- <div>
-                                <input type="submit" class="backButton" style="margin-left: 0px;" id="goToProfile" onclick="goTo(5)" style="background-color: #FF9F1C; color: white" value="&#8592; back">
-                                <input type="submit" class="nextButton" style="margin-right: 0px;" id="submitExpertise" onclick="goTo(4)" style="background-color: #FF9F1C; color: white" value="next &#8594; ">
+                                <input type="submit" class="backButton" style="margin-left: 0px;" id="goToProfile" onclick="goTo(5)" style="background-color: #FF9F1C; color: white" value="&#8592; Back">
+                                <input type="submit" class="nextButton" style="margin-right: 0px;" id="submitExpertise" onclick="goTo(4)" style="background-color: #FF9F1C; color: white" value="Next &#8594;">
                             </div> -->
                     </div>
                     <div id="engineering">
@@ -315,8 +317,8 @@
                         </table>
 
                         <!-- <div>
-                                <input type="submit" class="backButton" style="margin-left: 0px;" id="goToProfile" onclick="goTo(5)" style="background-color: #FF9F1C; color: white" value="&#8592; back">
-                                <input type="submit" class="nextButton" style="margin-right: 0px;" id="submitExpertise" onclick="goTo(4)" style="background-color: #FF9F1C; color: white" value="next &#8594; ">
+                                <input type="submit" class="backButton" style="margin-left: 0px;" id="goToProfile" onclick="goTo(5)" style="background-color: #FF9F1C; color: white" value="&#8592; Back">
+                                <input type="submit" class="nextButton" style="margin-right: 0px;" id="submitExpertise" onclick="goTo(4)" style="background-color: #FF9F1C; color: white" value="Next &#8594;">
                             </div> -->
                     </div>
                     <div id="history">
@@ -334,8 +336,8 @@
                         </table>
 
                         <!-- <div>
-                                <input type="submit" class="backButton" style="margin-left: 0px;" id="goToProfile" onclick="goTo(5)" style="background-color: #FF9F1C; color: white" value="&#8592; back">
-                                <input type="submit" class="nextButton" style="margin-right: 0px;" id="submitExpertise" onclick="goTo(4)" style="background-color: #FF9F1C; color: white" value="next &#8594; ">
+                                <input type="submit" class="backButton" style="margin-left: 0px;" id="goToProfile" onclick="goTo(5)" style="background-color: #FF9F1C; color: white" value="&#8592; Back">
+                                <input type="submit" class="nextButton" style="margin-right: 0px;" id="submitExpertise" onclick="goTo(4)" style="background-color: #FF9F1C; color: white" value="Next &#8594;">
                             </div> -->
                     </div>
                     <div id="humanities">
@@ -353,8 +355,8 @@
                         </table>
 
                         <!-- <div>
-                                <input type="submit" class="backButton" style="margin-left: 0px;" id="goToProfile" onclick="goTo(5)" style="background-color: #FF9F1C; color: white" value="&#8592; back">
-                                <input type="submit" class="nextButton" style="margin-right: 0px;" id="submitExpertise" onclick="goTo(4)" style="background-color: #FF9F1C; color: white" value="next &#8594; ">
+                                <input type="submit" class="backButton" style="margin-left: 0px;" id="goToProfile" onclick="goTo(5)" style="background-color: #FF9F1C; color: white" value="&#8592; Back">
+                                <input type="submit" class="nextButton" style="margin-right: 0px;" id="submitExpertise" onclick="goTo(4)" style="background-color: #FF9F1C; color: white" value="Next &#8594;">
                             </div> -->
                     </div>
                     <div id="math">
@@ -372,8 +374,8 @@
                         </table>
 
                         <!-- <div>
-                                <input type="submit" class="backButton" style="margin-left: 0px;" id="goToProfile" onclick="goTo(5)" style="background-color: #FF9F1C; color: white" value="&#8592; back">
-                                <input type="submit" class="nextButton" style="margin-right: 0px;" id="submitExpertise" onclick="goTo(4)" style="background-color: #FF9F1C; color: white" value="next &#8594; ">
+                                <input type="submit" class="backButton" style="margin-left: 0px;" id="goToProfile" onclick="goTo(5)" style="background-color: #FF9F1C; color: white" value="&#8592; Back">
+                                <input type="submit" class="nextButton" style="margin-right: 0px;" id="submitExpertise" onclick="goTo(4)" style="background-color: #FF9F1C; color: white" value="Next &#8594;">
                             </div> -->
                     </div>
                     <div id="science">
@@ -391,8 +393,8 @@
                         </table>
 
                         <!-- <div>
-                                <input type="submit" class="backButton" style="margin-left: 0px;" id="goToProfile" onclick="goTo(5)" style="background-color: #FF9F1C; color: white" value="&#8592; back">
-                                <input type="submit" class="nextButton" style="margin-right: 0px;" id="submitExpertise" onclick="goTo(4)" style="background-color: #FF9F1C; color: white" value="next &#8594; ">
+                                <input type="submit" class="backButton" style="margin-left: 0px;" id="goToProfile" onclick="goTo(5)" style="background-color: #FF9F1C; color: white" value="&#8592; Back">
+                                <input type="submit" class="nextButton" style="margin-right: 0px;" id="submitExpertise" onclick="goTo(4)" style="background-color: #FF9F1C; color: white" value="Next &#8594;">
                             </div> -->
                     </div>
                     <div id="socialScience">
@@ -410,8 +412,8 @@
                         </table>
 
                         <!-- <div>
-                                <input type="submit" class="backButton" style="margin-left: 0px;" id="goToProfile" onclick="goTo(5)" style="background-color: #FF9F1C; color: white" value="&#8592; back">
-                                <input type="submit" class="nextButton" style="margin-right: 0px;" id="submitExpertise" onclick="goTo(4)" style="background-color: #FF9F1C; color: white" value="next &#8594; ">
+                                <input type="submit" class="backButton" style="margin-left: 0px;" id="goToProfile" onclick="goTo(5)" style="background-color: #FF9F1C; color: white" value="&#8592; Back">
+                                <input type="submit" class="nextButton" style="margin-right: 0px;" id="submitExpertise" onclick="goTo(4)" style="background-color: #FF9F1C; color: white" value="Next &#8594;">
                             </div> -->
                     </div>
                     <div id="standardizedTests">
@@ -433,8 +435,8 @@
                 </div>
             </div>
             <div>
-                <input type="submit" class="backButton" style="margin-left: 280px;" id="goToProfile" onclick="goTo(5)" style="background-color: #FF9F1C; color: white" value="&#8592; back">
-                <input type="submit" class="nextButton" id="submitExpertise" onclick="goTo(4)" style="background-color: #FF9F1C; color: white" value="next &#8594; ">
+                <input type="submit" class="backButton" style="margin-left: 280px;" id="goToProfile" onclick="goTo(5)" style="background-color: #FF9F1C; color: white" value="&#8592; Back">
+                <input type="submit" class="nextButton" id="submitExpertise" onclick="goTo(4)" style="background-color: #FF9F1C; color: white" value="Next &#8594;">
             </div>
         </div>
 
@@ -452,52 +454,52 @@
             </div>
             <div class="rightBlock" id="right">
                 <div id="question1">
-                    <p style="padding: 0px"><i>Where does it come from?</i></p>
+                    <p style="padding: 0px; color: #65676b; "><i>Describe how you handle disagreement.</i></p>
                     <textarea name="question1" id="questionText1" cols="70" rows="3" placeholder="Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum provident vitae suscipit tenetur officia impedit praesentium accusamus aperiam. Culpa dolor non libero sequi dolore ullam quas magni iusto cum a?"></textarea>
                     <br>
-                    <a href="javascript: nextQuestion(1);" style="color: #FF9F1C">next question</a>
+                    <a href="javascript: nextQuestion(1);" style="color: #FF9F1C; float: right;">next question</a>
                     <br>
                     <br>
                     <span>
-                            <input type="submit" class="backButton" style="margin-left: 0px;" id="goToExpertise" onclick="goTo(7)" style="background-color: #FF9F1C; color: white" value="&#8592; back">
+                            <input type="submit" class="backButton" style="margin-left: 0px;" id="goToExpertise" onclick="goTo(7)" style="background-color: #FF9F1C; color: white" value="&#8592; Back">
                             <input type="submit" class="nextButton" style="margin-right: 0px; background-color: #3bff2d; color: white" id="button" onclick="goTo(6)"value="next &#8594;" disabled>
                     </span>
                 </div>
                 <div id="question2">
-                    <p style="padding: 0px"><i>Where does it come from?</i></p>
+                    <p style="padding: 0px; color: #65676b;"><i>Describe a time when you made a mistake.</i></p>
                     <textarea name="question1" id="questionText2" cols="70" rows="3" placeholder="Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum provident vitae suscipit tenetur officia impedit praesentium accusamus aperiam. Culpa dolor non libero sequi dolore ullam quas magni iusto cum a?"></textarea>
                     <br>
-                    <a href="javascript: nextQuestion(3);" style="color: #FF9F1C">previous question</a>
-                    <a href="javascript: nextQuestion(2);" style="color: #FF9F1C">next question</a>
+                    <a href="javascript: nextQuestion(3);" style="color: #FF9F1C; float: left;">previous question</a>
+                    <a href="javascript: nextQuestion(2);" style="color: #FF9F1C; float: right;">next question</a>
                     <br>
                     <br>
                     <span>
-                            <input type="button" class="backButton" style="margin-left: 0px;" id="goToExpertise" onclick="goTo(7)" style="background-color: #FF9F1C; color: white" value="&#8592; back">
+                            <input type="button" class="backButton" style="margin-left: 0px;" id="goToExpertise" onclick="goTo(7)" style="background-color: #FF9F1C; color: white" value="&#8592; Back">
                             <input type="button" class="nextButton" style="margin-right: 0px; background-color: #3bff2d; color: white" id="submitInterview" onclick="goTo(6)" value="next &#8594;" disabled>
                     </span>
                 </div>
                 <div id="question3">
-                    <p style="padding: 0px"><i>Where does it come from?</i></p>
+                    <p style="padding: 0px; color: #65676b;"><i>Describe a time when you delegated tasks to team-mates.</i></p>
                     <textarea name="question1" id="questionText3" cols="70" rows="3" placeholder="Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum provident vitae suscipit tenetur officia impedit praesentium accusamus aperiam. Culpa dolor non libero sequi dolore ullam quas magni iusto cum a?"></textarea>
                     <br>
-                    <a href="javascript: nextQuestion(5);" style="color: #FF9F1C">previous question</a>
-                    <a href="javascript: nextQuestion(4);" style="color: #FF9F1C">next question</a>
+                    <a href="javascript: nextQuestion(5);" style="color: #FF9F1C; float: left;">previous question</a>
+                    <a href="javascript: nextQuestion(4);" style="color: #FF9F1C; float: right;">next question</a>
                     <br>
                     <br>
                     <span>
-                            <input type="button" class="backButton" style="margin-left: 0px;" id="goToExpertise" onclick="goTo(7)" style="background-color: #FF9F1C; color: white" value="&#8592; back">
+                            <input type="button" class="backButton" style="margin-left: 0px;" id="goToExpertise" onclick="goTo(7)" style="background-color: #FF9F1C; color: white" value="&#8592; Back">
                             <input type="button" class="nextButton" style="margin-right: 0px; background-color: #3bff2d; color: white" id="submitInterview" onclick="goTo(6)" value="next &#8594;" disabled>
                     </span>
                 </div>
                 <div id="question4">
-                    <p style="padding: 0px"><i>Where does it come from?</i></p>
+                    <p style="padding: 0px; color: #65676b;"><i>Describe when you were blamed for somebody else’s mistake.</i></p>
                     <textarea name="question1" id="questionText4" cols="70" rows="3" placeholder="Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum provident vitae suscipit tenetur officia impedit praesentium accusamus aperiam. Culpa dolor non libero sequi dolore ullam quas magni iusto cum a?"></textarea>
                     <br>
+                    <a href="javascript: nextQuestion(6);" style="color: #FF9F1C; float: left;">previous question</a>
                     <br>
-                    <a href="javascript: nextQuestion(6);" style="color: #FF9F1C">previous question</a>
                     <br>
                     <span>
-                            <input type="button" class="backButton" style="margin-left: 0px;" id="goToExpertise" onclick="goTo(7)" style="background-color: #FF9F1C; color: white" value="&#8592; back">
+                            <input type="button" class="backButton" style="margin-left: 0px;" id="goToExpertise" onclick="goTo(7)" style="background-color: #FF9F1C; color: white" value="&#8592; Back">
                             <input type="button" class="nextButton" style="margin-right: 0px;" id="submitInterview" onclick="goTo(6)" style="background-color: green; color: white" value="next &#8594;">
                     </span>
                 </div>

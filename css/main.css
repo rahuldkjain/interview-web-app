@@ -1,7 +1,24 @@
-.body {
+body {
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-weight: 400;
-    margin: 200px;
+    margin: 0px 50px;
+}
+
+input {
+    font-size: 16px;
+}
+
+
+/* input[type="radio" i]:before {
+    background-color: #FF9F1C !important;
+    border: 1px solid #FF9F1C;
+    color: #FF9F1C;
+} */
+
+textarea {
+    border: 1px solid gray;
+    border-radius: 2px;
+    font-size: 16px;
 }
 
 .button {
@@ -24,10 +41,21 @@
     background-color: #FF9F1C;
     padding: 15px;
     text-align: center;
-    border-radius: 20px;
+    border-radius: 30px;
     font-size: 20px;
     float: right;
     margin-right: 200px;
+}
+
+.backButton {
+    color: white;
+    background-color: #FF9F1C;
+    padding: 15px;
+    text-align: center;
+    border-radius: 30px;
+    font-size: 20px;
+    float: left;
+    margin-left: 200px;
 }
 
 .interview__container_header {
@@ -43,6 +71,10 @@
 
 .interview__container_personalInfo {
     font-size: 18px;
+}
+
+.interview__container_header {
+    font-size: 12px;
 }
 
 .inputField {
@@ -62,15 +94,4 @@
     flex-basis: 50%;
     align-self: flex-start;
     margin-left: 10px;
-}
-
-.backButton {
-    color: white;
-    background-color: #FF9F1C;
-    padding: 15px;
-    text-align: center;
-    border-radius: 20px;
-    font-size: 20px;
-    float: left;
-    margin-left: 200px;
 }

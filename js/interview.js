@@ -74,7 +74,7 @@ function nextQuestion(questionID) {
             var data = [{ question: answer1 }]
             sessionStorage.setItem("questions", JSON.stringify(data))
             document.getElementById("button-question-1").innerHTML += '<span style = "color: #FF9F1C"> ✔ </span>';
-            alert("Question 1 response submitted")
+            alert("✔ Question 1 response submitted")
             question2();
         }
     } else if (questionID == 2) {
@@ -89,7 +89,7 @@ function nextQuestion(questionID) {
             data.push({ question: answer2 })
             sessionStorage.setItem("questions", JSON.stringify(data))
             document.getElementById("button-question-2").innerHTML += '<span style = "color: #FF9F1C"> ✔ </span>';
-            alert("Question 2 response submitted")
+            alert("✔ Question 2 response submitted")
             question3();
         }
     } else if (questionID == 3) {
@@ -107,7 +107,7 @@ function nextQuestion(questionID) {
             data.push({ question: answer3 })
             sessionStorage.setItem("questions", JSON.stringify(data))
             document.getElementById("button-question-3").innerHTML += '<span style = "color: #FF9F1C"> ✔ </span>';
-            alert("Question 3 response submitted")
+            alert("✔ Question 3 response submitted")
             question4();
         }
     } else if (questionID == 5) {

@@ -159,21 +159,24 @@ function addWorkHistory() {
     option.text = 2016
     activeTo.add(option)
 
+    var br = document.createElement("br")
+
     var workHistoryDiv = document.getElementById("workHistory")
     workHistoryDiv.appendChild(company)
+    workHistoryDiv.appendChild(br)
     workHistoryDiv.appendChild(activeFrom)
     workHistoryDiv.appendChild(activeTo)
 
     var oldLink = document.getElementById("addWorkLink");
     oldLink.parentNode.removeChild(oldLink);
 
-    var br = document.createElement("br")
+    var br1 = document.createElement("br")
     var addWorkLink = document.createElement("a")
     addWorkLink.setAttribute("id", "addWorkLink")
     addWorkLink.setAttribute("href", "javascript: addWorkHistory();")
     addWorkLink.text = "+ Add work"
 
-    workHistoryDiv.appendChild(br)
+    workHistoryDiv.appendChild(br1)
     workHistoryDiv.appendChild(addWorkLink)
 }
 
@@ -234,21 +237,26 @@ function addNewSchool() {
     option.text = 2016
     graduated.add(option)
 
+    var br = document.createElement("br")
+
     var educationDiv = document.getElementById("education")
     educationDiv.appendChild(school)
+    educationDiv.appendChild(br);
     educationDiv.appendChild(enrolled)
     educationDiv.appendChild(graduated)
+
+
 
     var oldLink = document.getElementById("addSchoolLink");
     oldLink.parentNode.removeChild(oldLink);
 
-    var br = document.createElement("br")
+    var br1 = document.createElement("br")
     var addSchoolLink = document.createElement("a")
     addSchoolLink.setAttribute("id", "addSchoolLink")
     addSchoolLink.setAttribute("href", "javascript: addNewSchool();")
     addSchoolLink.text = "+ Add school"
 
-    educationDiv.appendChild(br)
+    educationDiv.appendChild(br1)
     educationDiv.appendChild(addSchoolLink)
 }
 
@@ -383,7 +391,7 @@ function goTo(buttonID) {
                 sessionStorage.setItem("profile", JSON.stringify(data))
                 console.log(JSON.parse(sessionStorage.getItem("profile")))
                 expertisePage();
-                alert("profile inserted successfully")
+                alert("✔✔ Profile recorded successfully")
             }
         }
     } else if (buttonID == 3) {
@@ -420,7 +428,7 @@ function goTo(buttonID) {
                 }
                 sessionStorage.setItem("expertise", JSON.stringify(data))
                 interviewPage();
-                alert("Expertise added successfully");
+                alert("✔✔ Expertise added successfully");
             }
         }
     } else if (buttonID == 5) {
@@ -457,8 +465,8 @@ function goTo(buttonID) {
                 data.push({ question4: answer4 })
                 sessionStorage.setItem("questions", JSON.stringify(data))
                 document.getElementById("button-question-4").innerHTML += '<span style = "color: #FF9F1C"> ✔ </span>';
-                alert("Question 4 response submitted")
-                alert("Interview Ended! Thank You for participating")
+                alert("✔ Question 4 response submitted")
+                alert("✔✔ Interview Ended! Thank You for participating")
                 thankYouPage();
             }
         }
