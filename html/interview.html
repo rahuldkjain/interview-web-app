@@ -167,6 +167,8 @@
                 </div>
                 <div class="input">
                     <textarea name="aboutYou" id="aboutYou" cols="50" rows="3" placeholder="Write a short bio"></textarea>
+                    <br>
+                    <span id="aboutYouError" style="color: red; font-size: 12px"></span>
                 </div>
             </div>
 
@@ -176,6 +178,8 @@
                 </div>
                 <div class="input">
                     <textarea name="teachingExperience" id="teachingExperience" cols="50" rows="3" placeholder="Tell us about your teaching experience"></textarea>
+                    <br>
+                    <span id="teachingExperienceError" style="color: red; font-size: 12px"></span>
                 </div>
             </div>
 
@@ -185,6 +189,8 @@
                 </div>
                 <div class="input" id="workHistory">
                     <input type="text" name="workHistory" id="company-1" placeholder="Company">
+                    <span id="company-1Error" style="color: red; font-size: 12px"></span>
+                    <br>
                     <br>
                     <span>
                             <select name="activeFrom-1" id="activeFrom-1">
@@ -203,6 +209,7 @@
                             </select>
                     </span>
                     <br>
+                    <br>
                     <a id="addWorkLink" href="javascript: addWorkHistory();">+ Add work</a>
                 </div>
             </div>
@@ -213,10 +220,13 @@
                 </div>
                 <div class="input" id="education">
                     <input type="text" name="school" id="school-1" placeholder="School">
+                    <span id="school-1Error" style="color: red; font-size: 12px"></span>
+                    <br>
                     <br>
                     <span>
                         <select name="enrolled-1" id="enrolled-1">
                                     <option value="">Enrolled</option>
+                                    <option value="2020">2020</option>
                                     <option value="2019">2019</option>
                                     <option value="2018">2018</option>
                                     <option value="2017">2017</option>
@@ -224,12 +234,14 @@
                         </select>
                         <select name="graduated-1" id="graduated-1">
                                     <option value="">Graduated</option>
+                                    <option value="2020">2020</option>
                                     <option value="2019">2019</option>
                                     <option value="2018">2018</option>
                                     <option value="2017">2017</option>
                                     <option value="2016">2016</option>
                         </select>
                     </span>
+                    <br>
                     <br>
                     <a id="addSchoolLink" href="javascript: addNewSchool();">+ Add school</a>
                 </div>

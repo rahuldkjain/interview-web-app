@@ -121,6 +121,9 @@ function addWorkHistory() {
     company.setAttribute("name", "company");
     company.setAttribute("placeholder", "Company");
     company.setAttribute("id", "company-" + workHistoryCount);
+    var error = document.createElement("span");
+    error.setAttribute("id", "workHistoryError-" + workHistoryCount);
+    error.setAttribute("style", "color: red; font-size: 12px");
 
     var activeFrom = document.createElement("SELECT");
     activeFrom.setAttribute("name", "activeFrom-" + workHistoryCount);
@@ -170,23 +173,28 @@ function addWorkHistory() {
     activeTo.add(option)
 
     var br = document.createElement("br")
+    var br1 = document.createElement("br")
 
     var workHistoryDiv = document.getElementById("workHistory")
     workHistoryDiv.appendChild(company)
+    workHistoryDiv.appendChild(error)
     workHistoryDiv.appendChild(br)
+    workHistoryDiv.appendChild(br1)
     workHistoryDiv.appendChild(activeFrom)
     workHistoryDiv.appendChild(activeTo)
 
     var oldLink = document.getElementById("addWorkLink");
     oldLink.parentNode.removeChild(oldLink);
 
-    var br1 = document.createElement("br")
+    var br2 = document.createElement("br")
+    var br3 = document.createElement("br")
     var addWorkLink = document.createElement("a")
     addWorkLink.setAttribute("id", "addWorkLink")
     addWorkLink.setAttribute("href", "javascript: addWorkHistory();")
     addWorkLink.text = "+ Add work"
 
-    workHistoryDiv.appendChild(br1)
+    workHistoryDiv.appendChild(br2)
+    workHistoryDiv.appendChild(br3)
     workHistoryDiv.appendChild(addWorkLink)
 }
 
@@ -199,12 +207,19 @@ function addNewSchool() {
     school.setAttribute("name", "school");
     school.setAttribute("placeholder", "School");
     school.setAttribute("id", "school-" + schoolCount);
+    var error = document.createElement("span");
+    error.setAttribute("id", "educationError-" + schoolCount);
+    error.setAttribute("style", "color: red; font-size: 12px");
 
     var enrolled = document.createElement("SELECT");
     enrolled.setAttribute("name", "enrolled-" + schoolCount);
     enrolled.setAttribute("id", "enrolled-" + schoolCount);
     var option = document.createElement("option");
     option.text = "Enrolled"
+    enrolled.add(option)
+    option = document.createElement("option");
+    option.setAttribute("value", 2020)
+    option.text = 2020
     enrolled.add(option)
     option = document.createElement("option");
     option.setAttribute("value", 2019)
@@ -231,6 +246,10 @@ function addNewSchool() {
     option.text = "Graduated";
     graduated.add(option);
     option = document.createElement("option");
+    option.setAttribute("value", 2020)
+    option.text = 2020
+    graduated.add(option)
+    option = document.createElement("option");
     option.setAttribute("value", 2019)
     option.text = 2019
     graduated.add(option)
@@ -248,23 +267,28 @@ function addNewSchool() {
     graduated.add(option)
 
     var br = document.createElement("br")
+    var br1 = document.createElement("br");
 
     var educationDiv = document.getElementById("education")
     educationDiv.appendChild(school)
+    educationDiv.appendChild(error)
     educationDiv.appendChild(br);
+    educationDiv.appendChild(br1);
     educationDiv.appendChild(enrolled)
     educationDiv.appendChild(graduated)
 
     var oldLink = document.getElementById("addSchoolLink");
     oldLink.parentNode.removeChild(oldLink);
 
-    var br1 = document.createElement("br")
+    var br2 = document.createElement("br")
+    var br3 = document.createElement("br")
     var addSchoolLink = document.createElement("a")
     addSchoolLink.setAttribute("id", "addSchoolLink")
     addSchoolLink.setAttribute("href", "javascript: addNewSchool();")
     addSchoolLink.text = "+ Add school"
 
-    educationDiv.appendChild(br1)
+    educationDiv.appendChild(br2)
+    educationDiv.appendChild(br3)
     educationDiv.appendChild(addSchoolLink)
 }
 
@@ -406,16 +430,6 @@ function goTo(buttonID) {
             var enrolled = document.getElementById("enrolled-1").value
             var graduated = document.getElementById("graduated-1").value
 
-            if (activeFrom == "" || activeTo == "") {
-                alert("Please set the work history dates!")
-                return false;
-            }
-
-            if (enrolled == "" || graduated == "") {
-                alert("Please set the dates education dates!")
-                return false;
-            }
-
             var data = {
                 aboutYou: aboutYou,
                 teachingExperience: teachingExperience,
@@ -445,11 +459,38 @@ function goTo(buttonID) {
                 data.education.push({ school: school, enrolled: enrolled, graduated: graduated })
             }
 
-            validated = validateProfile(data)
+            if (validated) {
+                validated = validateAboutYou(aboutYou);
+                validated = validateTeachingExperience(teachingExperience);
+                if (activeFrom == "" || activeTo == "") {
+                    data.workHistory.pop();
+                }
+
+                if (enrolled == "" || graduated == "") {
+                    data.education.pop();
+
+                }
+                validated = validateWorkHistory(data.workHistory);
+                validated = validateEducation(data.education);
+            }
+
+            var aboutYouElement = document.getElementById("aboutYou");
+            aboutYouElement.addEventListener('change', function() {
+                aboutYou = document.getElementById("aboutYou");
+                validated = validateAboutYou(aboutYou);
+            });
+
+            var teachingExperienceElement = document.getElementById("teachingExperience");
+            teachingExperienceElement.addEventListener('change', function() {
+                teachingExperience = document.getElementById("teachingExperience");
+                validated = validateTeachingExperience(teachingExperience);
+            });
+
+
             if (validated) {
                 sessionStorage.setItem("profile", JSON.stringify(data))
                 expertisePage();
-                alert("✔✔ Profile recorded successfully")
+                swal("Cool!", "Profile recorded successfully");
             }
         }
     } else if (buttonID == 3) {

@@ -69,34 +69,104 @@ function validateMobile(mobile) {
     return true
 }
 
-function validateProfile(profileData) {
-    if (profileData.aboutYou == "") {
-        alert("Please tell us a little bit about yourself")
-        return false
-    } else if (profileData.teachingExperience == "") {
-        alert("Please tell us about your teaching experience")
-        return false
-    } else if (profileData.workHistory.length == 0) {
-        alert("Please tell us about your work history")
-        return false
-    } else if (profileData.workHistory.length > 0) {
-        for (var index = 0; index < profileData.workHistory.length; index++) {
-            if (profileData.workHistory[index].activeFrom > profileData.workHistory[index].activeTo) {
-                alert("Please set the Work History dates correctly")
-                return false
-            }
-        }
-    }
-    if (profileData.education.length == 0) {
-        alert("Please tell us about your education")
+function validateAboutYou(aboutYou) {
+    aboutYou = document.getElementById("aboutYou").value;
+    if (aboutYou == "") {
+        displayError("aboutYou");
+        document.getElementById("aboutYouError").textContent = "Give a short bio"
         return false
     } else {
-        for (var index = 0; index < profileData.education.length; index++) {
-            if (profileData.education[index].enrolled > profileData.education[index].graduated) {
-                alert("Please set the Education dates correctly")
-                return false
+        hideError("aboutYou");
+        return true;
+    }
+}
+
+function validateTeachingExperience(teachingExperience) {
+    teachingExperience = document.getElementById("teachingExperience").value;
+    if (teachingExperience == "") {
+        displayError("teachingExperience");
+        document.getElementById("teachingExperienceError").textContent = "Give your teaching experience"
+        return false
+    } else {
+        hideError("teachingExperience");
+        return true;
+    }
+}
+
+function validateWorkHistory(workHistory) {
+    if (workHistory.length == 0) {
+        displayError("company-1");
+        displayError("activeFrom-1");
+        displayError("activeTo-1");
+        document.getElementById("company-1Error").textContent = "Please add your work"
+        return false
+    } else if (workHistory.length > 0) {
+        var dateCheck = true;
+        for (var index = 0; index < workHistory.length; index++) {
+            if (workHistory[index].activeFrom > workHistory[index].activeTo) {
+                displayError("company-" + (index + 1));
+                displayError("activeFrom-" + (index + 1));
+                displayError("activeTo-" + (index + 1));
+                document.getElementById("company-" + (index + 1) + "Error").textContent = "Aww! set dates correctly"
+                dateCheck = false;
+            } else {
+                hideError("company-" + (index + 1));
+
+                document.getElementById("activeFrom-" + (index + 1)).style.webkitTransition = "";
+                document.getElementById("activeFrom-" + (index + 1)).style.outline = "";
+                document.getElementById("activeFrom-" + (index + 1)).style.padding = "";
+                document.getElementById("activeFrom-" + (index + 1)).style.margin = "";
+                document.getElementById("activeFrom-" + (index + 1)).style.border = "";
+
+                document.getElementById("activeTo-" + (index + 1)).style.webkitTransition = "";
+                document.getElementById("activeTo-" + (index + 1)).style.outline = "";
+                document.getElementById("activeTo-" + (index + 1)).style.padding = "";
+                document.getElementById("activeTo-" + (index + 1)).style.margin = "";
+                document.getElementById("activeTo-" + (index + 1)).style.border = "";
             }
         }
+        if (dateCheck == false) {
+            return false
+        }
     }
-    return true
+    return true;
+}
+
+function validateEducation(education) {
+    if (education.length == 0) {
+        displayError("school-1");
+        displayError("enrolled-1");
+        displayError("graduated-1");
+        document.getElementById("school-1Error").textContent = "Please add your education"
+        return false
+    } else {
+        var dateCheck = true;
+        for (var index = 0; index < education.length; index++) {
+            if (education[index].enrolled > education[index].graduated) {
+                displayError("school-" + (index + 1));
+                displayError("enrolled-" + (index + 1));
+                displayError("graduated-" + (index + 1));
+                document.getElementById("school-" + (index + 1) + "Error").textContent = "Aww! set dates correctly"
+                dateCheck = false;
+            } else {
+                hideError("school-" + (index + 1));
+
+                document.getElementById("enrolled-" + (index + 1)).style.webkitTransition = "";
+                document.getElementById("enrolled-" + (index + 1)).style.outline = "";
+                document.getElementById("enrolled-" + (index + 1)).style.padding = "";
+                document.getElementById("enrolled-" + (index + 1)).style.margin = "";
+                document.getElementById("enrolled-" + (index + 1)).style.border = "";
+
+                document.getElementById("graduated-" + (index + 1)).style.webkitTransition = "";
+                document.getElementById("graduated-" + (index + 1)).style.outline = "";
+                document.getElementById("graduated-" + (index + 1)).style.padding = "";
+                document.getElementById("graduated-" + (index + 1)).style.margin = "";
+                document.getElementById("graduated-" + (index + 1)).style.border = "";
+            }
+        }
+        if (dateCheck == false) {
+            return false
+        }
+    }
+    return true;
 }
