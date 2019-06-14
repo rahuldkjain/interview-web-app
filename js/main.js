@@ -340,6 +340,37 @@ function goTo(buttonID) {
                 validated = validateMajor(major);
                 validated = validateMobile(mobile);
             }
+            var nameElement = document.getElementById("name");
+            nameElement.addEventListener('change', function() {
+                name = document.getElementById("name").value
+                validated = validateName(name);
+            });
+
+            var emailElement = document.getElementById("email");
+            emailElement.addEventListener('change', function() {
+                email = document.getElementById("email").value
+                validated = validateEmail(email);
+            });
+
+            var universityElement = document.getElementById("university");
+            universityElement.addEventListener('change', function() {
+                university = document.getElementById("university").value
+                validated = validateUniversity(university);
+            });
+
+            var majorElement = document.getElementById("major");
+            majorElement.addEventListener('change', function() {
+                major = document.getElementById("major").value
+                validated = validateMajor(major);
+            });
+
+            var mobileElement = document.getElementById("mobile");
+            mobileElement.addEventListener('change', function() {
+                mobile = document.getElementById("mobile").value
+                validated = validateMobile(mobile);
+            });
+
+
             if (validated) {
                 var data = {
                     name: name,
