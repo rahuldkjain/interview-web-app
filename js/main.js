@@ -348,8 +348,7 @@ function goTo(buttonID) {
 
             var emailElement = document.getElementById("email");
             emailElement.addEventListener('change', function() {
-                email = document.getElementById("email").value
-                validated = validateEmail(email);
+                validated = validateEmail(document.getElementById("email").value);
             });
 
             var universityElement = document.getElementById("university");
@@ -384,7 +383,8 @@ function goTo(buttonID) {
                 }
                 sessionStorage.setItem("personalInfo", JSON.stringify(data))
                 profilePage();
-                alert("✔✔ Personal Info added successfully")
+                swal("Good job!", "Personal Info added successfully!");
+
             }
         }
 

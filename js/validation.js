@@ -1,4 +1,5 @@
 function validateName(name) {
+    name = document.getElementById("name").value;
     if (name == "") {
         displayError("name")
         document.getElementById("nameError").textContent = "Please enter your name"
@@ -10,6 +11,7 @@ function validateName(name) {
 }
 
 function validateUniversity(university) {
+    university = document.getElementById("university").value;
     if (university == "") {
         displayError("university")
         document.getElementById("universityError").textContent = "Please enter your university"
@@ -20,8 +22,9 @@ function validateUniversity(university) {
     return true
 }
 
-function validateMajor(name) {
-    if (name == "") {
+function validateMajor(major) {
+    major = document.getElementById("major").value;
+    if (major == "") {
         displayError("major")
         document.getElementById("majorError").textContent = "Please enter your major"
         return false
@@ -33,7 +36,7 @@ function validateMajor(name) {
 
 function validateEmail(email) {
     var reg = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
-
+    email = document.getElementById("email").value;
     if (email == "") {
         displayError("email");
         document.getElementById("emailError").textContent = "Please enter your email"
@@ -50,6 +53,7 @@ function validateEmail(email) {
 }
 
 function validateMobile(mobile) {
+    mobile = document.getElementById("mobile").value;
     if (mobile == "") {
         displayError("mobile");
         document.getElementById("mobileError").textContent = "Please enter mobile number";
