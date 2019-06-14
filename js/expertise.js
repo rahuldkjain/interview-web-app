@@ -2,7 +2,11 @@
 var stream = "";
 
 //onload functionCall
-hideAllExpertise()
+if (!sessionStorage.getItem("expertise")) {
+    computerScienceExpertise();
+} else {
+    hideAllExpertise()
+}
 
 
 function hideAllExpertise() {
@@ -34,14 +38,60 @@ function hideAllExpertise() {
     document.getElementById("button-social-science").style.borderLeft = "0px solid #FF9F1C";
     document.getElementById("button-science").style.borderLeft = "0px solid #FF9F1C";
     document.getElementById("button-standardized-tests").style.borderLeft = "0px solid #FF9F1C";
+
+    var response = document.getElementsByName("computer-science-expertise")
+    uncheckAll(response);
+
+    response = document.getElementsByName("computer-software-expertise")
+    uncheckAll(response);
+
+    response = document.getElementsByName("engineering-expertise")
+    uncheckAll(response);
+
+    response = document.getElementsByName("humanities-expertise")
+    uncheckAll(response);
+
+    response = document.getElementsByName("history-expertise")
+    uncheckAll(response);
+
+    response = document.getElementsByName("math-expertise")
+    uncheckAll(response);
+
+    response = document.getElementsByName("science-expertise")
+    uncheckAll(response);
+
+    response = document.getElementsByName("social-science-expertise")
+    uncheckAll(response);
+
+    response = document.getElementsByName("standardized-tests-expertise")
+    uncheckAll(response);
+}
+
+function uncheckAll(response) {
+    for (var i = 0; i < response.length; i++) {
+        if (response[i].checked == true) {
+            response[i].checked = false;
+        }
+    }
+}
+
+function showChecked() {
+    var expertises = JSON.parse(sessionStorage.getItem("expertise")).expertise
+    expertises.forEach(expertise => {
+        document.getElementById(expertise).checked = true;
+    });
 }
 
 function computerScienceExpertise() {
 
     if (JSON.parse(sessionStorage.getItem("expertise"))) {
-        expertisePage()
+        expertisePage();
     }
     hideAllExpertise();
+
+    if (sessionStorage.getItem("expertise")) {
+        showChecked();
+    }
     stream = "computer-science";
     document.getElementById("computerScience").style.display = '';
     document.getElementById("button-computer-science").style.background = "#ffffff";
@@ -49,7 +99,11 @@ function computerScienceExpertise() {
 }
 
 function computerSoftwareExpertise() {
+
     hideAllExpertise();
+    if (sessionStorage.getItem("expertise")) {
+        showChecked();
+    }
     stream = "computer-software";
     document.getElementById("computerSoftware").style.display = '';
     document.getElementById("button-computer-software").style.background = "#ffffff";
@@ -58,6 +112,9 @@ function computerSoftwareExpertise() {
 
 function engineeringExpertise() {
     hideAllExpertise();
+    if (sessionStorage.getItem("expertise")) {
+        showChecked();
+    }
     stream = "engineering";
     document.getElementById("engineering").style.display = '';
     document.getElementById("button-engineering").style.background = "#ffffff";
@@ -66,6 +123,9 @@ function engineeringExpertise() {
 
 function historyExpertise() {
     hideAllExpertise();
+    if (sessionStorage.getItem("expertise")) {
+        showChecked();
+    }
     stream = "history";
     document.getElementById("history").style.display = '';
     document.getElementById("button-history").style.background = "#ffffff";
@@ -74,6 +134,9 @@ function historyExpertise() {
 
 function humanitiesExpertise() {
     hideAllExpertise();
+    if (sessionStorage.getItem("expertise")) {
+        showChecked();
+    }
     stream = "humanities"
     document.getElementById("humanities").style.display = '';
     document.getElementById("button-humanities").style.background = "#ffffff";
@@ -82,6 +145,9 @@ function humanitiesExpertise() {
 
 function mathExpertise() {
     hideAllExpertise();
+    if (sessionStorage.getItem("expertise")) {
+        showChecked();
+    }
     stream = "math";
     document.getElementById("math").style.display = '';
     document.getElementById("button-math").style.background = "#ffffff";
@@ -90,6 +156,9 @@ function mathExpertise() {
 
 function scienceExpertise() {
     hideAllExpertise();
+    if (sessionStorage.getItem("expertise")) {
+        showChecked();
+    }
     stream = "science";
     document.getElementById("science").style.display = '';
     document.getElementById("button-science").style.background = "#ffffff";
@@ -98,6 +167,9 @@ function scienceExpertise() {
 
 function socialScienceExpertise() {
     hideAllExpertise();
+    if (sessionStorage.getItem("expertise")) {
+        showChecked();
+    }
     stream = "social-science";
     document.getElementById("socialScience").style.display = '';
     document.getElementById("button-social-science").style.background = "#ffffff";
@@ -106,6 +178,9 @@ function socialScienceExpertise() {
 
 function standardizedTestsExpertise() {
     hideAllExpertise();
+    if (sessionStorage.getItem("expertise")) {
+        showChecked();
+    }
     stream = "standardized-tests";
     document.getElementById("standardizedTests").style.display = '';
     document.getElementById("button-standardized-tests").style.background = "#ffffff";

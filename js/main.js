@@ -103,12 +103,16 @@ function thankYouPage() {
     document.getElementById("expertise").style.display = 'none';
     document.getElementById("interview").style.display = 'none';
     document.getElementById("thankYou").style.display = '';
-    document.getElementById("interview__container_header-personalInfo").style.color = "gray"
-    document.getElementById("interview__container_header-profile").style.color = "gray"
-    document.getElementById("interview__container_header-expertise").style.color = "gray"
-    document.getElementById("interview__container_header-interview").style.color = "gray"
+    document.getElementById("interview__container_header-personalInfo").style.display = "none"
+    document.getElementById("interview__container_header-profile").style.display = "none"
+    document.getElementById("interview__container_header-expertise").style.display = "none"
+    document.getElementById("interview__container_header-interview").style.display = "none"
 
     resetButtons();
+    document.getElementById("button-1").style.display = "none";
+    document.getElementById("button-2").style.display = "none";
+    document.getElementById("button-3").style.display = "none";
+    document.getElementById("button-4").style.display = "none";
     sessionStorage.clear()
 }
 
@@ -122,7 +126,7 @@ function addWorkHistory() {
     company.setAttribute("placeholder", "Company");
     company.setAttribute("id", "company-" + workHistoryCount);
     var error = document.createElement("span");
-    error.setAttribute("id", "workHistoryError-" + workHistoryCount);
+    error.setAttribute("id", "company-" + workHistoryCount + "Error");
     error.setAttribute("style", "color: red; font-size: 12px");
 
     var activeFrom = document.createElement("SELECT");
@@ -208,7 +212,7 @@ function addNewSchool() {
     school.setAttribute("placeholder", "School");
     school.setAttribute("id", "school-" + schoolCount);
     var error = document.createElement("span");
-    error.setAttribute("id", "educationError-" + schoolCount);
+    error.setAttribute("id", "school-" + schoolCount + "Error");
     error.setAttribute("style", "color: red; font-size: 12px");
 
     var enrolled = document.createElement("SELECT");
@@ -347,7 +351,13 @@ function goTo(buttonID) {
         } else if (sessionStorage.length > 1) {
             goTo(5);
         } else {
-            var validated = true
+            var validatedName = true;
+            var validatedEmail = true;
+            var validatedWhatAreYou = true;
+            var validatedUniversity = true;
+            var validatedMajor = true;
+            var validatedMobile = true;
+
             var name = document.getElementById("name").value
             var email = document.getElementById("email").value
             var whatAreYou = document.querySelector('input[name="whatAreYou"]:checked').value
@@ -357,13 +367,14 @@ function goTo(buttonID) {
             var taxID = document.querySelector('input[name="taxID"]:checked').value
             var mobile = document.getElementById("mobile").value
 
-            if (validated) {
-                validated = validateName(name);
-                validated = validateEmail(email);
-                validated = validateUniversity(university);
-                validated = validateMajor(major);
-                validated = validateMobile(mobile);
-            }
+
+            validatedName = validateName(name);
+            validatedEmail = validateEmail(email);
+            validatedUniversity = validateUniversity(university);
+            validatedUniversity = validateUniversity(university);
+            validatedMajor = validateMajor(major);
+            validatedMobile = validateMobile(mobile);
+
             var nameElement = document.getElementById("name");
             nameElement.addEventListener('change', function() {
                 name = document.getElementById("name").value
@@ -394,7 +405,7 @@ function goTo(buttonID) {
             });
 
 
-            if (validated) {
+            if (validatedName && validatedEmail && validatedUniversity && validatedMajor && validatedMobile) {
                 var data = {
                     name: name,
                     email: email,
@@ -420,7 +431,10 @@ function goTo(buttonID) {
         } else if (sessionStorage.length > 2) {
             goTo(7);
         } else {
-            var validated = true
+            var validatedAboutYou = true,
+                validatedTeachingExperience = true,
+                validatedWorkHistory = true,
+                validatedEducation = true;
             var aboutYou = document.getElementById("aboutYou").value
             var teachingExperience = document.getElementById("teachingExperience").value
             var company = document.getElementById("company-1").value
@@ -459,20 +473,20 @@ function goTo(buttonID) {
                 data.education.push({ school: school, enrolled: enrolled, graduated: graduated })
             }
 
-            if (validated) {
-                validated = validateAboutYou(aboutYou);
-                validated = validateTeachingExperience(teachingExperience);
-                if (activeFrom == "" || activeTo == "") {
-                    data.workHistory.pop();
-                }
+            validatedAboutYou = validateAboutYou(aboutYou);
+            validatedTeachingExperience = validateTeachingExperience(teachingExperience);
 
-                if (enrolled == "" || graduated == "") {
-                    data.education.pop();
-
-                }
-                validated = validateWorkHistory(data.workHistory);
-                validated = validateEducation(data.education);
+            if (activeFrom == "" || activeTo == "") {
+                data.workHistory.pop();
             }
+
+            if (enrolled == "" || graduated == "") {
+                data.education.pop();
+
+            }
+            validatedWorkHistory = validateWorkHistory(data.workHistory);
+            validatedEducation = validateEducation(data.education);
+
 
             var aboutYouElement = document.getElementById("aboutYou");
             aboutYouElement.addEventListener('change', function() {
@@ -487,7 +501,7 @@ function goTo(buttonID) {
             });
 
 
-            if (validated) {
+            if (validatedAboutYou && validatedTeachingExperience && validatedWorkHistory && validatedEducation) {
                 sessionStorage.setItem("profile", JSON.stringify(data))
                 expertisePage();
                 swal("Cool!", "Profile recorded successfully");
@@ -521,7 +535,7 @@ function goTo(buttonID) {
             }
             //validation
             if (expertise.length < 1) {
-                alert("Please select atleast one expertise")
+                swal("Ghosh!", "Please select atleast one expertise", "warning")
             } else {
                 var data = {
                     stream: stream,
@@ -529,7 +543,7 @@ function goTo(buttonID) {
                 }
                 sessionStorage.setItem("expertise", JSON.stringify(data))
                 interviewPage();
-                alert("✔✔ Expertise added successfully");
+                swal("Ahoy!", "Expertise added successfully");
             }
         }
     } else if (buttonID == 5) {
@@ -538,53 +552,71 @@ function goTo(buttonID) {
         document.getElementById("teachingExperience").value = JSON.parse(sessionStorage.getItem("profile")).teachingExperience
 
         for (var index = 1; index <= JSON.parse(sessionStorage.getItem("profile")).workHistory.length; index++) {
-            if (index > 1) {
-                addWorkHistory();
+            if (workHistoryCount <= JSON.parse(sessionStorage.getItem("profile")).workHistory.length) {
+                if (index > 1) {
+                    addWorkHistory();
+                }
+                document.getElementById("company-" + index).value = JSON.parse(sessionStorage.getItem("profile")).workHistory[index - 1].company
+                document.getElementById("activeFrom-" + index).value = JSON.parse(sessionStorage.getItem("profile")).workHistory[index - 1].activeFrom
+                document.getElementById("activeTo-" + index).value = JSON.parse(sessionStorage.getItem("profile")).workHistory[index - 1].activeTo
+
             }
-            document.getElementById("company-" + index).value = JSON.parse(sessionStorage.getItem("profile")).workHistory[index - 1].company
-            document.getElementById("activeFrom-" + index).value = JSON.parse(sessionStorage.getItem("profile")).workHistory[index - 1].activeFrom
-            document.getElementById("activeTo-" + index).value = JSON.parse(sessionStorage.getItem("profile")).workHistory[index - 1].activeTo
         }
 
         for (var index = 1; index <= JSON.parse(sessionStorage.getItem("profile")).education.length; index++) {
-            if (index > 1) {
-                addNewSchool();
+            if (schoolCount <= JSON.parse(sessionStorage.getItem("profile")).education.length) {
+                if (index > 1) {
+                    addNewSchool();
+                }
+                document.getElementById("school-" + index).value = JSON.parse(sessionStorage.getItem("profile")).education[index - 1].school
+                document.getElementById("enrolled-" + index).value = JSON.parse(sessionStorage.getItem("profile")).education[index - 1].enrolled
+                document.getElementById("graduated-" + index).value = JSON.parse(sessionStorage.getItem("profile")).education[index - 1].graduated
+
             }
-            document.getElementById("school-" + index).value = JSON.parse(sessionStorage.getItem("profile")).education[index - 1].school
-            document.getElementById("enrolled-" + index).value = JSON.parse(sessionStorage.getItem("profile")).education[index - 1].enrolled
-            document.getElementById("graduated-" + index).value = JSON.parse(sessionStorage.getItem("profile")).education[index - 1].graduated
         }
 
         profilePage();
 
     } else if (buttonID == 6) {
         //submit interview
-        if (JSON.parse(sessionStorage.getItem("questions")).length == 3) {
-            var answer4 = document.getElementById("questionText4").value
-            if (answer4 == "") {
-                alert("Please answer the question! Skipping questions not allowed")
-            } else {
-                var data = JSON.parse(sessionStorage.getItem("questions"))
-                data.push({ questions: answer4 })
-                sessionStorage.setItem("questions", JSON.stringify(data))
-                document.getElementById("button-question-4").innerHTML += '<span style = "color: #FF9F1C"> ✔ </span>';
-                console.log("final personalInfo: " + sessionStorage.getItem("personalInfo"));
-                console.log("final profile: " + sessionStorage.getItem("profile"));
-                console.log("final expertise: " + JSON.parse(sessionStorage.getItem("expertise")).expertise);
-                console.log("final Interview: " + JSON.parse(sessionStorage.getItem("questions"))[0].question + ', ' + JSON.parse(sessionStorage.getItem("questions"))[1].question + ', ' + JSON.parse(sessionStorage.getItem("questions"))[2].question + ', ' + JSON.parse(sessionStorage.getItem("questions"))[3].question);
-                alert("✔ Question 4 response submitted")
-                alert("✔✔ Interview Ended! Thank You for participating")
-                thankYouPage();
-            }
-        }
+        // var answer4 = document.getElementById("questionText4").value
+        //     if (answer4 == "") {
+        //         alert("Please answer the question! Skipping questions not allowed")
+        //     } else {
+        //         var data = JSON.parse(sessionStorage.getItem("questions"))
+        //         data.push({ questions: answer4 })
+        //         sessionStorage.setItem("questions", JSON.stringify(data))
+        //         document.getElementById("button-question-4").innerHTML += '<span style = "color: #FF9F1C"> ✔ </span>';
+        //         console.log("final personalInfo: " + sessionStorage.getItem("personalInfo"));
+        //         console.log("final profile: " + sessionStorage.getItem("profile"));
+        //         console.log("final expertise: " + JSON.parse(sessionStorage.getItem("expertise")).expertise);
+        //         console.log("final Interview: " + JSON.parse(sessionStorage.getItem("questions"))[0].question + ', ' + JSON.parse(sessionStorage.getItem("questions"))[1].question + ', ' + JSON.parse(sessionStorage.getItem("questions"))[2].question + ', ' + JSON.parse(sessionStorage.getItem("questions"))[3].question);
+        //         alert("✔ Question 4 response submitted")
+        //         alert("✔✔ Interview Ended! Thank You for participating")
+        //         thankYouPage();
+        //     }
+        // if (JSON.parse(sessionStorage.getItem("questions")).length == 3) {
+        //     var answer4 = document.getElementById("questionText4").value
+        //     if (answer4 == "") {
+        //         alert("Please answer the question! Skipping questions not allowed")
+        //     } else {
+        //         var data = JSON.parse(sessionStorage.getItem("questions"))
+        //         data.push({ questions: answer4 })
+        //         sessionStorage.setItem("questions", JSON.stringify(data))
+        //         document.getElementById("button-question-4").innerHTML += '<span style = "color: #FF9F1C"> ✔ </span>';
+        //         console.log("final personalInfo: " + sessionStorage.getItem("personalInfo"));
+        //         console.log("final profile: " + sessionStorage.getItem("profile"));
+        //         console.log("final expertise: " + JSON.parse(sessionStorage.getItem("expertise")).expertise);
+        //         console.log("final Interview: " + JSON.parse(sessionStorage.getItem("questions"))[0].question + ', ' + JSON.parse(sessionStorage.getItem("questions"))[1].question + ', ' + JSON.parse(sessionStorage.getItem("questions"))[2].question + ', ' + JSON.parse(sessionStorage.getItem("questions"))[3].question);
+        //         alert("✔ Question 4 response submitted")
+        //         alert("✔✔ Interview Ended! Thank You for participating")
+        //         thankYouPage();
+        //     }
+        // }
 
     } else if (buttonID == 7) {
         //back to expertisePage
         var name = JSON.parse(sessionStorage.getItem("expertise")).stream + "-expertise";
-        var expertises = JSON.parse(sessionStorage.getItem("expertise")).expertise
-        expertises.forEach(expertise => {
-            document.getElementById(expertise).checked = true;
-        });
 
         switch (name) {
             case "computer-science-expertise":
@@ -627,6 +659,10 @@ function goTo(buttonID) {
             default:
                 break;
         }
+        var expertises = JSON.parse(sessionStorage.getItem("expertise")).expertise
+        expertises.forEach(expertise => {
+            document.getElementById(expertise).checked = true;
+        });
     }
 
     return false
